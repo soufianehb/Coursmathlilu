@@ -1,0 +1,601 @@
+\documentclass[leqno,10pt,tick,mathserif,xcolor=dvipsnames,oneside,fleqn]{beamer}
+%\documentclass[slidestop,usepdftitle=false]{beamer}
+%\documentclass[leqno,10pt,tick,mathserif,xcolor=dvipsnames]{beamer}
+%\usepackage{xcolor}
+\usepackage{etex}
+\reserveinserts{28}
+\usepackage[all]{xy}
+\usepackage[latin1]{inputenc}
+\usepackage[frenchb]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{frcursive}
+\usepackage{pdftricks}
+\usepackage{palatino}
+%\input{../preamb-pres.tex}
+%\beamertemplateshadingbackground{white!30}{white!100}
+%\usepackage{beamerthemeshadow}
+%\usepackage{beamerthemesplit}
+\usepackage{hyperref}
+%\usetheme{Warsaw}
+%\documentclass{beamer}
+
+%\usetheme{Blackboard}
+%\usetheme{Copenhagen}
+%\usetheme{S}
+\usepackage{dsfont}
+\usepackage{hyperref}
+\everymath{\displaystyle}
+\usecolortheme{crane}
+\usecolortheme{beaver}
+%%%%%%%%%%%%%%%%%%%pour la gaune%%%%%%%%%%%%%%%%%%%%%
+%\useinnertheme[shadow=true]{rounded}
+%\useoutertheme{infolines}
+%\usecolortheme{wolverine}
+%\setbeamerfont{block title}{size={}}
+%\setbeamercolor{titlelike}{parent=structure,bg=yellow!85!orange}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{beamertexpower}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{amsmath,amssymb,amsfonts}
+% Beamer class for the ENST de Bretagne (GET/ ENST B)
+
+% based on the work done by  Madhusudan Singh for NCSU
+
+% modified by Gilles Bertrand
+
+% December 2006
+
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+
+\def \K {\mathbb{K} }
+\def \S {\mathbb{S} }
+\def \L {\mathbb{L} }
+\def \N {\mathbb{N} }
+\def \Z {\mathbb{Z} }
+\def \Q {\mathbb{Q} }
+\def \R {\mathbb{R} }
+\def \C {\mathbb{C} }
+\def \F {\mathfrak{F}}
+\def \B {\mathfrak{B}}
+\def \O {\mathfrak{O}}
+\def \U {\mathfrak{U}}
+\usepackage{tablists}
+\mode <all>
+\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+
+%\usepackage{epsfig,psfig}
+%ENSEMBLES USUELS
+\newcommand{\field}[1]{\mathbb{#1}}
+\newcommand{\rrr}{\field{R}}
+\newcommand{\nnn}{\field{N}}
+\newcommand{\zzz}{\field{Z}}
+\newcommand{\kkk}{\field{K}}
+\newcommand{\qqq}{\field{Q}}
+\usepackage{graphicx,float,placeins,subfigure}
+%pour importer des grahes construit Ã  partir de geogebra
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+%couleur des paragraphes
+%\usepackage{sectsty}
+%FIN DE LA DECLARATION DES FONTES ENSEMBLES USUELS
+\definecolor{orange}{rgb}{0.99,0.69,0.07}
+\definecolor{red}{rgb}{1,0,0}
+%\definecolor{blue}{rgb}{0,0,2}
+\newcommand{\blue}{\color{blue}}
+\newcommand{\green}{\color{green}}
+\newcommand{\red}{\color{red}}
+\newcommand{\brown}{\color{brown}}
+\newcommand{\white}{\color{white}}
+\newcommand{\yellow}{\color{yellow}}
+%\beamertemplatetransparentcovereddynamic
+\newcommand{\Lang}[1]{\operatorname{\text{\textsc{#1}}}}
+\newcommand{\Class}[1]{\operatorname{\mathchoice
+{\text{\sf \small #1}} {\text{\sf \small #1}}
+  {\text{\sf #1}}
+{\text{\sf #1}}}}
+%\newcommand{\R}{I\!\!R}
+%\newcommand{\N}{I\!\!N}
+\newcommand{\NumSAT}      {\text{\small\#SAT}}
+\newcommand{\NumA}        {\#_{\!A}}
+\newcommand{\barA}        {\,\bar{\!A}}
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\Set}[1]{\{#1\}}
+\newtheorem{proposition}{Proposition}[section]
+%\newtheorem{property}[proposition]{PropriÃƒÂ©tÃƒÂ©}
+%\renewtheorem{corollary}[proposition]{Corollaire}
+
+%\usetheme{Warsaw}
+%\usetheme{Frankfurt}
+%\usetheme{Antibes}
+%\usetheme{JuanLesPins}
+%\usetheme{Berkeley}
+\usetheme{CambridgeUS}
+%\usetheme[secheader]{Boadilla}
+%\usetheme[secheader]{Madrid}
+%\usetheme{AnnArbor}
+%\usetheme[compress]{berlin}
+%\usetheme{Warsaw}
+%\usetheme{Luebeck}
+%\usecolortheme{seahorse}
+\newtheorem{ex}{Exemple}[section]
+\usecolortheme{wolverine}
+\theoremstyle{plain}
+\newtheorem{Thm}{{\textbf{Théorème}}}[section] 
+\newtheorem*{theoreme*}{{Théorème}}
+\newtheorem{Prop}{\textbf{Proposition}}[section]
+\newtheorem*{proposition*}{Proposition}
+\newtheorem{Cor}{\textbf{Corollaire}}[section]
+\newtheorem*{corollaire*}{Corollaire}
+\newtheorem{Lem}{\textbf{Lemme}}[section]
+\newtheorem*{lemme*}{Lemme}
+\newtheorem{Defs}{\textbf{Définitions}}[section]
+\newtheorem{dfn}{\textbf{Définition}}[section]
+\newtheorem{rem}{\textbf{Remarque}}[section]
+\newtheorem{Propr}{\textbf{Propriétés}}[section]
+%\newtheorem{ex}{Exemple}[section]
+\newtheorem{exs}[ex]{Exemples}
+%--------------------------------------------------
+\setbeamercolor{block title example} {fg=violet,bg=purple!50}
+\setbeamercolor{block title } {fg=violet,bg=piggypink}
+\setbeamercolor{block title alerted} {fg=teal,bg=teal!40}
+\pgfdeclaremask{tu}{beamer-tu-logo-mask}
+%\pgfdeclaremask{computer}{beamer-computer-mask}
+%\pgfdeclareimage[interpolate=true,mask=computer,height=4cm]{computerimage}{beamer-computer}
+%\pgfdeclareimage[interpolate=true,mask=computer,height=2cm]{computerworkingimage}{beamer-computerred}
+%\pgfdeclareimage[mask=tu,height=0.6cm]{logo}{ts_logo}
+%\pgfdeclareimage[height=0.6cm]{logo}{es} \logo{\pgfuseimage{logo}}
+\everymath{\displaystyle}
+% % % % % % % % % % %ù
+% % % % % % % % % %
+
+\title[Mathématique 1]{\textbf{\textcolor{red}{ Module:  Mathématique 1}}\vspace{0.4cm}\\\textbf{Chapitre 4: D\'{e}nombrement}}
+\author{\textbf{Prof. Mohammed SRATI}}
+
+\institute[ENS-Fès]
+{
+\medskip\medskip
+\textbf{{Licence d'Éducation \\ Spécialité: Enseignement Primaire}}}
+\date{07-12-2022}
+
+\begin{document}
+\begin{frame}
+	\begin{center}  \vspace*{-0.3cm}  
+			\includegraphics[width=10cm, height=1.4cm]{logo}
+	\vspace*{-0.5cm}	\end{center}
+\titlepage
+\end{frame}
+%----------------------------------
+
+%--------------------------------
+
+%----------------------------------
+
+%--------------------------------
+
+\begin{frame}
+\frametitle{Sommaire}
+\textbf{4. Dénombrement }
+
+\begin{itemize}
+\item Ensembles finis
+\item Applications (injective, surjective, bijective, correspondance)
+\item Arrangements, permutations, combinaisons
+
+\end{itemize}
+%2.3.	Calcul d'intégrale
+%\begin{itemize}
+%\item	Fonction primitive
+%\item	Surface et fonction primitive d'une fonction continue (fonction constante et positive sur un intervalle - fonction affine positive sur un intervalle - ...)
+%\item	Intégrale d'une fonction continue
+%\item	Calcul des volumes, calcul de la masse
+%\item	Vitesse et distance
+%\end{itemize}
+\end{frame}
+%%----------------------------------
+
+%--------------------------------
+
+
+%--------------------------------
+\begin{frame}
+ \section{Ensembles finis}
+ \subsection{D\'{e}nitions}
+ \begin{dfn}
+ 
+ Soient $u_{1}, u_{2}, \ldots, u_{p}$ des objets math\'{e}matiques. On forme alors l'ensemble
+ $$
+ E=\{u_{1},\ u_{2},\ \ldots,\ u_{p}\}
+ $$
+ On dit alors que chaque $u_{i} ($pour $1\leq i\leq p)$ est un \'{e}l\'{e}ment de l'ensemble $E$, ou autrement dit que $u_{i}$ appartient \`{a} $E$ et on \'{e}crit
+ $$
+ u_{i}\in E
+ $$
+ \end{dfn}
+ \pause
+ \begin{exs}
+ \begin{itemize}
+ \item $\mathbb{N}=\{0,1,2,\ \ldots\}$ est l'ensemble des entiers naturels.  \pause
+ \item $\mathbb{R}$ est l'ensemble des nombres r\'{e}els.
+  \end{itemize}
+ \end{exs}
+ \end{frame}
+ \begin{frame}
+ \begin{rem}
+ Deux ensembles sont \'{e}gaux s'ils ont les m\^{e}mes \'{e}l\'{e}ments. L'ordre des \'{e}l\'{e}ments n'est pas important. Ainsi, les ensembles:
+ $$\{1,2\},~~ \{2,1\},~~ \{1,1,2,2,2\}$$
+ sont en r\'{e}alit\'{e} le m\^{e}me ensemble au sens math\'{e}matique.
+ \end{rem}
+  \pause
+ \begin{dfn}
+ Le nombre d'\'{e}l\'{e}ments distincts d'un ensemble $E$ est appel\'{e} le cardinal de $E$, on le note
+ ${\it Card} ({\it E})$.\\
+ Un ensemble est fini si son cardinal est un entier naturel, i.e. s'il poss\`{e}de un nombre fini d'\'{e}l\'{e}ments. Dans le cas contraire, on dit qu'il est infini.
+ \end{dfn}
+ \end{frame}
+  \begin{frame}
+ \begin{exs}
+ \begin{itemize}
+ \item L'ensemble vide, not\'{e} $\emptyset$, est un ensemble de cardinal $0.$  \pause
+ 
+ \item L'ensemble $\{*,\ \theta,\ \lambda,\ l\}$ est de cardinal $4$.  \pause
+ 
+ \item Pour tous entiers naturels $m$ et $n$, on note si $m\leq n$:
+ $$
+ [m,\ n]=\{m,\ m+1,\ m+2,\ \ldots,\ n-1,\ n\}
+ $$
+ et si $m>n$: $[m,  n]=\emptyset\cdot$
+ 
+ \item Si $n\in \mathbb{N}$, l'ensemble , $[1, n]$ est fini et est de cardinal $n.$  \pause
+ 
+ \item Si $m\leq n$, alors l'ensemble, $[m,n]$ est un ensemble fini de cardinal $n-m+1.$
+ \end{itemize}
+ \end{exs}
+ \end{frame}
+  \begin{frame}
+ \subsection{Parties d'un ensemble}
+ \begin{dfn}
+ Soient $E$ et $F$ deux ensembles. On dit que $F$ est inclus dans $E$ et on \'{e}crit
+ $$
+ F\subset E
+ $$
+ si tout \'{e}l\'{e}ment de l'ensemble $F$ est aussi un \'{e}l\'{e}ment de l'ensemble $E$, i.e.
+ $$
+ F\subset E\Leftrightarrow\forall x\in F,\ x\in E
+ $$
+ Lorsque $F\subset E$, on dit que $F$ est une partie ou un sous-ensemble de $E.$
+ \end{dfn}
+  \pause
+ \begin{exs}
+ \begin{itemize}
+ \item On a $\mathbb{N}\subset \mathrm{Z}\subset \mathbb{Q}\subset \mathbb{R}$
+ \item Lorsqu'on a un ensemble $E$, il est courant de consid\'{e}rer un sous-ensemble $F$ des \'{e}l\'{e}ments de $E$ v\'{e}riant une certaine propri\'{e}t\'{e} :
+ $$
+ F=\{x\in E/x^{2}-5x+4<0\}~~~~~~ F\subset E
+ $$
+ \end{itemize}
+ \end{exs}
+ \end{frame}
+  \begin{frame}
+ \begin{Propr}
+ Soient $E, F$  et $G$  trois ensembles. Alors:\\
+ \begin{itemize}
+ \item[1)] $\emptyset\subset E$
+ \item[2)] $E\subset E.$
+ \item[3)] Transitivit\'{e}: {\it si} $E\subset F$ {\it et} $F\subset G$, {\it alors} $E\subset G.$
+ \item[4)] Double inclusion:
+ $E=F \Leftrightarrow E\subset F$ {\it et} $F\subset E$
+ \end{itemize}
+  \pause
+ \end{Propr}
+ \begin{Propr}
+ {\it Soit} $E$ {\it un ensemble fini et soit A un sous-ensemble de} $E.$  \pause
+ 
+ {\it Alors} $A$  est \'{e}galement un ensemble fini et $Card(A)\leq Card(E)$.  \pause
+ 
+ {\it Si de plus, on a Card} $(A)=Card(E)$ , {\it alors n\'{e}cessairement} $A=E.$ 
+ \end{Propr}
+ \end{frame}
+  \begin{frame}
+ \begin{dfn}
+ Pour tout ensemble $E$, on note $\mathcal{P}(E)$ l'ensemble form\'{e} par toutes les parties de $E.$
+ \end{dfn}  \pause
+ \begin{rem}
+ $\mathcal{P}(E)$ est un ensemble dont chacun des \'{e}l\'{e}ments est un ensemble
+ \end{rem}
+ \end{frame}
+  \begin{frame}
+ \subsection{Intersection et union d'ensembles}
+ \begin{dfn}
+ Soient $E$ et $F$ deux ensembles.
+ 
+ $\bullet$ On appelle intersection de $E$ et $F$, not\'{e}e $E\cap F$, l'ensemble des \'{e}l\'{e}ments qui appartiennent simul- tan\'{e}ment \`{a} $E$ et \`{a} $F.$  \pause
+ 
+ $\bullet$ On appelle union de $E$ et $F$, not\'{e}e $E\cup F$, l'ensemble des \'{e}l\'{e}ments qui appartiennent \`{a} $E$ ou \`{a} $F,$ i.e. dans au moins un des deux ensembles.  \pause
+ 
+ Deux ensembles $E$ et $F$ v\'{e}rifiant $ E\cap F=\emptyset$ sont dits disjoints.
+ \end{dfn}
+ \end{frame}
+  \begin{frame}
+ \begin{Propr}
+ {\it La relation d}'{\it intersection est}:
+ \begin{itemize}
+ \item[$\bullet$] {\it commutative}: $A\cap B=B\cap A$  \pause
+ 
+ \item[$\bullet$] {\it associative}: $A\cap(B\cap C)=(A\cap B)\cap C$  \pause
+ 
+ \item[$\bullet$] $A\cap A=A$ {\it et} $ A\cap\emptyset=\emptyset$
+ \end{itemize}
+ {\it La relation de r\'{e}union est}:
+ \begin{itemize}
+ \item[$\bullet$] {\it commutative}: $A\cup B=B\cup A$  \pause
+ 
+ \item[$\bullet$] {\it associative}: $A\cup(B\cup C)=(A\cup B)\cup C$  \pause
+ 
+ \item[$\bullet$] $A\cup A=A$ {\it et} $A\cup\emptyset=A$
+ \end{itemize}
+  \pause
+ {\it L}'{\it intersection et la r\'{e}union v\'{e}rifient}:
+ \begin{itemize}
+ \item[$\bullet$] {\it la distributivit\'{e} de} $\cap$ sur $\cup:$ $A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$,   \pause
+ \item[$\bullet$] {\it la distributivit\'{e} de} $\cup$ sur $\cap$ : $A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$.
+ \end{itemize}
+ \end{Propr}
+ \end{frame}
+  \begin{frame}
+ \begin{rem}
+ On peut g\'{e}n\'{e}raliser ces notations: si $(A_{i})_{i\in I}$ est une famille d'ensembles, on note:  \pause
+ 
+ $\bullet$ leur r\'{e}union $\displaystyle \bigcup_{i\in I}A_{i}$, d\'{e}nie par : $x\displaystyle \in\bigcup_{i\in I}A_{i} \Leftrightarrow \exists i\in I/x\in A_{i}.$  \pause
+ 
+ $\bullet$ leur intersection $\displaystyle \bigcap_{i\in I}A_{i}$, d\'{e}nie par : $x\displaystyle \in\bigcap_{i\in I}A_{i} \Leftrightarrow \forall i\in I, x\in A_{i}.$
+ \end{rem}
+  \pause
+ \begin{Propr}
+ Soient $E, F$ deux ensembles finis. On a:
+ \begin{itemize}
+ 
+ \item[$\bullet$]  $Card(E\cup F)=Card(E)+Card(F)-Card(E\cap F)$  \pause
+ 
+ \item[$\bullet$]   En particulier, si $E$ et $F$  sont disjoints, on a
+  $Card(E\cup F)=Card(E)+Card(F).$
+ \end{itemize}
+ \end{Propr}
+  \pause
+\textbf{Preuve}\\
+ Si on ajoute $Card(E)$ et $Card(F)$, on compte deux fois les \'{e}l\'{e}ments de $E\cap F$. On doit donc retrancher $Card(E\cap F)$ pour obtenir le cardinal de $E \cup F$ .
+
+ \end{frame}
+   \begin{frame}
+ \subsection{Compl\'{e}mentaire d'une partie}
+ \begin{dfn}
+ Soit $E$ un ensemble et $A$ une partie de $E$. On appelle compl\'{e}mentaire de $A$ dans $E$, et on note $E\backslash A$, (ou $^CA$ ou $\overline{A}$ ) l'ensemble des \'{e}l\'{e}ments de $E$ n'appartenant pas \`{a} $A$:
+ $$
+ E\backslash A=\ ^CA=\overline{A}=\{x\in E,\ x\not\in A\}
+ $$
+ \end{dfn}
+  \pause
+ \begin{Propr}
+ {\it Soient} $E$ {\it un ensemble et} $A$ {\it et} $B$ {\it deux parties de} $E.$  \pause
+ \begin{itemize}
+ \item[$\bullet$] $^CE=\emptyset$  \pause
+ 
+ \item[$\bullet$] $^C\emptyset=E$  \pause
+ 
+ \item[$\bullet$] $^C(^CA)=A$  \pause
+ 
+ \item[$\bullet$] $(^{C}A)\cap A=\emptyset$  \pause
+ 
+ \item[$\bullet$] $(^{C}A)\cup A=E$  \pause
+ 
+ \item[$\bullet$] $^C(A\cup B)=(^{C}A)\cap(^{C}B)$  \pause
+  \item[$\bullet$] $^C(A\cap B)=(^{C}A)\cup(^{C}B)$.
+ \end{itemize}
+ \end{Propr}
+ \end{frame}
+   \begin{frame}
+ \subsection{Produit cart\'{e}sien d'ensembles}
+ \begin{dfn}
+ On appelle produit cart\'{e}sien de $n$ ensembles $E_{1}, E_{2}, \ldots, E_{n}$, l'ensemble des suites finies :
+ $$
+ E_{1}\times E_{2}\times\ \cdots\ \times E_{n}=\{(x_{1},\ x_{2},\ \ldots,\ x_{n}),\ x_{1}\in E_{1},\ x_{2}\in E_{2},\ \ldots,\ x_{n}\in E_{n}\}
+ $$
+ En particulier, lorsque les $E_{i}$ sont tous identiques, on le note simplement $E^{n}.$
+ \end{dfn}
+  \pause
+ \begin{Propr}
+ {\it Si} $E$ {\it et} $F$ {\it sont deux ensembles finis, alors}
+ $$Card(E\times F)=Card(E)\times Card(F)$$
+ \end{Propr}
+ \end{frame}
+   \begin{frame}
+ \begin{rem}
+ De mani\`{e}re plus g\'{e}n\'{e}rale, si $E_{1}, \ldots, E_{n}$ sont $n$ ensembles finis, alors
+ 
+ $$Card(E_{1}\displaystyle \times E_{2}\times\cdots\times E_{n})=\prod_{k=1}^{n}Card(E_k).$$ En particulier, si $E$ est un ensemble fini, alors
+ $$Card(E^{n})=(Card(E))^{n}$$
+ \end{rem}
+ \end{frame}
+   \begin{frame}
+ \section{Applications entre ensembles finis et cardinal}
+ \begin{Propr}
+ Si $E$ est fini, on a les \'{e}quivalences:
+ \begin{itemize}
+ \item[$\bullet$] il existe une injection de $E$ dans $F\Leftrightarrow F$ est infni ou card $(F)\geq card(E)$.  \pause
+ \item[$\bullet$] il existe une surjection de $E$ dans $F\Leftrightarrow F$ est fni et $card(F)\leq card(E)$. \pause
+  \item[$\bullet$] il existe une bijection de $E$ dans $F\Leftrightarrow F$ est fni et $card(F)=card(E)$.
+ \end{itemize}
+ \end{Propr}
+  \pause
+ \begin{Propr}
+ Soient $E, F$ de m\^{e}me cardinal et fnis. Soit $f:~~E\rightarrow F$. On a les \'{e}quivalences :
+  \pause
+ \begin{itemize}
+  \item[$\bullet$] $f$ est injective $\Leftrightarrow f$ est bijective.  \pause
+ \item[$\bullet$] $f$ est surjective $\Leftrightarrow f$ est bijective.
+ \end{itemize} 
+ \end{Propr}
+ \end{frame}
+    \begin{frame}{D\'{e}nombrement des $p$-listes}
+ \section{D\'{e}nombrement}
+ \subsection{D\'{e}nombrement des $p$-listes}
+ \begin{dfn}
+ On appelle $p$-liste ou $p$-uplet d'un ensemble $E$ tout \'{e}l\'{e}ment de $E^{p}$, i.e. un \'{e}l\'{e}ment de la forme $(x_{1},\ \ldots,\ x_{p})$, avec $\forall 1,...,p$, $x_{i}\in E.$
+ \end{dfn}
+ \pause
+ \begin{theorem}
+ {\it Soit} $E$ {\it un ensemble fini de cardinal} $n$. {\it Alors, le nombre de} $p$-{\it listes d}'{\it \'{e}l\'{e}ments de} $E$ {\it est \'{e}gal \`{a}} $n^{p}.$
+ \end{theorem}
+  \pause
+\textbf{Preuve}
+ Cela vient du fait que $card(E^p)= card(E)^p$
+  \pause
+ \begin{rem}
+  On utilise les $p$-listes en cas de choix successifs de $p$ \'{e}l\'{e}ments d'un ensemble, avec \'{e}ventuelles r\'{e}p\'{e}titions
+ \end{rem}
+ \end{frame}
+     \begin{frame}
+ \begin{ex}
+ On tire trois cartes avec remise dans un jeu de $32$ cartes. Combien de tirages différents peut-on
+ rencontrer ?
+ Un tirage de trois cartes avec remise est une $3$-liste d'un ensemble à $32$ éléments : il y a donc $32^3 = 32768$
+ possibilités.
+ \end{ex} 
+  \pause
+ \textbf{Exercice}
+ 
+ $1$) Déterminer le nombre de code à $4$ chiffres pour une carte bancaire.
+ 
+ $2)$ Déterminer le nombre de numéros de téléphone portable possibles (06 plus 8 chiffres).
+ \end{frame}
+     \begin{frame}{Arrangements}
+ \subsection{Arrangements}
+ \begin{dfn}
+ Soit $E$ un ensemble et soit $p\in \mathbb{N}^{*}$. On appelle $p$-arrangement de $E$ ou arrangement de $p$ \'{e}l\'{e}ments de $E$ toute suite de $p$ \'{e}l\'{e}ments distincts de $E.$
+  \pause
+ Si $E$ contient $n$ \'{e}l\'{e}ments, on note $A_{n}^{p}$ le nombre d'arrangement \`{a} $p$ \'{e}l\'{e}ments d'un ensemble \`{a} $n$ \'{e}l\'{e}ments
+ \end{dfn}
+  \pause
+ \begin{rem}
+  Si $p>n$, il ne peut pas y avoir de $p$-arrangements dans l'ensemble $E$. On a alors $A_{n}^{p}=0.$
+ \end{rem}
+ \end{frame}
+     \begin{frame}
+     \begin{theorem}
+      {\it Soit} $E$ {\it un ensemble fini de cardinal} $n$. {\it Soit} $p\leq n$. {\it Alors le nombre de} $p$-{\it arrangements} $A_{n}^{p}$ {\it de l}'{\it ensemble} $E$ {\it est \'{e}gal \`{a}}
+      $$
+      A_{n}^{p}=\frac{n!}{(n-p)!}
+      $$
+      {\it o\`{u} on a not\'{e}} $n!=n\times(n-1)\times(n-2)\times\cdots\times 2\times 1$, {\it appel\'{e} factorielle} $n.$
+      \end{theorem}
+       \pause
+ \begin{rem}
+  On utilise les arrangements en cas de choix succesifs de $p$ \'{e}l\'{e}ments pris parmi $n$, sans r\'{e}p\'{e}tition.
+ \end{rem}
+  \pause
+ \begin{ex}
+ Le nombre de bureaux éligibles de $4$ personnes d'une association de 30 membres est de : 
+ $$A_{30}^4=30\times 29\times 28\times 27$$
+ \end{ex}
+  \pause
+ \textbf{Exercice}
+ Déterminer le nombre de tirages successifs, sans remise, de 3 boules dans une urne comportant 9 boules numérotées de 1 à 9.
+ \end{frame}
+     \begin{frame}{Permutations}
+ \subsection{Permutations}
+ \begin{dfn}
+ Soit $E$ un ensemble \`{a} $n$ \'{e}l\'{e}ments. Un $n$-arrangement de $E$ est appel\'{e} une permutation de $E$. Une permutation est donc un $n$-uplet constitu\'{e}, dans un certain ordre, des $n$ \'{e}l\'{e}ments de $E.$
+ \end{dfn}
+  \pause
+ \begin{theorem}
+ {\it Soit} $E$ {\it un ensemble \`{a}} $n$ {\it \'{e}l\'{e}ments. Alors il} $y$ {\it a} $n!$ {\it permutations de E. Autrement} $dit$, {\it il} $y$ {\it a} $n!$ {\it fa\c{a}ons de ranger} $n$ {\it \'{e}l\'{e}ments distincts dans tous les ordres possibles}.
+ \end{theorem}
+  \pause
+ \begin{rem}
+  On utilise les permutations dans les cas o\`{u} on veut ordonner tous les \'{e}l\'{e}ments d'un ensemble sans r\'{e}p\'{e}tition
+ \end{rem}
+ \end{frame}
+     \begin{frame}
+ \begin{ex}
+ De combien de manières différentes peut-on mélanger un jeu de $32$ cartes ?\\
+ Le nombre de mélanges correspond au nombre de permutations sur les 32 cartes : il y en a $32!$. 
+ \end{ex}
+  \pause
+ \textbf{Exercice}
+ De combien de manières peut-on disposer 6 livres (distincts) sur
+ une étagère ?
+ \end{frame}
+     \begin{frame}{Combinaisons}
+ \subsection{Combinaisons}
+ \begin{dfn}
+ Soit $E$ un ensemble \`{a} $n$ \'{e}l\'{e}ments. On appelle combinaison de $p$ \'{e}l\'{e}ments de $E$ toute partie de $E$ qui contient $p$ \'{e}l\'{e}ments. On note le nombre de combinaisons de $p$ \'{e}l\'{e}ments d'un ensemble de $n$ \'{e}l\'{e}ments : $C^p_n$, qui se lit $p$ parmi $n$
+ \end{dfn}
+  \pause
+ \begin{rem}
+ \begin{itemize}
+ \item[$\bullet$] Les \'{e}l\'{e}ments d'une combinaison de $p$ \'{e}l\'{e}ments sont deux \`{a} deux distincts. \item[$\bullet$] Si $p>n$ ou si $p<0$ on a $C^p_n=0$
+  \pause
+ \item[$\bullet$] L'ordre des \'{e}l\'{e}ments d'une combinaison n'a pas d'importance.
+ \end{itemize}
+ \end{rem}
+ \end{frame}
+     \begin{frame}
+ \begin{theorem}
+ {\it Soit} $n\in \mathbb{N}$ {\it et soit} $0\leq p\leq n$. {\it Alors, le nombre de combinaisons de} $p$ {\it \'{e}l\'{e}ments parmi un ensemble \`{a}} $n$ {\it \'{e}l\'{e}ments est \'{e}gal \`{a}}
+ $$
+ C^p_n=\frac{n!}{p!(n-p)!}=\frac{n(n-1)(n-2)\cdots(n-p+1)}{p(p-1)(p-2)\cdots 1}
+ $$
+ \end{theorem}
+  \pause
+ \begin{ex}
+ $C_8^2=\dfrac{8\times 7}{2\times 1}=28$,~~  $C_3^{50}=\dfrac{50\times 49 \times 48}{2\times 1 \times 1}=19600$.
+ \end{ex}
+  \pause
+ \begin{rem}
+ On retiendra que l'on utilise les combinaisons dans les probl\`{e}mes de choix simultan\'{e}s de $p$ \'{e}l\'{e}ments choisis parmi $n$, sans consid\'{e}ration d'ordre et sans r\'{e}p\'{e}tition.
+ \end{rem}
+ \end{frame}
+     \begin{frame}
+ \begin{ex}
+ On tire simultanément trois cartes dans un jeu de $32$ cartes. Combien de tirages différents peut-on
+ rencontrer ?\\  \pause
+ Un tirage simultané de trois cartes est une partie à $3$ éléments d'un ensemble à $32$ éléments : il y a donc $$C_{32}^3=\dfrac{32\times 31 \times 30}{3 \times 2 \times 1}=4960$$ possibilités. C'est beaucoup moins que le nombre de 3-listes d'éléments distincts, car l'ordre dans
+ lequel on pioche les cartes ne compte pas.
+ \end{ex}
+ \end{frame}
+     \begin{frame}
+ \begin{center}
+ \includegraphics[width=100.62mm,height=54.37mm]{./tab1}\end{center}
+ \end{frame}
+     \begin{frame}
+ \textbf{Exercice}
+ Un étudiant doit répondre à $7$ des $10$ questions d'un examen.
+ De combien de manières peut-il répondre ?  \pause
+ \begin{theorem}(Formule du bin\^{o}me de Newton)\\
+ {\it Soient} $a$ {\it et} $b$ {\it deux nombres r\'{e}els et} $n$ {\it un entier. Alors}
+ $$
+ (a+b)^{n}=\sum_{k=0}^{n}C^k_na^{k}b^{n-k}.
+ $$
+ \end{theorem}  \pause
+ \begin{theorem}
+ {\it Soient} $n$ {\it et} $p$ {\it deux entiers. Alors}:
+ $$C^p_n=C_n^{n-p}$$.
+ \end{theorem}  \pause
+\textbf{Preuve}
+ $$
+ C^p_n=\frac{n!}{p!(n-p)!}=\frac{n!}{(n-p)!(n-(n-p))!}=C_n^{n-p}.
+ $$
+\end{frame}
+\begin{frame}
+\textbf{Exercice.}
+Un sac contient 9 jetons numérotés : 1, 2, 3, 4, 5, 6, 7, 8, 9.\\
+\begin{itemize}
+\item[$1)$] On tire 3 jetons successivement, en remettant à chaque fois le jeton tiré dans le sac avant de tirer le suivant. On écrit côte à chacun des 3 chiffres tirés, dans l'ordre du tirage, formant ainsi un  nombre de 3 chiffres. Combien peut-on obtenir de résultats différents ? \\ 
+\item[$2)$] On procédé au tirage de 3 jetons successivement, mais sans remise. On place les jetons côte à côte dans l'ordre du tirage. Combien de peut-on former ainsi de nombres de 3 chiffres ?\\ 
+\item[$3)$] On procédé au tirage de 3 jetons simultanément. Combien peut-on obtenir de résultats différents ? 
+\end{itemize}
+\end{frame}
+\end{document}

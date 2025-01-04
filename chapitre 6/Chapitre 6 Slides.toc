@@ -1,0 +1,31 @@
+\beamer@endinputifotherversion {3.26pt}
+\select@language {french}
+\beamer@sectionintoc {1}{Objet et langage de la statistique}{5}{0}{1}
+\beamer@subsectionintoc {1}{1}{Terminologie de base}{5}{0}{1}
+\beamer@subsectionintoc {1}{2}{Typologie des variables}{7}{0}{1}
+\beamer@subsectionintoc {1}{3}{S\'erie statistique}{12}{0}{1}
+\beamer@subsectionintoc {1}{4}{Tableaux statistiques}{14}{0}{1}
+\beamer@subsubsectionintoc {1}{4}{1}{La pr\'esentation d'un tableau statistique}{15}{0}{1}
+\beamer@subsubsectionintoc {1}{4}{2}{La fr\'equence relative}{18}{0}{1}
+\beamer@subsubsectionintoc {1}{4}{3}{Effectifs cumul\'es et fr\'equences cumul\'ees}{21}{0}{1}
+\beamer@subsubsectionintoc {1}{4}{4}{Le tableau statistique pour les variables quantitatifs continus}{25}{0}{1}
+\beamer@sectionintoc {2}{Repr\'esentation graphique des donn\'ees statistiques}{31}{0}{2}
+\beamer@subsectionintoc {2}{1}{Repr\'esentations des caract\`eres qualitatifs}{31}{0}{2}
+\beamer@subsubsectionintoc {2}{1}{1}{Diagrammes en b\^atons}{31}{0}{2}
+\beamer@subsubsectionintoc {2}{1}{2}{Diagrammes \`a bandes}{34}{0}{2}
+\beamer@subsectionintoc {2}{2}{Diagrammes \`a secteurs}{36}{0}{2}
+\beamer@subsectionintoc {2}{3}{Repr\'esentations des caract\`eres quantitatifs}{38}{0}{2}
+\beamer@subsubsectionintoc {2}{3}{1}{Repr\'esentation graphique des caract\`eres quantitatifs discrets}{38}{0}{2}
+\beamer@subsectionintoc {2}{4}{Repr\'esentation graphique des caract\`eres quantitatifs continus}{40}{0}{2}
+\beamer@subsubsectionintoc {2}{4}{1}{Histogramme}{40}{0}{2}
+\beamer@subsubsectionintoc {2}{4}{2}{Polygones cumulatifs}{44}{0}{2}
+\beamer@sectionintoc {3}{Statistique descriptive univari\'ee}{46}{0}{3}
+\beamer@subsectionintoc {3}{1}{Param\`etres de position}{46}{0}{3}
+\beamer@subsubsectionintoc {3}{1}{1}{Le mode}{47}{0}{3}
+\beamer@subsubsectionintoc {3}{1}{2}{La m\'ediane}{58}{0}{3}
+\beamer@subsubsectionintoc {3}{1}{3}{La moyenne}{66}{0}{3}
+\beamer@subsectionintoc {3}{2}{Param\`etres de dispersion}{70}{0}{3}
+\beamer@subsubsectionintoc {3}{2}{1}{\'Etendue}{70}{0}{3}
+\beamer@subsubsectionintoc {3}{2}{2}{La variance}{72}{0}{3}
+\beamer@subsubsectionintoc {3}{2}{3}{L'\'ecart-type}{78}{0}{3}
+\beamer@subsubsectionintoc {3}{2}{4}{Le coefficient de variation}{79}{0}{3}

@@ -1,0 +1,1337 @@
+\documentclass[leqno,10pt,tick,mathserif,xcolor=dvipsnames,oneside,fleqn]{beamer}
+%\documentclass[slidestop,usepdftitle=false]{beamer}
+%\documentclass[leqno,10pt,tick,mathserif,xcolor=dvipsnames]{beamer}
+%\usepackage{xcolor}
+\usepackage{etex}
+\reserveinserts{28}
+\usepackage[all]{xy}
+\usepackage[latin1]{inputenc}
+\usepackage[frenchb]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{frcursive}
+\usepackage{pdftricks}
+\usepackage{palatino}
+%\input{../preamb-pres.tex}
+%\beamertemplateshadingbackground{white!30}{white!100}
+%\usepackage{beamerthemeshadow}
+%\usepackage{beamerthemesplit}
+\usepackage{hyperref}
+%\usetheme{Warsaw}
+%\documentclass{beamer}
+
+%\usetheme{Blackboard}
+%\usetheme{Copenhagen}
+%\usetheme{S}
+\usepackage{dsfont}
+\usepackage{hyperref}
+\everymath{\displaystyle}
+\usecolortheme{crane}
+\usecolortheme{beaver}
+%%%%%%%%%%%%%%%%%%%pour la gaune%%%%%%%%%%%%%%%%%%%%%
+%\useinnertheme[shadow=true]{rounded}
+%\useoutertheme{infolines}
+%\usecolortheme{wolverine}
+%\setbeamerfont{block title}{size={}}
+%\setbeamercolor{titlelike}{parent=structure,bg=yellow!85!orange}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{beamertexpower}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{amsmath,amssymb,amsfonts}
+
+\usepackage{bbding}
+
+\usepackage{fancybox}
+
+%\usepackage{dingbat}
+
+\usepackage{colortbl}
+\usepackage{graphicx,color,helvet,textcomp}
+\usepackage{xparse}
+\usepackage[breakable, skins, theorems]{tcolorbox}
+
+% Beamer class for the ENST de Bretagne (GET/ ENST B)
+
+% based on the work done by  Madhusudan Singh for NCSU
+
+% modified by Gilles Bertrand
+
+% December 2006
+
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+
+\def \K {\mathbb{K} }
+\def \S {\mathbb{S} }
+\def \L {\mathbb{L} }
+\def \N {\mathbb{N} }
+\def \Z {\mathbb{Z} }
+\def \Q {\mathbb{Q} }
+\def \R {\mathbb{R} }
+\def \C {\mathbb{C} }
+\def \F {\mathfrak{F}}
+\def \B {\mathfrak{B}}
+\def \O {\mathfrak{O}}
+\def \U {\mathfrak{U}}
+\usepackage{tablists}
+\mode <all>
+\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+
+%\usepackage{epsfig,psfig}
+%ENSEMBLES USUELS
+\newcommand{\field}[1]{\mathbb{#1}}
+\newcommand{\rrr}{\field{R}}
+\newcommand{\nnn}{\field{N}}
+\newcommand{\zzz}{\field{Z}}
+\newcommand{\kkk}{\field{K}}
+\newcommand{\qqq}{\field{Q}}
+\usepackage{graphicx,float,placeins,subfigure}
+%pour importer des grahes construit Ã  partir de geogebra
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+%couleur des paragraphes
+%\usepackage{sectsty}
+%FIN DE LA DECLARATION DES FONTES ENSEMBLES USUELS
+\definecolor{orange}{rgb}{0.99,0.69,0.07}
+\definecolor{red}{rgb}{1,0,0}
+%\definecolor{blue}{rgb}{0,0,2}
+\newcommand{\blue}{\color{blue}}
+\newcommand{\green}{\color{green}}
+\newcommand{\red}{\color{red}}
+\newcommand{\brown}{\color{brown}}
+\newcommand{\white}{\color{white}}
+\newcommand{\yellow}{\color{yellow}}
+%\beamertemplatetransparentcovereddynamic
+\newcommand{\Lang}[1]{\operatorname{\text{\textsc{#1}}}}
+\newcommand{\Class}[1]{\operatorname{\mathchoice
+{\text{\sf \small #1}} {\text{\sf \small #1}}
+  {\text{\sf #1}}
+{\text{\sf #1}}}}
+%\newcommand{\R}{I\!\!R}
+%\newcommand{\N}{I\!\!N}
+\newcommand{\NumSAT}      {\text{\small\#SAT}}
+\newcommand{\NumA}        {\#_{\!A}}
+\newcommand{\barA}        {\,\bar{\!A}}
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\Set}[1]{\{#1\}}
+\newtheorem{proposition}{Proposition}[section]
+%\newtheorem{property}[proposition]{PropriÃƒÂ©tÃƒÂ©}
+%\renewtheorem{corollary}[proposition]{Corollaire}
+
+%\usetheme{Warsaw}
+%\usetheme{Frankfurt}
+%\usetheme{Antibes}
+%\usetheme{JuanLesPins}
+%\usetheme{Berkeley}
+\usetheme{CambridgeUS}
+%\usetheme[secheader]{Boadilla}
+%\usetheme[secheader]{Madrid}
+%\usetheme{AnnArbor}
+%\usetheme[compress]{berlin}
+%\usetheme{Warsaw}
+%\usetheme{Luebeck}
+%\usecolortheme{seahorse}
+\newtheorem{ex}{Exemple}[section]
+\usecolortheme{wolverine}
+\theoremstyle{plain}
+\newtheorem{Thm}{{\textbf{Théorème}}}[section] 
+\newtheorem*{theoreme*}{{Théorème}}
+\newtheorem{Prop}{\textbf{Proposition}}[section]
+\newtheorem*{proposition*}{Proposition}
+\newtheorem{Cor}{\textbf{Corollaire}}[section]
+\newtheorem*{corollaire*}{Corollaire}
+\newtheorem{Lem}{\textbf{Lemme}}[section]
+\newtheorem*{lemme*}{Lemme}
+\newtheorem{Defs}{\textbf{Définitions}}[section]
+\newtheorem{dfn}{\textbf{Définition}}[section]
+\newtheorem{Rem}{\textbf{Remarque}}[section]
+\newtheorem{Propr}{\textbf{Propriétés}}[section]
+\newtheorem{rems}{\textbf{Remarques}}[section]
+%--------------------------------------------------
+
+ \newtheorem{e}{Exercice}[section]
+
+\newtheorem{exple}{Exemple}[section]
+
+\setbeamercolor{block title example} {fg=violet,bg=purple!50}
+\setbeamercolor{block title } {fg=violet,bg=piggypink}
+\setbeamercolor{block title alerted} {fg=teal,bg=teal!40}
+\pgfdeclaremask{tu}{beamer-tu-logo-mask}
+%\pgfdeclaremask{computer}{beamer-computer-mask}
+%\pgfdeclareimage[interpolate=true,mask=computer,height=4cm]{computerimage}{beamer-computer}
+%\pgfdeclareimage[interpolate=true,mask=computer,height=2cm]{computerworkingimage}{beamer-computerred}
+%\pgfdeclareimage[mask=tu,height=0.6cm]{logo}{ts_logo}
+%\pgfdeclareimage[height=0.6cm]{logo}{es} \logo{\pgfuseimage{logo}}
+\everymath{\displaystyle}
+% % % % % % % % % % %ù
+% % % % % % % % % %
+
+\title[Mathématique 1]{\textbf{\textcolor{red}{ Module:  Mathématique 1}}\vspace{0.4cm}\\\textbf{Chapitre 5: Suites}}
+\author{\textbf{Prof. Mohammed SRATI}}
+
+\institute[ENS-Fès]
+{
+\medskip\medskip
+\textbf{{Licence d'Éducation \\ Spécialité: Enseignement Primaire}}}
+\date{02-01-2023}
+
+\begin{document}
+\begin{frame}
+	\begin{center}  \vspace*{-0.3cm}  
+			\includegraphics[width=10cm, height=1.4cm]{logo}
+	\vspace*{-0.5cm}	\end{center}
+\titlepage
+\end{frame}
+%----------------------------------
+
+%--------------------------------
+
+%----------------------------------
+
+%--------------------------------
+
+\begin{frame}
+\frametitle{Sommaire}
+\textbf{3. Suites}
+
+\begin{itemize}
+\item Suites numériques 
+\item Suites arithmétiques
+\item Suites géométriques 
+\end{itemize}
+%2.3.	Calcul d'intégrale
+%\begin{itemize}
+%\item	Fonction primitive
+%\item	Surface et fonction primitive d'une fonction continue (fonction constante et positive sur un intervalle - fonction affine positive sur un intervalle - ...)
+%\item	Intégrale d'une fonction continue
+%\item	Calcul des volumes, calcul de la masse
+%\item	Vitesse et distance
+%\end{itemize}
+\end{frame}
+%%----------------------------------
+
+%--------------------------------
+\begin{frame}
+
+\textit{\textbf{La statistique}} est un domaine des mathématiques et de plus en plus, elle fait partie de ce que l'on appelle aujourd'hui la science des données. Plus précisément, C'est une méthode scientifique qui consiste à réunir des données chiffrées sur des ensembles nombreux, puis à analyser, à commenter et à critiquer ces données. Il ne faut pas confondre \textbf{la} statistique qui est la science qui vient d'être définie et \textbf{une} statistique qui est un ensemble de données chiffrées sur un sujet précis.
+ 
+ Les premières statistiques correctement élaborées ont été celles des recensements démographiques. Ainsi le vocabulaire statistique est essentiellement celui de la démographie. La statistique s'applique à la plupart des disciplines :  biologie, agronomie, démographie, économie, sociologie, métrologie, médecine, psychologie, ...\\
+ \end{frame}
+ \begin{frame}
+ Le calcul statistique a double objectif :
+ \begin{itemize}
+ \item[$\bullet$]  $1^{\rm er}$ but: À  partir de données brutes en grand nombre, on peut dégager avec un minimum d'effort, un certain nombre de renseignements qualitatifs ou quantitatifs permettant de visualiser cette statistique avec une bonne précision. Cela afin de pouvoir la comparer à d'autres statistiques du même type (\textit{Statistique Descriptive}).
+  \item[$\bullet$]  $2^{\rm \grave{e}me}$ but: La statistique ayant été effectuée sur un échantillon, nous permet d'extrapoler les résultats partiels en vue de déduire des précisions globales (\textit{Statistique Inférentielle}).
+ \end{itemize}
+  \end{frame}
+  \begin{frame}
+\section{Objet et langage de la statistique}
+\subsection{Terminologie de base}
+ \noindent$\bullet$ \textit{\textbf{Population}} : est l'ensemble que l'on observe et qui sera soumis à une analyse statistique. Par exemple : étudiants de l'ENS de Fès, salariés d'une entreprise, $\ldots$.\\
+$\bullet$ \textit{\textbf{Individu}} ou \textit{\textbf{unité statistique}} : chaque élément de la population sur
+ lequel porte l'observation.
+Par exemple: étudiant; salarié, $\ldots$.\\
+ $\bullet$ \textit{\textbf{Échantillon}} : est un sous-ensemble d'individus prélevés de la population. Par exemple: étudiants de moins de 20 ans, jeunes salariés, $\ldots$.\\
+ $\bullet$ \textit{\textbf{Caractère}} ou une \textit{\textbf{variable statistique}} : désigne une grandeur observable sur un individu et susceptible de varier prenant ainsi différents états appelés \textit{\textbf{modalités}} tel que 
+  : l'âge des étudiants, le nombre d'heures du travail des salariés, $\ldots$.\\
+ $\bullet$ L'ensemble des valeurs possibles ou des \textit{modalités} est appelé le domaine de la variable.\\
+  \end{frame}
+  \begin{frame}
+Plus généralement, on appelle caractère toute application $X$ de la population $\Omega$ dans un ensemble $E$, dont les éléments $x$ sont appelés modalités du caractère $X$ (ou valeurs du caractère).
+\begin{center}
+$
+\begin{array}{ll}
+X\;:\; & {\Omega\;{\longrightarrow}\;E}\\
+ & {w\;{\longmapsto}\;X(w):=x,}
+\end{array}
+$
+\hspace*{1cm}
+$\left\lbrace 
+\begin{array}{ll}
+X & :\;  \text{le caractère,}\\
+\Omega & :\;  \text{la population,}\\
+w & :\; \text{individu,}\\
+E & :\;  \text{l'ensemble des modalités,}\\
+X(w):=x & :\; \text{modalité}.
+\end{array}\right. 
+$
+\end{center}
+ \end{frame}
+ \begin{frame}
+\subsection{Typologie des variables} 
+\noindent
+   \textbf{ \textit{Variables quantitatives}} : se sont des variables numériques et mesurables exprimant une quantité. Les variables quantitatives peuvent être classées en :
+\begin{itemize}
+\item[$\bullet$] \textbf{\textit{Variables quantitatives discrètes}} (ou discontinues) : représentées par un nombre fini de valeurs  (de modalités) isolées.\\
+- Exemple: nombre d'enfant par ménage, nombre d'heures de travail par jour des salariés d'une entreprise,... ($X(\Omega)=\{0,1,2,3,4\}$).
+\item[$\bullet$] \textbf{\textit{Variables quantitatives continues}} : un caractère continu peut prendre un nombre infini de valeurs dans son intervalle de définition. Ses valeurs peuvent être regroupées en classes (en pratique un intervalle de  $\mathbb{R}$).\\
+- Exemple: revenu mensuel par ménage, poids ou taille des étudiants de la filière LPEP-S1, ... ($X(\Omega)=\displaystyle [0,5[\cup[5,10[\cup[10,15[\cup[15,20[$).\\
+\end{itemize}
+ \end{frame}
+ \begin{frame}
+   \textbf{ \textit{Variables qualitatives}} : se présentent en plusieurs modalités (différentes \textit{catégories} prises par un caractère qualitatif) et ils ne peuvent pas faire l'objet d'une mesure car ils \textit{ne se présentent pas sous forme numérique}. ile peuvent être classées en :
+\begin{itemize}
+\item[$\bullet$] \textbf{\textit{Variables qualitatives nominales}} :  dont les modalités ne peuvent pas être ordonnées ou hiérarchisées.\\ - Exemple: Pour le caractère "sexe des étudiants", les modalités féminin et masculin ($X(\Omega)=\left\lbrace \text{féminin, masculin}\right\rbrace $) ne peuvent pas être ordonnées.
+\item[$\bullet$] \textbf{\textit{ Variables qualitatives ordinales}} :  dont les modalités peuvent être ordonnées ou hiérarchisées.\\
+- Exemple : pour le caractère "mention du baccalauréat", les modalités sont ordonnées par ordre croissante comme suit : {\small $X(\Omega)=\left\lbrace \text{Passable, Assez-bien, Bien, Très bien, Excellent}\right\rbrace $}.
+\end{itemize}
+ \end{frame}
+ \begin{frame}
+\begin{center}
+\includegraphics[scale=0.40]{type.jpeg}
+\end{center}
+ \end{frame}
+ \begin{frame}
+\begin{exple}\text{}\\
+$\bullet$ Étude du nombre d'enfants des couples d'un quartier donné.
+\begin{center}
+\begin{tabular}{ll}
+Population & :\;  Ensembles des couples du quartier,\\
+Individu & :\;  Couple,\\
+Caractère & :\;  Nombre d'enfants,\\
+Type & :\;  Quantitatif discret.
+\end{tabular}
+\end{center}
+$\bullet$ Étude des marques de voitures d'une ville donnée.
+\begin{center}
+\begin{tabular}{ll}
+Population & :\;  Ensembles des voitures de la ville,\\
+Individu & :\;  Voiture,\\
+Caractère & :\;  Marque,\\
+Type & :\;  Qualitatif nominal.
+\end{tabular}
+\end{center}
+\end{exple}
+ \end{frame}
+ \begin{frame}
+\begin{e}
+Spécifier pour chacune des variables suivantes si elle est qualitative (ordinale ou nominale), quantitative (continue ou discrète). Proposer, pour les variables qualitatives, des modalités adéquates.\\
+Niveau de scolarité, Couleur des yeux, Nombre de voiture par famille, Revenu, État mécanique d'une voiture, Profession, Nombre d'heures de travail des salariés, Taille, Grade militaire, Nationalité, Note obtenues par les étudiants, Âge, Masse, Surface.
+\end{e}
+\begin{Rem}
+Toute statistique qualitative peut se transformer en une statistique quantitative à l'aide d'un codage des valeurs possibles du caractère. Par exemple:\\
+   $\bullet$ 1\,: masculin et 2\,: féminin est le codage usuel du sexe.\\    $\bullet$ Le code postal est le codage de lieux géographiques.
+\end{Rem}
+ \end{frame}
+ \begin{frame}
+\subsection{Série statistique}
+On appelle \textit{série statistique} la suite des valeurs prises par une variable $X$ sur les unités d'observation.\\
+$\bullet$ Le nombre d'unités d'observation est noté $n$.\\
+$\bullet$ Les valeurs de la variable $X$ sont notées :
+$
+x_{1}, \ldots, x_{i}, \ldots, x_{n}.
+$
+ \end{frame}
+ \begin{frame}
+\begin{exple}
+ On s'intéresse à la variable "état-civil" notée $X$ et à la série statistique des valeurs prises par $X$ sur 20 personnes. La codification est
+\begin{center}
+\begin{tabular}{ll}
+$\mathrm{C}:$ & célibataire, \\
+$\mathrm{M}:$ & marié(e), \\
+$\mathrm{V}:$ & veuf(ve), \\
+$\mathrm{D}:$ & divorcée. \\
+
+\end{tabular}
+\end{center}
+Le domaine de la variable $X$ est $\{C, M, V, D\}$. Considérons la série statistique suivante :
+\begin{center}
+\begin{tabular}{cccccccccc}
+$M$ & $M$ & $D$ & $C$ & $C$ & $M$ & $C$ & $C$ & $C$ & $M$ \\
+$C$ & $M$ & $V$ & $M$ & $V$ & $D$ & $C$ & $C$ & $C$ & $M$ \\
+\end{tabular}
+\end{center}
+Ici, $n=20$ et $
+x_{1}=M, x_{2}=M, x_{3}=D, x_{4}=C, x_{5}=C, \ldots, x_{20}=M .
+$
+\end{exple}
+ \end{frame}
+ \begin{frame}
+\subsection{Tableaux statistiques}
+L'un des objectifs de la statistique descriptive est de résumer les données brutes recueillies sur une population dans des tableaux statistiques afin d'avoir une présentation des données d'une façon lisible.
+\begin{exple}\label{exmp1.1.2}
+ Enquête auprès d'un échantillon de 60 familles de la région Fès-Meknès sur le nombre d'enfant par ménage. Les résultats brutes des nombres d'enfants sont:
+$$2,1,4,2,2,0,1,2,3,0,4,5,2,5,4,2,6,2,6,4,2,1,3,2,1,3,3,3,1,1,$$ $$ 1,3,2,3,3,2,4,2,5,2,3,3,1,5,1,5,2,6,2,5,2,3,1,2,2,0,1,4,3,1.$$
+Remarquons que les données brutes ne sont pas lisibles d'où la nécessité de regrouper ces données dans un tableau pour faciliter leur traitement.
+\end{exple}
+ \end{frame}
+ \begin{frame}
+\subsubsection{La présentation d'un tableau statistique}
+La présentation d'un tableau statistique doit respecter des principes généraux:
+\begin{itemize}
+\item   Le tableau doit porter des \textit{intitulés} de lignes et de colonnes clairement définis ainsi que préciser les unités utilisés.
+\item   Le tableau doit porter un \textit{titre} précisant son contenu et la source des informations lorsque les données sont empruntées à une publication ou à un organisme.
+\item   Dans un tableau statistique:
+\begin{itemize}
+\item[$\bullet$] La première colonne présent les différentes \textit{modalités} $\left(x_{i}\right)$ prises par le caractère étudié.
+\item[$\bullet$] La deuxième colonne présente les \textit{effectifs} $\left(n_{i}\right)$ nombre d'individus correspondant à chaque modalité $\left(x_{i}\right) \mathrm{du}$ caractère.
+\end{itemize}
+\end{itemize}
+ \end{frame}
+ \begin{frame}
+ Considérons une population statistique de $n$ individus décrite selon le caractère $x$ dont les $k$ modalités sont $x_{1}, x_{2}, \ldots, x_{i}, \ldots, x_{k}$.\vspace*{0.3cm}
+ \begin{center}
+ \begin{minipage}{7cm}
+     \begin{tabular}{|c|c|c|}
+     \hline \rowcolor{lightgray} \textbf{Modalité} $\left(x_i\right)$ & \textbf{Effectif} $\left(n_i\right)$ \\
+     \hline$x_{1}$ & $n_{1}$ \\
+     $x_{2}$ & $n_{2}$ \\
+     $\vdots$ & $\vdots$ \\
+     $x_{i}$ & $n_{i}$ \\
+     $\vdots$ & $\vdots$ \\
+     $x_{p}$ & $n_{p}$ \\
+     \hline \rowcolor{orange!35} \textbf{Total} & $n$ \\
+     \hline
+     \end{tabular} 
+ \end{minipage}
+  \begin{minipage}{8cm}
+  $\bullet$ 
+  $n_{i}$ : représente le nombre $\mathrm{d}^{\prime}$ individus, appelé  \textit{\textbf{effectif partiel}} présentant la modalité $x_{i}$\\
+ $\bullet$   $n$ : la somme des effectifs partiels $n_{i}$ est appelé \textit{\textbf{effectif total}}  de la population.
+  $$
+  n=\sum_{i=1}^{p} n_{i}.
+  $$
+  \end{minipage}
+\end{center}
+ \end{frame}
+ \begin{frame}
+\vspace*{0.3cm}
+ Maintenant on  regroupe les données de l'exemple \ref{exmp1.1.2} dans un tableau pour faciliter leur traitement.
+ \vspace*{0.3cm}
+\begin{center}
+\begin{tabular}{|c|c|}
+   \hline \rowcolor{lightgray} Nombre d'enfants par ménage $\left(x_i\right)$ & Effectif des ménages $\left(x_i\right)$ \\
+   \hline 0 & 3 \\
+   \hline 1 & 12 \\
+   \hline 2 & 18 \\
+   \hline 3 & 12 \\
+   \hline 4 & 6 \\
+   \hline 5 & 6 \\
+   \hline 6 & 3 \\
+   \hline \rowcolor{orange!35} Total & 60 \\
+   \hline
+   \end{tabular}
+\\\vspace*{0.5cm}
+{\small \textbf{Titre} : Nombre d'enfants
+observé dans un échantillon des ménages de la région de Fès-Meknès.}
+\end{center}
+ \end{frame}
+ \begin{frame}
+\subsubsection{La fréquence relative}
+\begin{dfn}[Fréquence]
+La fréquence relative ou fréquence notée $f_i$ est la proportion d'individus présentant la même modalité dans la population. Elle est obtenue en divisant chaque effectif $n_i$ par l'effectif total $n$, c'est-à-dire :
+$$
+f_{i}=\frac{n_{i}}{n}.
+$$
+\end{dfn}
+\textbf{Remarques} :
+\begin{itemize}
+\item[$\diamond$] Il est recommandé d'exprimer la fréquence $f_i$ en pourcentage $\%$.
+\item[$\diamond$] La somme des fréquences $f_i$ est égale à $1$ et la somme des fréquences exprimées en pourcentage est égale à $100 \%$.
+\end{itemize}
+ \end{frame}
+ \begin{frame}
+Le tableau statistique de la distribution du caractère étudié se présentera donc sous la forme suivante :
+\begin{center}
+ \begin{tabular}{|c|c|c|}
+ \hline \rowcolor{lightgray!50} \textbf{Modalité} $\left(x_i\right)$ & \textbf{Effectif} $\left(n_i\right)$ & \textbf{Fréquence} $\left(f_i\right)$ \\
+ \hline$x_{1}$ & $n_{1}$ & $f_{1}$ \\
+ $x_{2}$ & $n_{2}$ & $f_{2}$ \\
+ $\vdots$ & $\vdots$ & $\vdots$ \\
+ $x_{i}$ & $n_{i}$ & $f_{i}$ \\
+ $\vdots$ & $\vdots$ & $\vdots$ \\
+ $x_{p}$ & $n_{p}$ & $f_{p}$ \\
+ \hline
+ \rowcolor{orange!35} \textbf{Total} & $n$ & 1 \\
+  \hline
+ \end{tabular}
+\end{center}
+II en est de même si on considère les fréquences en pourcentage au lieu des fréquences.
+ \end{frame}
+ \begin{frame}
+\begin{exple}
+ Le tableau statistique de la distribution de nombre d'enfants par ménage dans la région de Fès-Meknès est présenté comme suit :
+\begin{center}
+ \begin{tabular}{|c|c|c|}
+ \hline\rowcolor{lightgray!50} Nombre d'enfants  & Effectif des  & Fréquence des \\\rowcolor{lightgray!50} par ménage & ménages &  ménages en \%\\
+ \hline 0 & 3 & 5 \\
+ \hline 1 & 12 & 20 \\
+ \hline 2 & 18 & 30 \\
+ \hline 3 & 12 & 20 \\
+ \hline 4 & 6 & 10 \\
+ \hline 5 & 6 & 10 \\
+ \hline 6 & 3 & 5 \\
+ \hline\rowcolor{orange!35} Total & 60 & 100 \\
+ \hline
+ \end{tabular}
+\end{center}
+\end{exple}
+ \end{frame}
+ \begin{frame}
+\subsubsection{Effectifs cumulés et fréquences cumulées} 
+Dans l'exemple précédent, s'il est demandé de répondre à certains questions de type : 
+\begin{enumerate}
+\item Combien de familles ont  \textbf{moins de} quatre enfants?
+\item Combien de familles ont \textbf{au moins} quatre enfants?
+\item  Quelle est la proportion de familles ayant \textbf{au plus} quatre enfants?
+\item Quelle est la proportion de familles ayant \textbf{plus} de quatre enfants?
+\end{enumerate}
+Le calcul des effectifs cumulés, notés $N_{i}$, et des fréquences cumulées, notées $F_i$, nous permet de donner ces valeurs.
+Ce calcul se fait en \textbf{cumulant} (\textbf{sommant}) les effectifs et les fréquences relatives dans une colonne du tableau. En effet :
+ \end{frame}
+ \begin{frame}
+\begin{itemize}
+\item   Pour calculer un \textit{effectif cumulé croissant} d'une valeur d'un caractère, il suffit d'ajouter à l'effectif de cette valeur le ou les effectifs des valeurs précédentes.
+\item   Pour calculer une \textit{fréquence cumulée croissante} d'une valeur d'un caractère, il suffit d'ajouter à la fréquence de cette valeur la ou les fréquences des valeurs précédentes. 
+\item   Pour calculer un \textit{effectif cumulé décroissant} d'une valeur d'un caractère, il suffit d'ajouter à l'effectif de cette valeur le ou les effectifs des valeurs suivantes.
+\item   Pour calculer une \textit{fréquence cumulée décroissante} d'une valeur d'un caractère, il suffit d'ajouter à la fréquence de cette valeur la ou les fréquences des valeurs suivantes.
+\end{itemize}
+ \end{frame}
+ \begin{frame}
+\begin{center}
+\ovalbox{\begin{minipage}{7.5cm}
+\begin{center}
+Sommer de haut en bas
+\end{center}
+$$\Downarrow$$
+\begin{center}
+Calculer les effectifs cumulés croissants et les fréquences cumulées croissantes
+\end{center}
+$$\Downarrow$$
+\begin{center}
+Répondre aux questions «moins de» et «au plus»
+\end{center}
+\end{minipage}}
+\hspace*{0.2cm}
+\ovalbox{\begin{minipage}{7.5cm}
+\begin{center}
+Sommer de bas en haut
+\end{center}
+$$\Downarrow$$
+\begin{center}
+Calculer les effectifs cumulés décroissants et les fréquences cumulées décroissantes
+\end{center}
+$$\Downarrow$$
+\begin{center}
+Répondre aux questions «plus de» et «au moins»
+\end{center}
+\end{minipage}}
+\end{center}
+ \end{frame}
+ \begin{frame}
+\begin{exple}
+ Pour répondre aux questions posées au début de ce paragraphe, il suffit de calculer les effectifs cumulés et les fréquences cumulées du caractère représentant le nombre d'enfants par ménage dans la région Fès-Meknès.
+ \begin{center}
+\resizebox{\textwidth}{!}{  \begin{tabular}{|c|c|c|c|c|c|c|}
+  \hline \rowcolor{lightgray!50} Nombre d'enfants & Effectifs  & Fréquences des  & Effectifs cumulés  & Effectifs cumulés  & Fréquences cumulées  & Fréquences cumulées  \\ \rowcolor{lightgray!50}
+  par ménage & des Ménages & Ménage en $\%$ & croissants & décroissants & croissantes en $\%$ & décroissante s en $\%$
+  \\
+  \hline 0 & 3 & 5 & 3 & \cellcolor{orange!35} 60 & 5 &  \cellcolor{orange!35} 100 \\
+  \hline 1 & 12 & 20 & 15 & 57 & 25 & 95 \\
+  \hline 2 & 18 & 30 & 33 & 45 & 55 & 75 \\
+  \hline 3 & 12 & 20 & \cellcolor{green!30} 45 & 27 & 75 & 45 \\
+  \hline 4 & 6 & 10 & 51 & \cellcolor{green!30} 15 & \cellcolor{green!30} 85 & 25 \\
+  \hline 5 & 6 & 10 & 57 & 9 & 95 & \cellcolor{green!30} 15 \\
+  \hline 6 & 3 & 5 & \cellcolor{orange!35}60 & 3 & \cellcolor{orange!35} 100 & 5 \\
+  \hline \cellcolor{orange!35} Total & \cellcolor{orange!35} 60 & \cellcolor{orange!35} 100 & & & & \\
+  \hline
+  \end{tabular}}
+ \end{center}
+ D'après le tableau:
+ \begin{itemize}
+ \item 45 ménages ont moins de 4 enfants.
+ \item 15 ménages ont au moins 4 enfants.
+ \item $85 \%$ des ménages ont au plus de 4 enfants.
+ \item $15\%$ des ménages ont plus de 4 enfants.
+ \end{itemize}
+\end{exple}
+ \end{frame}
+ \begin{frame}
+\subsubsection{Le tableau statistique pour les variables quantitatifs continus}
+Une variable quantitative continue peut prendre une infinité de valeurs possibles. Le domaine de la variable est alors $\mathbb{R}$ ou un intervalle de $\mathbb{R}$. En pratique, une mesure est limitée en précision. La taille peut être mesurée en centimètres, voire en millimètres. On peut alors traiter les variables continues comme des variables discrètes. Cependant, pour  construire le tableau statistique et faire des représentations graphiques, il faut procéder à des regroupements en classes. Le tableau regroupé en classe est souvent appelé distribution groupée. Si $\left[c_{j}^{-} ; c_{j}^{+}[\right.$ désigne la classe $j$, on note, de manière générale :
+ \end{frame}
+ \begin{frame}
+\begin{enumerate}
+\item $c_{j}^{-}$ : la \textit{borne inférieure} de la classe $j$,
+\item $c_{j}^{+}$ : la \textit{borne supérieure} de la classe $j$,
+\item $c_{j}=\frac{\left(c_{j}^{+}+c_{j}^{-}\right)}{2}$ : le \textit{centre} de la classe $j$, 
+\item $a_{j}=c_{j}^{+}-c_{j}^{-}$ : l'\textit{amplitude} de la classe $j$,
+\item $n_{j}$ : l'\textit{effectif} de la classe $j$
+\item $N_{j}$ : l'\textit{effectif cumulé} de la classe $j$,
+\item  $f_{j}$ : la \textit{fréquence} de la classe $j$,
+\item $F_{j}$ : la \textit{fréquence cumulée} de la classe $j$.
+\end{enumerate}
+ \end{frame}
+ \begin{frame}
+La répartition en classes des données nécessite de définir a priori le \textit{nombre de classes} $J$ et donc l'amplitude de chaque classe. En règle générale, on choisit au moins cinq classes de même amplitude. Cependant, il existent des formules qui nous permettent d'établir le nombre de classes et la longueur de classe (l'amplitude) pour une série statistique de $n$ observations.
+\begin{itemize}
+\item \textbf{\textit{La règle de Sturge}} : $J=1+\left(3.3\times \log _{10}(n)\right)$.
+\item \textbf{\textit{La règle de Yule}} : $J=2.5\times \sqrt[4]{n}$.
+\end{itemize} 
+L'intervalle de classe est obtenue ensuite de la manière suivante : \begin{center}
+Longueur de l'intervalle (l'amplitude) $=\frac{\left(x_{\max }-x_{\min }\right)}{J}$,\end{center} où $x_{\max }\left(\right.$ resp. $\left.x_{\min }\right)$
+ désigne la plus grande (resp. la plus petite) valeur observée.
+  \end{frame}
+  \begin{frame}
+\begin{Rem}\text{ }
+\begin{enumerate}
+\item  Il faut arrondir le nombre de classe $J$ à l'entier le plus proche. Par commodité, on peut aussi arrondir la valeur obtenue de l'intervalle de classe.
+\item  A partir de la plus petite valeur observée, on obtient les bornes de classes en additionnant successivement la longueur de classe (l'amplitude).
+\end{enumerate}
+\end{Rem} 
+ \end{frame}
+ \begin{frame}
+\begin{block}{Exemple}
+On mesure la taille en centimètres de $50$ élèves d'une classe :
+\begin{center}
+ \begin{tabular}{lllllllll}
+ 152 & 152 & 152 & 153 & 153 
+ 154 & 154 & 154 & 155 & 155 \\
+ 156 & 156 & 156 & 156 & 156
+ 157 & 157 & 157 & 158 & 158 \\
+ 159 & 159 & 160 & 160 & 160 
+ 161 & 160 & 160 & 161 & 162 \\
+ 162 & 162 & 163 & 164 & 164
+ 164 & 164 & 165 & 166 & 167 \\
+ 168 & 168 & 168 & 169 & 169 
+ 170 & 171 & 171 & 171 & 171 \\
+ \end{tabular}
+\end{center}
+On a les classes de tailles définies comme il suit :
+\begin{center}
+$[151,5 ; 155,5[$, \hspace*{0.5cm}
+$[155,5 ; 159,5[$,  \hspace*{0.5cm}
+$[159,5 ; 163,5[$,  \hspace*{0.5cm}
+$[163,5 ; 167,5[$, \hspace*{0.5cm}
+$[167,5 ; 171,5[$.
+\end{center}
+\end{block}
+ \end{frame}
+\begin{frame}
+\begin{block}{ }
+Alors, on construit le tableau statistique la série statistique des tailles des élèves. 
+\begin{center}
+\resizebox{\textwidth}{!}{ \begin{tabular}{|c|c|c|c|c|}
+\hline  \rowcolor{lightgray!50}  $\left[c_{j}^{-}, c_{j}^{+}\right]$ & Effectif $n_{j}$ &  Effectif cumulé $N_{j}$ & Fréquence $f_{j}$ & Fréquence cumulée $F_{j}$ \\ \hline
+\hline$[151,5 ; 155,5[$ & 10 & 10 & $0.20$ & $0.20$ \\ \hline
+{$[155,5 ; 159,5[$} & 12 & 22 & $0.24$ & $0.44$ \\ \hline
+{$[159,5 ; 163,5[$} & 11 & 33 & $0.22$ & $0.66$ \\ \hline
+{$[163,5 ; 167,5[$} & 7 & 40 & $0.14$ & $0.80$ \\ \hline
+{$[167,5 ; 171,5[$} & 10 & 50 & $0.20$ & $1.00$ \\
+\hline \cellcolor{orange!35}  Total & \cellcolor{orange!35}  $50$ & & \cellcolor{orange!35}  $1.00$ & \\
+\hline 
+\end{tabular}}
+\end{center}
+
+\end{block}
+ \end{frame}
+\begin{frame}
+\section{Représentation graphique des données statistiques}
+ Les graphiques permettent de donner une synthèse visuelle de la distribution d'une variable et mettre en évidence certaines informations données par le tableau.\\
+Les représentations graphiques sont spécifiques à chaque type de variables ou de caractères (qualitatif, quantitatif discret ou quantitatif continu).
+\subsection{Représentations des caractères qualitatifs}
+Les variables qualitatives peuvent être représentées graphiquement de différentes manières.
+Les diagrammes les plus utilisés sont le \textbf{diagramme à bandes} (ou diagramme en tuyaux d'orgues) et le \textbf{diagramme à secteurs circulaires}.
+\subsubsection{Diagrammes en bâtons} Un diagramme en bâtons est constitué d'une suite de bâtons (verticaux ou horizontaux). À chaque modalité du caractère, on associe un «bâton» de longueur proportionnelle à l'effectif ou à la fréquence de cette modalité.
+ \end{frame}
+\begin{frame}
+\begin{block}{Exemple A}
+Répartition des salariés de l'entreprise $X$ selon le contrat de travail (contrat de sécurisation professionnelle : CSP).
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline \rowcolor{lightgray!50} CSP: $x_i$ & Effectif $n_i$ & Fréquence $f_i$ & Fréquence $f_i$ en $\%$ \\
+\hline \cellcolor{lightgray!50} Cadres & 10 & 0,125 & 12.5\\
+\hline \cellcolor{lightgray!50} Contremaîtres & 5 & 0,0625 & 6.25 \\
+\hline \cellcolor{lightgray!50} Employés & 20 & 0,25 & 25 \\
+\hline \cellcolor{lightgray!50} Ouvriers & 40 & 0,50 & 50 \\
+\hline \cellcolor{lightgray!50} Autres & 5 & 0,0625 & 6.25 \\
+\hline \rowcolor{orange!35} Total & 80 & 1 & 100\\
+\hline
+\end{tabular}
+\end{center}
+\end{block}
+ \end{frame}
+\begin{frame}
+\begin{figure}[htp!]
+\hspace*{1cm}\includegraphics[scale=0.65]{CSP.jpg}
+\caption*{\textbf{\textit{Répartition des salariés de l'entreprise selon la CSP.}}}
+\end{figure}
+ \end{frame}
+\begin{frame}
+\subsubsection{Diagrammes à bandes}
+Dans un diagramme à bandes, on associe une bande verticale à chaque modalité. La largeur de chacune de bande est la même et sa hauteur est proportionnelle à l'effectif ou la fréquence de la modalité correspondante. La distance entre les bandes est constante. Au dessus de chaque bande on note des étiquettes permettant connaître l'effectif ou la fréquence de la modalité associée.\\
+\textbf{Exemple}\\ Reprenons l'exemple A, alors le diagramme à bandes correspondant aux effectifs des salariés de l'entreprise $X$ est présenté comme suit : 
+ \end{frame}
+\begin{frame}
+\begin{center}
+\includegraphics[width=89.62mm,height=74.37mm]{./CSP2}\end{center}
+\textbf{\textit{Répartition des salariés de l'entreprise selon la CSP.}}
+ \end{frame}
+\begin{frame}
+\subsection{Diagrammes à secteurs}
+C'est un disque divisé en secteurs angulaires représentant l'ensemble de la population. Les différentes modalités du caractère sont représentées par des angles aux centres proportionnelles aux effectifs ou fréquences de leurs modalités respectives.
+L'angle de chaque secteur $\alpha_i$ est proportionnel à la fréquence $f_{i}$ :
+$
+\alpha_{i}=360 \times f_{i}.
+$
+\\ \textbf{Exemple\\} Répartition des salariés de l'entreprise $X$ selon la CSP.
+ \end{frame}
+\begin{frame}
+\begin{center}
+\begin{minipage}{7.5cm}
+\resizebox{\textwidth}{!}{\begin{tabular}{|c|c|c|c|}
+\hline \rowcolor{lightgray!50} CSP : $x_i$ & Effectif $n_i$ & Fréquence $f_i$ & Angle $\alpha_i$ \\
+\hline \cellcolor{lightgray!50} Cadres & 10 & 0,125 & 45 \\
+\hline \cellcolor{lightgray!50} Contremaîtres & 5 & 0,0625 & 22,5 \\
+\hline \cellcolor{lightgray!50} Employés & 20 & 0,25 & 90 \\
+\hline \cellcolor{lightgray!50} Ouvriers & 40 & 0,50 & 180 \\
+\hline \cellcolor{lightgray!50} Autres & 5 & 0,0625 & 22,5 \\
+\hline \rowcolor{orange!35} Total & 80 & 1 & 360\\
+\hline
+\end{tabular}}
+\end{minipage}
+\begin{minipage}{7.5cm}
+\begin{center}
+\includegraphics[scale=0.8]{sect.jpg}
+\end{center}
+\end{minipage}
+
+\textbf{\textit{Répartition par secteurs des salariés de l'entreprise selon la CSP.}}
+\end{center}
+ \end{frame}
+\begin{frame}
+\subsection{Représentations des caractères quantitatifs}
+\subsubsection{Représentation graphique des caractères quantitatifs discrets}
+\textbf{Représentation d'une distribution de fréquences (ou effectifs).} Quand la variable est discrète, les effectifs sont représentés par un diagramme en bâtons.\\
+\textbf{Exemple}\\
+Nombre d'enfants de 40 salariés d'une entreprise:
+\begin{center}
+\resizebox{.4\textwidth}{!}{\begin{tabular}{|c|c|c|}
+\hline \rowcolor{lightgray!50} Nbr. d'enfants & Effectifs & Fréquences en \% \\
+\hline 0 & 8 & 20 \\
+\hline 1 & 7 & 17,5 \\
+\hline 2 & 12 & 30 \\
+\hline 3 & 6 & 15 \\
+\hline 4 & 3 & 7,5 \\
+\hline 5 & 4 & 10 \\
+\hline  \rowcolor{orange!35} Total & $4 0$ & $1 0 0$ \\
+\hline
+\end{tabular}}
+\end{center}
+ \end{frame}
+\begin{frame}
+\begin{center}
+\includegraphics[scale=0.8]{Gr1.jpg}\\
+\textbf{\textit{Distribution des fréquences des salariés selon leur nombre d'enfants.}}
+\end{center}
+ Le polygone de fréquence est obtenu en joignant les sommets des bâtons par une ligne brisée. 
+ \end{frame}
+\begin{frame}
+\subsection{Représentation graphique des caractères quantitatifs continus} 
+\subsubsection{Histogramme} Un histogramme est constitué d'une suite de rectangles, dont les bases coïncident avec les classes divisant le domaine de variation de la variable et dont les hauteurs soient telles que les effectifs (ou les fréquences) sont traduits par les surfaces des rectangles.
+\begin{block}{Exemple B}
+Dans le cadre de l'étude de la population des adolescents d'un cartier populaire, les valeurs de leurs tailles peuvent être réparties de la façon suivante :
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline \rowcolor{lightgray!50}  Taille & effectif & Fréquence en \% \\
+\hline$[140,145[$ & 1 & 2 \\
+\hline$[145,150[$ & 1 & 2 \\
+\hline$[150,155[$ & 9 & 18 \\
+\hline$[155,160[$ & 17 & 34 \\
+\hline$[160,165[$ & 16 & 32 \\
+\hline$[165,170[$ & 3 & 6 \\
+\hline$[170,175[$ & 3 & 6 \\
+\hline
+\end{tabular}
+\end{center}
+\end{block}
+ \end{frame}
+\begin{frame}
+L'histogramme des effectifs de cette série est présenté par le graphique suivant:
+\begin{center}
+\includegraphics[scale=0.9]{histog1.jpg}
+\\
+\textbf{\textit{Effectifs des adolescents selon
+leurs tailles.}}
+\end{center}
+ \end{frame}
+\begin{frame}
+ Sur le même graphique des effectifs (resp. des fréquences), on présente le polygone des effectifs (resp. des fréquences). Ce polygone permet de représenter la distribution sous la forme d'une courbe en joignant les milieux des bases supérieures de chaque rectangle de l'histogramme par des segments de droite.
+  \end{frame}
+ \begin{frame}
+\begin{center}
+\includegraphics[scale=0.7]{histog2.jpg}\\
+\textbf{\textit{Fréquences des adolescents selon
+leurs tailles.}}
+\end{center}
+ \end{frame}
+\begin{frame}
+\subsubsection{Polygones cumulatifs} On construit dans un repère cartésien orthogonal les points dont les abscisses sont égales aux bornes supérieurs des classes (sauf pour le premier point), et dont les ordonnées sont les effectifs cumulés croissant correspondants.
+En joignant ces points par des segments de droites nous obtenons le polygone cumulatif croissant de la distribution donnée.
+\\
+\textbf{Exemple}\\
+Reprenons l'exemple B. On calcule les effectifs cumulés croissant:
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline \rowcolor{lightgray!50}  Taille & effectif & Effectif cumulé \\
+\hline$[140,145[$ & 1 & 1 \\
+\hline$[145,150[$ & 1 & 2 \\
+\hline$[150,155[$ & 9 & 11 \\
+\hline$[155,160[$ & 17 & 28 \\
+\hline$[160,165[$ & 16 & 44 \\
+\hline$[165,170[$ & 3 & 47 \\
+\hline$[170,175[$ & 3 & 50 \\
+\hline
+\end{tabular}
+\end{center}
+ \end{frame}
+\begin{frame}
+Le Polygone des effectifs cumulés des adolescents selon leurs tailles est présenté par le graphique suivant:
+\begin{center}
+\includegraphics[scale=0.8]{poly1.jpg}\\
+\textbf{\textit{Polygone des effectifs cumulés des adolescents selon leurs tailles}}
+\end{center}
+ \end{frame}
+\begin{frame}
+%------16-02-2022------------
+\section{Statistique descriptive univariée}
+On entend par statistique univariée l'étude d'une seule variable, que celle-ci soit quantitative ou qualitative. La statistique univariée fait partie de la statistique descriptive.
+\subsection{Paramètres de position}
+Appelés également caractéristiques de position ou de tendance centrale, les paramètres de position tentent de donner une information sur la valeur de la modalité "autour de laquelle se situent les autres modalités" (d'où le terme de tendance "centrale").
+Cette notion suppose donc que les modalités constituent un ensemble ordonné, ou pour le moins que la notion de "distance" entre deux modalités ait un sens.
+Il est bien évident que seuls les caractères quantitatifs permettent de donner un sens précis à ces notions intuitives.
+ \end{frame}
+\begin{frame}
+\subsubsection{Le mode} 
+\begin{dfn}[Le mode]
+On appelle \textit{mode} ou \textit{valeur dominante} d'une série statistique la valeur observée de la variable ayant le  \textbf{\textit{plus grand effectif}} (ou la \textbf{\textit{fréquence la plus élevée}}). On note généralement le mode $M_o$.
+\end{dfn}
+\begin{exple}
+Soit la série : $\{8,4,4,3,4,3,8,2,5\}$.
+La valeur la plus fréquente de cette série est $4$. Le mode est $M_o=4$.
+\end{exple}
+\begin{rems}
+\begin{itemize}
+\item Le mode peut être calculé pour tous les types de variable, quantitative et qualitative.\vspace*{0.2cm}
+\item Le mode n'est pas nécessairement unique, c'est-à-dire,  Une série peut avoir plusieurs modes:
+Soit la série $S=\{4,0,1,1,2,2,2, \underline{3}, \underline{3}, 4,2,3,4,5,2,1, \underline{3}, \underline{3}, 4,5\}$.
+"2" et "3" sont les valeurs qui reviennent le plus souvent: 5 fois chacune.
+Cette série a deux modes: 2 et $3 .$
+On peut avoir des séries avec $3,4, \ldots$ modes. Ce sont alors des séries multimodales.\vspace*{0.2cm}
+\end{itemize}
+\end{rems}
+\end{frame}
+\begin{frame}
+\begin{rems}\text{ }
+\begin{itemize}
+\item  Le mode n'existe pas forcément : C'est le cas lorsque toutes les valeurs ont le même effectif comme dans l'exemple suivant : $\{8,6,5,7,3,1\}$. Dans ce cas, on peut aussi dire que toutes les valeurs sont modales.\vspace*{0.2cm}
+\item Le mode n'est pas la valeur la plus élevée : Il ne faut pas confondre le mode, qui est la valeur la plus fréquente, avec la valeur la plus élevée de la série. Dans la série $\{8,6,5,7,3,1\}$, il n'y a pas de mode, mais la valeur la plus élevée est $8$. II peut arriver que le mode soit aussi la valeur la plus élevée, mais ce n'est alors qu'une coïncidence.\vspace*{0.2cm}
+\item Quand une variable continue est découpée en classes, on peut définir une classe modale (classe correspondant à l'effectif le plus élevé).
+\end{itemize}
+\end{rems}
+\end{frame}
+\begin{frame}
+\textbf{Le mode dans le cas d'une variable qualitative :}
+Le mode est la modalité correspondante à l'effectif le plus important.
+\begin{exple}
+Répartition des salariés de l'entreprise $X$ selon le contrat de travail :
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline \cellcolor{lightgray!30} CSP & Cadres supérieurs & Contremaîtres & Employés & \cellcolor{orange!50} Ouvriers spécialisés & Autres catégories \\
+\hline \cellcolor{lightgray!50} Effectif des salariés & 10 & 5 & 20 & \textcolor{red}{\textbf{40}} & 5 \\
+\hline
+\end{tabular}}
+\end{center}
+ Le mode de ce caractère est la modalité «\textit{ouvriers spécialisés}».
+\end{exple}
+\end{frame}
+\begin{frame}
+\textbf{Le mode dans le cas d'une variable quantitative discrète :} 
+Le mode est la valeur correspondante à l'effectif le plus important 
+\begin{exple}
+Nombre d'enfants de 40 salariés d'une entreprise
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline \rowcolor{lightgray!30} Nbr. d'enfants & Effectifs & Fréquences en \% \\
+\hline 0 & 8 & 20 \\
+\hline 1 & 7 & 17,5 \\
+\hline \cellcolor{orange!50} 2 & \textcolor{red}{\textbf{12}} & \textcolor{red}{\textbf{30}} \\
+\hline 3 & 6 & 15 \\
+\hline 4 & 3 & 7,5 \\
+\hline 5 & 4 & 10 \\
+\hline Total & $\mathbf{4 0}$ & $\mathbf{1 0 0}$ \\
+\hline
+\end{tabular}
+\end{center}
+ Le mode de ce caractère est égal à $2$ enfants, c'est-à-dire : $M_o=2$.
+\end{exple}
+\end{frame}
+\begin{frame}
+\textbf{La classe modale dans le cas d'une variable quantitative continue :}
+\begin{itemize}
+\item Si les classes sont toutes de \textit{même amplitude}, la classe modale est la classe d'\textit{effectif le plus élevé} ou de \textit{fréquence la plus élevée}. 
+\item  Si les classes \textit{ne sont pas toutes de même amplitude}, on définit l'\textit{effectif corrigé} $\widetilde{n_i}$ (resp. la \textit{fréquence corrigée}) par $$\widetilde{n_i}= \frac{n_i}{a_i},\;\; \left( \text{resp. }\widetilde{f_i}=\frac{f_i}{a_i}\right) ,$$  où $a_{i}=c_{i}^{+}-c_{i}^{-}$ l'\textit{amplitude} de la classe $i$ : $[c_{i}^{-}, c_{i}^{+}[$. Alors
+ la classe modale est la classe dont l'effectif corrigé ou la fréquence corrigée  est \textit{maximale}.
+\end{itemize}
+\end{frame}
+\begin{frame}
+
+\begin{block}{Exemple}
+
+$\bullet$ On considère la distribution statistique d'une population d'étudiants selon leur taille :\vspace*{0.15cm}
+\begin{center}
+\resizebox{\textwidth}{!}{\begin{tabular}{|l|c|c|c|c|c||c|}
+\hline \cellcolor{lightgray!30} Taille $(\mathrm{cm})$ & $[150 , 160[$ & {$[160 , 170[$} &  \cellcolor{orange!70} {$[170 , 180[$} & {$[180 , 190[$} & $[190 , 200[$ & \cellcolor{orange!10}Total \\
+\hline \cellcolor{lightgray!30} Effectif & 6 & 7 & \textcolor{red}{\textbf{8}} & 2 & 1 & \cellcolor{orange!10}24 \\
+\hline \cellcolor{lightgray!30} Fréquences en $\%$ & 25 & 29,1 & \textcolor{red}{\textbf{33,3}} & 8,3 & 4,3 & \cellcolor{orange!10}100 \\
+\hline
+\end{tabular}}
+
+\end{center}\vspace*{0.15cm}
+\end{block}
+\end{frame}
+\begin{frame}
+ L'effectif ou la fréquence les plus élevés montrent que le classe modale est $[170;180[$.\vspace*{0.2cm}
+ Soit la distribution d'une population des étudiants répartis suivant leur poids (en Kg) :\vspace*{0.15cm}
+\begin{center}
+\resizebox{\textwidth}{!}{\begin{tabular}{|c|c|c|c|c|}
+\hline \rowcolor{lightgray!30} Poids (en $Kg$ ) & Effectif $n_i$ & Fréquence $f_i$ en $\%$ & Amplitude $a_i$ & Fréq. corrigée $\widetilde{f_i}$ \\
+\hline$[50 ; 55[$ & 2 & 8,33 & 5 & 1,67 \\
+\hline$[55 ; 60[$ & 3 & 12,5 & 5 & 2,5 \\
+\hline$[60 ; 70[$ & 4 & 16,67 & 10 & 1,67 \\
+\hline \cellcolor{orange!70} $[70 ; 75[$ & 5 & 20,83 & 5 & \textcolor{red}{\textbf{4,17}} \\
+\hline$[75 ; 85[$ & 6 & 25 & 10 & 2,5 \\
+\hline$[85 ; 95[$ & 4 & 16,67 & 10 & 1,67 \\
+\hline Total & 24 & 100 & & \\
+\hline
+\end{tabular}}
+\end{center}\vspace*{0.15cm}
+ La classe modale, à laquelle est associée la fréquence corrigée la plus grande, est la classe $[70; 75[$.
+\end{frame}
+\begin{frame}
+\textbf{Calcul du mode dans le cas d'une variable quantitative continue :}
+
+$\bullet$ Cas des effectifs groupés par classes d'amplitudes \textbf{\textit{égales}} : Dans ce cas, la classe modale est la classe d'effectif $n_{i}$ le plus élevé, soit $\left[c^-_{i}, c^+_{i}\right[.$ L'effectif de la classe qui précède la classe modale est $n_{i-1}$ et celui de la classe qui suit la classe modale est $n_{i+1}$ alors
+\begin{equation}\label{eq1}
+M_o=c^-_{i}+a_{i}\left(\frac{m_{1}}{m_{1}+m_{2}}\right)
+\end{equation}
+avec
+$$
+\begin{aligned}
+&m_{1}=n_{i}-n_{i-1}, \\
+&m_{2}=n_{i}-n_{i+1}.
+\end{aligned}
+$$
+\end{frame}
+\begin{frame}
+\begin{exple}
+ Dans le tableau ci-dessous, les valeurs d'une variable $X$ ont été groupées par classes de valeurs d'amplitudes égales.
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline \rowcolor{lightgray!30} Classes & $n_{i}$ & $N_{i}$ \\
+\hline \hline$[0,5[$ & 2 & 2 \\
+\hline$[5,10[$ & 7 & 9 \\
+\hline\cellcolor{orange!70} $[10,15[$ & \textcolor{red}{\textbf{18}} & 27 \\
+\hline$[15,20[$ & 3 & 30 \\
+\hline
+\end{tabular}\\
+ Titre : Valeurs groupées par classes de valeurs d'amplitudes égales.\\
+\end{center}
+ La classe modale est $[10,15[$. Donc par application de la formule \eqref{eq1} on trouve que  le mode de ce caractère est :
+{\small $$
+ M_o=c^-_{i}+a_{i}\left(\frac{m_{1}}{m_{1}+m_{2}}\right)=10+5\times\left(\frac{18-7}{(18-7)+(18-3)}\right)=10+5\left(\frac{11}{11+15}\right)=12,115.
+ $$}
+\end{exple}\vspace*{0.2cm}
+\end{frame}
+\begin{frame}
+$\bullet$ Cas des effectifs groupés par classes d'amplitudes \textbf{\textit{inégales}} :  Dans ce cas, pour calculer le mode, il faut appliquer la formule \eqref{eq1} mais la définition de $m_{1}$ et de $m_{2}$ change, car il faut remplacer les effectifs $n_{i}$ par les effectifs corrigées $\widetilde{n_i}= \frac{n_i}{a_i}$, c'est-à-dire :
+$$
+\widetilde{m}_{1}=\widetilde{n}_{i}-\widetilde{n}_{i-1}, \quad \text{et}\quad
+\widetilde{m}_{2}=\widetilde{n}_{i}-\widetilde{n}_{i+1}.
+$$
+\end{frame}
+\begin{frame}
+\begin{exple}
+ Soit le tableau suivant où les données sont présentées par classes d'amplitudes inégales.
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline  \rowcolor{lightgray!30}$x_{i}$ & $n_{i}$ & $a_{i}$ & $\widetilde{n_i}=\frac{n_{i}}{a_{i}}$ \\
+\hline \hline$[0,10[$ & 9 & 10 & 0,9 \\
+\hline \cellcolor{orange!70} $[10,12[$ & 9 & 2 & \textcolor{red}{\textbf{4,5}} \\
+\hline$[12,20[$ & 12 & 8 & 1,5 \\
+\hline
+\end{tabular}
+\end{center}
+D'après le tableau, la classe modale est $[10,12[$, On a donc 
+{\small$$
+\widetilde{n}_{i-1}= \frac{n_{i-1}}{a_{i-1}}=\frac{9}{10}=0,9; \quad \widetilde{n}_{i}=\frac{n_{i}}{a_{i}}=\frac{9}{2}=4,5; \quad \widetilde{n}_{i+1}=\frac{n_{i+1}}{a_{i+1}}=\frac{12}{8}=1,5.
+$$}
+{\small$$ \Longrightarrow\quad
+\widetilde{m}_{1}=\widetilde{n}_{i}-\widetilde{n}_{i-1}=4,5-0,9=3,6 \quad\text{et} \quad \widetilde{m}_{2}=\widetilde{n}_{i}-\widetilde{n}_{i+1}=4,5-1,5=3.
+$$}
+On trouve donc {\small$$M_o=c^-_{i}+a_{i}\left(\frac{\widetilde{m}_{1}}{\widetilde{m}_{1}+\widetilde{m}_{2}}\right)=10+2 \times\left(\frac{3,6}{3,6+3}\right)=11,09.$$}
+\end{exple}
+\end{frame}
+\begin{frame}
+\subsubsection{La médiane}
+\begin{dfn}[La médiane] \textit{La médiane} $M_e$ est telle que l'effectif des observations dont les modalités sont inférieures à $M_e$ est égal à l'effectif des observations dont les modalités sont supérieures à $M_e$. Elle partage la série statistique en
+deux parties d'égal effectif.
+\end{dfn}
+\noindent \textbf{Détermination pratique :} Il ya deux méthodes.
+\begin{itemize}
+\item On classe les données par ordre croissant, la médiane est la \textit{valeur centrale} qui sépare la série en deux parties égales.
+\item On la détermine à partir des \textit{effectifs cumulés} ou du \textit{diagramme cumulatif}.
+\end{itemize} 
+\end{frame}
+\begin{frame} 
+\textbf{Cas d'une variable discrète :}
+\textit{- À partir de la série statistique :}
+On classe les données par ordre croissant : $$x_{1}<x_{2}<\ldots<x_{n}.$$
+\begin{itemize}
+\item  Si $n$ est \textit{paire} $(n=2 k)$, la médiane est égale à
+$$M_e=\frac{x_{k+1}+x_{k}}{2}.$$
+
+\textbf{Exemple :} $S=\{0 ; 0 ; 1 ; 1 ; 2 ; 2 ; 3 ; 4\}$. La médiane est égale à $ M_e=\frac{1+2}{2}=1,5.$
+\item Si $n$ est \textit{impaire} $(n=2 k+1)$, la médiane est égale à la $(k+1)^{\text{ème}}$ valeur de la série :
+$$
+M_e=x_{k+1}.
+$$
+\textbf{Exemple :} $S=\{0 ; 1 ; 1 ; 2 ; 2 ; 3 ; 4\}$. La médiane est égale à $M_e=2$.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\textit{- À partir du tableau statistique :} On la détermine à partir des \textit{fréquence cumulées}.
+\begin{exple}
+ Nombre d'enfants ($x_i$) observés dans un échantillon de $n=55$ familles ($n_i$) :
+\begin{center}
+\begin{minipage}{7.5cm}
+\begin{tabular}{|c|c|c|c|c|}
+\hline \rowcolor{lightgray!30} $x_i$ & $n_i$ & $N_i$ & $f_i$ en \% & $F_i$ en \%  \\
+\hline 0 & 3 & 3 & $5 $ & $5 $ \\
+\hline 1 & 4 & 7 & $7 $ & $12 $ \\
+\hline 2 & 8 & 15 & $15 $ & $27 $ \\
+\hline 3 & 7 & 22 & $13 $ & $40 $ \\
+\hline \rowcolor{yellow!70} \textcolor{red}{\textbf{4}} & 14 & \textcolor{red}{\textbf{36}} & $25 $ & \textcolor{red}{\textbf{65}} \\
+\hline 5 & 9 & 45 & $16 $ & $81 $ \\
+\hline 6 & 6 & 51 & $11 $ & $92 $ \\
+\hline 7 & 2 & 53 & $4 $ & $96 $ \\
+\hline 8 & 1 & 54 & $2 $ & $98 $ \\
+\hline 9 & 1 & 55 & $2 $ & $100 $ \\
+\hline\rowcolor{lightgray!15} Total & 55 & & 100 & \\
+\hline
+\end{tabular}
+\end{minipage}
+\begin{minipage}{7cm}
+$\Longrightarrow$ D'après le tableau on a : $M_e=4$.
+\end{minipage}
+\end{center}
+\end{exple}
+\end{frame}
+\begin{frame}
+\vspace*{0.3cm}
+\begin{exple}
+Nombre d'enfants par foyer :
+\begin{center}
+\begin{minipage}{7.5cm}
+\begin{tabular}{|c|c|c|c|c|}
+\hline  \rowcolor{lightgray!30} $x_i$ & $n_i$ & $N_i$ & $f_i$ en \% & $F_i$ en \%\\
+\hline 0 & 22 & 22 & 27,5 & 27,5 \\
+\hline \cellcolor{yellow!70} \textcolor{red}{\textbf{1}} & 18 & 40 & 22,5 & \textcolor{red}{\textbf{50}} \\
+\hline \cellcolor{yellow!70} \textcolor{red}{\textbf{2}} & 16 & 56 & 20 & \textcolor{red}{\textbf{70}} \\
+\hline 3 & 10 & 66 & 12,5 & 82,5 \\
+\hline 4 & 7 & 73 & 8,75 & 91,25 \\
+\hline 5 & 5 & 78 & 6,25 & 97,5 \\
+\hline 6 & 2 & 80 & 2,5 & 100 \\
+\hline \rowcolor{lightgray!15} Total & 80 & & 100 & \\
+\hline
+\end{tabular}
+\end{minipage}
+\begin{minipage}{6cm}
+$$
+\Longrightarrow\;\;M_{e}=\frac{x_{40}+x_{41}}{2}=\frac{1+2}{2}=1,5.
+$$
+\end{minipage}
+\end{center}
+\end{exple}
+\end{frame}
+\begin{frame}
+\textbf{Cas d'une variable continue :} Il n'y a aucune différence de calcul pour la médiane selon que les classes sont d 'amplitudes constantes ou variables. Le calcul de la médiane dans le cas de variable continue passe, d'abord, par la détermination de la classe médiane. Ensuite, par interpolation linéaire, on peut calculer la valeur précise de la médiane à l'intérieur de la classe médiane.\\
+$\bullet$ Pour déterminer la médiane $M_e$, on recherche la classe qui la contient. C'est la classe : \begin{center}
+$\left[c_{i}^-, c_{i}^+\right[= \left[a, b\right[$ telle que $F(a)\leqslant 0,5<F(b,)$
+\end{center} 
+
+en notant $F$ la fonction "\textit{fréquences relatives cumulées}".
+
+Alors, la médiane $M_e$ est l'abscisse du point $P$ d'ordonnée $0,5$ ou $50\%$ dans la représentation graphique des fréquences cumulés croissantes (voir la figure ci-dessous). Son calcul est le suivant:
+
+\end{frame}
+\begin{frame}
+\begin{center}
+\includegraphics[scale=0.75]{Me.jpg}
+\end{center}
+\end{frame}
+\begin{frame}
+\begin{minipage}{7cm}
+$$
+\frac{0.5-F(a)}{F(b)-F(a)}=\frac{M_e-a}{b-a}$$ $$\Downarrow $$$$ M_e=a+\left[\frac{0.5-F(a)}{F(b)-F(a)}\right]\left(b-a\right).
+$$
+\end{minipage}\\
+\end{frame}
+\begin{frame}
+\textbf{\textit{Détermination de la médiane par interpolation linéaire}}.
+\begin{center}
+\includegraphics[scale=0.6]{median.jpg}
+\end{center}
+\end{frame}
+\begin{frame}
+\begin{exple}
+ La distribution statistique d'une population d'étudiants selon leur taille (en cm):
+\begin{center}
+\resizebox{\textwidth}{!}{\begin{tabular}{|l|c|c|c|c|c|c|}
+\hline \cellcolor{lightgray!30} Taille $(\mathrm{cm})$ & $[150 ; 160[$ & {$[160 ; 170[$} & {$[170 ; 180[$} & {$[180 ; 190[$} & $[190 ; 200[$ & \cellcolor{lightgray!30} Total \\
+\hline \cellcolor{lightgray!30} Effectif & 6 & 7 & 8 & 2 & 1 & 24 \\
+\hline \cellcolor{lightgray!30} Fréquences en $\%$ & 25 & 29,1 & 33,3 & 8,3 & 4,3 & 100 \\
+\hline \cellcolor{lightgray!30} Fréquences cumulées croissantes en $\%$ & 25 & 54,1 & 87,4 & 95,7 & 100 & \\
+\hline
+\end{tabular}}
+\end{center}
+La médiane de cette distribution est :
+$$
+M_e=160+\frac{50-25}{54,1-25}(170-160) 
+\approx 168,6.
+$$
+\end{exple}
+\end{frame}
+\begin{frame}
+%----------------new 27-02-2022-----------
+\subsubsection{La moyenne}
+\begin{dfn}[Moyenne Arithmétique]
+La moyenne est la somme des valeurs observées divisée par leur nombre.
+\end{dfn}
+\noindent$\;$ La moyenne ne peut être définie que sur une variable quantitative.\\
+$\;$ \textbf{La moyenne d'une variable discrète}  $\left\{\left(x_{i} ; n_{i}\right)\right\}$ est donnée par :
+{\small $
+\overline{x}=\frac{n_{1} x_{1}+n_{2} x_{2}+\ldots+n_{p} x_{p}}{n_{1}+n_{2}+\ldots+n_{p}}=\frac{1}{n} \sum_{i=1}^{p} n_{i} x_{i}.
+$}
+\end{frame}
+\begin{frame}
+\begin{block}{Exemple C}
+ L'étude de $20$ familles a conduit à la distribution des nombres d'enfants dans chaque famille :
+\begin{center}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline \cellcolor{lightgray!30} Nombre d'enfants $\boldsymbol{x}_{\boldsymbol{i}}$ & $\mathbf{0}$ & $\mathbf{1}$ & $\mathbf{2}$ & $\mathbf{3}$ & $\mathbf{4}$ & $\mathbf{5}$ \\
+\hline \cellcolor{lightgray!30} Nombre de familles $\boldsymbol{n}_{\boldsymbol{i}}$ & 5 & 3 & 6 & 1 & 3 & 2 \\
+\hline
+\end{tabular}
+\end{center}
+Le nombre moyen d'enfants par famille est:
+$$
+\overline{x}=\frac{(0 \times 5)+(1 \times 3)+(2 \times 6)+(3 \times 1)+(4 \times 3)+(5 \times 2)}{5+3+6+1+3+2} =\frac{40}{20}=2.
+$$
+\end{block}
+\end{frame}
+\begin{frame}
+\noindent$\;$ \textbf{La moyenne d'une variable continue :}  La variable continue est connue par ses classes $\left[c_{i}^- ; c_{i}^+\right[$ et les effectifs $n_i$ associées à chaque classe. Si on note $c_i$ le centre de la classe  $\left[c_{i}^- ; c_{i}^+\right[$, alors 
+{\small $
+\overline{x}=\frac{n_{1} c_{1}+n_{2} c_{2}+\ldots+n_{p} c_{p}}{n_{1}+n_{2}+\ldots+n_{p}}=\frac{1}{n} \sum_{i=1}^{p} n_{i} c_{i}.
+$}
+\end{frame}
+\begin{frame}
+ \begin{exple}\label{exp11}
+ La distribution des tailles de 40 étudiants est donnée par le tableau ci-après. 
+\begin{center}
+\resizebox{\textwidth}{!}{\begin{tabular}{|l|c|c|c|c|c|}
+\hline \cellcolor{lightgray!30} Taille en cm $x_i$ & $[150;160[$ & $[160;165[$ & $[165;170[$ & $[170;175[$ & $[175;185]$ \\
+\hline \cellcolor{lightgray!30} Nombre d'étudiants $n_i$ & 4 & 8 & 10 & 16 & 2 \\
+\hline
+\end{tabular}}
+\end{center}
+La moyenne des tailles des étudiants:
+{\small $$
+\begin{aligned}
+\overline{x}&=\frac{(155 \times 4)+(162,5 \times 8)+(167,5 \times 10)+(172,5 \times 16)+(180 \times 2)}{4+8+10+16+2}\\ &=\frac{620+1300+1675+2760+360}{40}=167,875.
+\end{aligned}
+$$}
+ \end{exple}
+ \end{frame}
+ \begin{frame}
+\subsection{Paramètres de dispersion}
+Dans le paragraphe précédent, nous avons quantifié l'aspect "moyen" d'une série statistique. Il est bien évident que des séries ayant la même moyenne et la même médiane peuvent être trés différemment étalées. Les paramètres de dispersion que nous allons maintenant définir permettent d'apprécier l'importance de la dispersion d'une série statistique autour de sa moyenne ou de sa médiane.
+\subsubsection{Étendue}
+\begin{dfn}
+ On appelle \textbf{\textit{étendue}} d'une distribution statistique quantitative $X=\left(x_{i}, n_{i}\right)_{i=1}^p$ la différence entre la plus grande et la plus petite valeur observée, notée $E$ :   $$E=x_{\max} - x_{\min}.$$
+\end{dfn}
+\noindent L'étendue est simple et facile à calculer. Toutefois, il est très sensible aux valeurs extrêmes "aberrantes". Si la série statistique $\left(x_{i}, n_{i}\right)_{i=1}^p$ est classée dans l'ordre croissant  {\footnotesize $x_1<x_2<\cdots<x_p$}, alors 
+$$E=x_{p} - x_{1}.$$
+\end{frame}
+\begin{frame}
+\begin{exple}
+On considère la distribution statistique suivante :
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline \cellcolor{lightgray!30} $x_{i}$ & 7 & 8 & 9 & 10 & 11 & 12 & 13 \\
+\hline \cellcolor{lightgray!30} $n_{i}$ & 2 & 3 & 7 & 10 & 6 & 2 & 1 \\
+\hline \cellcolor{lightgray!30} $N_{i}$ & 2 & 5 & 12 & 22 & 28 & 30 & 31 \\
+\hline
+\end{tabular}
+\end{center}  l'étendue est : $$E=x_7-x_1=13-7=6.$$
+\end{exple}
+\end{frame}
+\begin{frame}
+\subsubsection{La variance}
+En statistique, la \textit{variance} est une mesure arbitraire servant à caractériser la dispersion d'une distribution ou d'un échantillon.
+\begin{dfn}
+La variance est la somme des carrés des écarts à la moyenne divisée par le nombre d'observations :
+$$\vspace*{-0.3cm}
+V_{ar}=\frac{1}{n} \sum_{i=1}^{p}\left(x_{i}-\bar{x}\right)^{2}.
+$$
+\end{dfn}
+$\bullet$ La variance d'une variable quantitatif discrète $\left(x_{i}, n_{i}\right)_{i=1}^p$ est exprimée par :\vspace*{-0.2cm}
+ $$ 
+V_{ar}=\frac{1}{n} \sum_{i=1}^{p} n_{i}\left(x_{i}-\bar{x}\right)^{2}.
+$$
+$\bullet$  La variance  d'une variable quantitative continue $\left([c_{i}^- ; c_{i}^+[, n_{i}\right)_{i=1}^p$ est donnée par:\vspace*{-0.2cm}
+ $$
+V_{ar}=\frac{1}{n} \sum_{i=1}^{p} n_{i}\left(c_{i}-\bar{x}\right)^{2},
+$$
+où $c_{i}$ est le centre de la classe $[c_{i}^- ; c_{i}^+[$.
+\end{frame}
+\begin{frame}
+\begin{rems}\text{}
+\begin{itemize}
+\item  On peut dire que plus la variance est élevée, plus la dispersion autour de la moyenne est élevée. Mais comme les écarts à la moyenne ont été élevés au carré, le chiffre obtenu est assez élevé. C'est pourquoi, on utilise surtout la variance comme calcul intermédiaire pour obtenir l'écart-type et le coefficient de variation.
+\item La variance peut s'écrire encore de la forme suivante:
+\begin{itemize}
+\item Pour une \textit{variable quantitative discrète} :
+$$
+V_{av}=\frac{1}{n} \sum_{i=1}^{p} n_{i} x_{i}^{2}-(\bar{x})^{2}.
+$$
+\item Pour une \textit{variable quantitative continue} :
+$$
+V_{av}=\frac{1}{n} \sum_{i=1}^{p} n_{i} c_{i}^{2}-(\bar{x})^{2}.
+$$
+\end{itemize}
+\end{itemize}
+\end{rems}
+\end{frame}
+\begin{frame}
+\begin{block}{Exemple D}
+Reprenons l'exemple C, qui présent   la distribution des nombres d'enfants dans $20$ familles selon le tableau suivant :
+\begin{center}
+\resizebox{\textwidth}{!}{\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline \cellcolor{lightgray!30} Nombre d'enfants $\boldsymbol{x}_{\boldsymbol{i}}$ & $\mathbf{0}$ & $\mathbf{1}$ & $\mathbf{2}$ & $\mathbf{3}$ & $\mathbf{4}$ & $\mathbf{5}$ \\
+\hline \cellcolor{lightgray!30} Nombre de familles $\boldsymbol{n}_{\boldsymbol{i}}$ & 5 & 3 & 6 & 1 & 3 & 2 \\
+\hline
+\end{tabular}}
+\end{center}
+\end{block}
+\end{frame}
+\begin{frame}
+On a déjà calculé le nombre moyen d'enfants par famille :
+$
+\overline{x}=2.
+$\\
+Pour calculer la variance de cette série statistique, on calcule d'abord les valeurs $n_{i} x_{i}^{2}$.
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline \cellcolor{lightgray!50} $\boldsymbol{x}_{\boldsymbol{i}}$ & $\mathbf{0}$ & $\mathbf{1}$ & $\mathbf{2}$ & $\mathbf{3}$ & $\mathbf{4}$ & $\mathbf{5}$ \\
+\hline \cellcolor{lightgray!50}  $\boldsymbol{n}_{\boldsymbol{i}}$ & 5 & 3 & 6 & 1 & 3 & 2 \\
+\hline
+\cellcolor{lightgray!50} $\boldsymbol{x}_{\boldsymbol{i}}^{2}$ & 0 & 1 & 4& 9& 16 & 25\\
+\hline 
+\cellcolor{lightgray!50} $\boldsymbol{n}_{\boldsymbol{i}} \boldsymbol{x}_{\boldsymbol{i}}^{2}$ & 0 & 3 & 24& 9& 48 & 50\\ \hline
+\end{tabular}
+\end{center}
+
+On a donc : $$V_{ar}=\frac{1}{n} \sum_{i=1}^{p} n_{i} x_{i}^{2}-(\bar{x})^{2}=  \frac{1}{20} \sum_{i=1}^{6} n_{i} x_{i}^{2}-(\bar{x})^{2}=\frac{1}{20}(0+3+24+9+48+50)-2^2=2,7.$$
+\end{frame}
+\begin{frame}
+\begin{block}{Exemple E}
+Reprenons l'exemple  qui présent la distribution des tailles de $40$ étudiants est donnée par le tableau ci-après. 
+\begin{center}
+\resizebox{\textwidth}{!}{\begin{tabular}{|l|c|c|c|c|c|}
+\hline \cellcolor{lightgray!30} Taille en cm $[c_{i}^- ; c_{i}^+[$ & $[150;160[$ & $[160;165[$ & $[165;170[$ & $[170;175[$ & $[175;185]$ \\
+\hline \cellcolor{lightgray!30} Nombre d'étudiants $n_i$ & 4 & 8 & 10 & 16 & 2 \\
+\hline
+\end{tabular}}
+\end{center}
+\end{block}
+\end{frame}
+\begin{frame}
+On a déjà calculé la moyenne des tailles des étudiants :
+$\overline{x}=167,875.$\\
+Pour calculer la variance de cette série statistique, on calcule d'abord les valeurs $c_{i} x_{i}^{2}$.
+\begin{center}
+\resizebox{\textwidth}{!}{\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline \cellcolor{lightgray!30} $[c_{i}^- ; c_{i}^+[$ & $[150;160[$ & $[160;165[$ & $[165;170[$ & $[170;175[$ & $[175;185]$& \cellcolor{lightgray!50} Total \\
+\hline \cellcolor{lightgray!30}  $n_i$ & 4 & 8 & 10 & 16 & 2 & \cellcolor{lightgray!50} 40 \\\hline
+\cellcolor{lightgray!50} $\boldsymbol{c}_{\boldsymbol{i}}$ & 155 & 162,5 & 167,5 & 172,5 & 180 & 
+\\
+\hline
+\cellcolor{lightgray!50} $\boldsymbol{x}_{\boldsymbol{i}}^{2}$ & 24025 &  26406 & 28056 & 29756 &  32400 & \\
+\hline 
+\cellcolor{lightgray!50} $\boldsymbol{n}_{\boldsymbol{i}} \boldsymbol{x}_{\boldsymbol{i}}^{2}$ & 96100 & 211250 & 280562,5 & 476100 &  64800 & \cellcolor{lightgray!50} 1128813 \\ \hline 
+\end{tabular}}
+\end{center}
+On a donc {\small$$
+V_{av}=\frac{1}{n} \sum_{i=1}^{p} n_{i} c_{i}^{2}-(\bar{x})^{2} =  \frac{1}{40} \sum_{i=1}^{5} n_{i} c_{i}^{2}-(167,875)^{2}= \frac{1}{40}(1128813)- (167,875)^{2}\simeq 38,3.$$}
+\end{frame}
+\begin{frame}
+\subsubsection{L'écart-type}
+L'écart type est la mesure la plus courante de la dispersion ou de la répartition des données sur la moyenne. 
+\begin{dfn}
+\textbf{\textit{L'écart-type}} d'une variable, noté par $\sigma$, est la racine carrée de la variance :
+$
+~~~\sigma=\sqrt{V_{ar}}.
+$
+\end{dfn}
+\begin{rems}\text{}
+\begin{itemize}
+\item L'écart-type est la mesure de la dispersion la plus couramment utilisée.
+\item  Si l'écart-type est petit, cela signifie que les valeurs sont assez concentrées autour de la moyenne. Autrement dit, les
+valeurs observées sont \texttt{peu dispersées} (\texttt{homogène}).
+\item Si l'écart-type est élevé, cela veut dire au contraire que les valeurs sont \texttt{plus dispersées} autour de la moyenne. Autrement dit,  les valeurs observées sont \texttt{hétérogènes}.
+\item Quelque soit la distribution statistique étudiée, un intervalle dont les extrémités sont «$\overline{x}-2 \sigma$» et «$\overline{x}+2 \sigma$» (i.e. $[\overline{x}-2 \sigma,\overline{x}+2 \sigma]$) contient toujours au moins $75 \%$ des unités constituant la population étudiée.
+\end{itemize}
+\end{rems}
+\end{frame}
+\begin{frame}
+\begin{exple}
+Reprenons les exemples D et E. Alors :\\
+$\bullet$ L'écart type de la série statistique étudiée dans l'exemple D est : $$\sigma=\sqrt{V_{ar}}=\sqrt{2.7}=1,64.$$
+$\bullet$ L'écart type de la série statistique étudiée dans l'exemple E est : $$\sigma=\sqrt{V_{ar}}=\sqrt{38,3}=6,19.$$
+\end{exple}
+\end{frame}
+\begin{frame}
+\subsubsection{Le coefficient de variation}
+\texttt{Le coefficient de variation}, noté par $C_\text{v}$, est une mesure de la répartition qui décrit la variation des données par rapport à la moyenne :
+ $C_\text{v}=\frac{\sigma}{\overline{x}}.$
+ Le coefficient de variation est ajusté de façon à ce que les valeurs soient sur une échelle \texttt{sans unités}. C'est pourquoi vous pouvez utiliser le coefficient de variation à la place de l'écart type pour comparer la variation des données ayant des unités ou des moyennes très différentes.\\
+  Plus le coefficient de variation est élevé, plus les données sont dispersées.
+  \end{frame}
+  \begin{frame}
+ \begin{e}
+ Sur une population bien portante issues d'une certaine région, on a dosé le taux de cholestérol, exprimé en $\mathrm{cg}/\ell$ et on a obtenu les résultats suivants :
+\begin{center}
+ \resizebox{\textwidth}{!}{\begin{tabular}{|c|c|c|c|c|c|c|c|}
+ \hline \cellcolor{lightgray!50} Classes & {$[84,96[$} & {$[96,108[$} & {$\left[108,120\right[$} & {$[120,132[$} & {$[132,144[$} & {$[144,156[$} & {$[156,168[$} \\
+ \hline  \cellcolor{lightgray!50} Effectif $n_{i}$ & 2 & 8 & 16 & 19 & 2 & 2 & 1 \\
+ \hline
+ \end{tabular}}
+\end{center}
+\begin{enumerate}
+\item Quel est le nombre d'individus?
+\item Quel est le caractère étudié?
+\item Déterminer le mode.
+\item Déterminer la médiane.
+\item Déterminer la moyenne arithmétique.
+\item Déterminer l'écart-type.
+\item Calculer le coefficient de variation, puis conclure.
+\end{enumerate} 
+ \end{e}
+\end{frame}
+%---------------
+\end{document}

@@ -1,0 +1,634 @@
+\documentclass[leqno,10pt,tick,mathserif,xcolor=dvipsnames,oneside,fleqn]{beamer}
+%\documentclass[slidestop,usepdftitle=false]{beamer}
+%\documentclass[leqno,10pt,tick,mathserif,xcolor=dvipsnames]{beamer}
+%\usepackage{xcolor}
+\usepackage{etex}
+\reserveinserts{28}
+\usepackage[all]{xy}
+\usepackage[latin1]{inputenc}
+\usepackage[frenchb]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{frcursive}
+\usepackage{pdftricks}
+\usepackage{palatino}
+%\input{../preamb-pres.tex}
+%\beamertemplateshadingbackground{white!30}{white!100}
+%\usepackage{beamerthemeshadow}
+%\usepackage{beamerthemesplit}
+\usepackage{hyperref}
+%\usetheme{Warsaw}
+%\documentclass{beamer}
+
+%\usetheme{Blackboard}
+%\usetheme{Copenhagen}
+%\usetheme{S}
+\usepackage{dsfont}
+\usepackage{hyperref}
+\everymath{\displaystyle}
+\usecolortheme{crane}
+\usecolortheme{beaver}
+%%%%%%%%%%%%%%%%%%%pour la gaune%%%%%%%%%%%%%%%%%%%%%
+%\useinnertheme[shadow=true]{rounded}
+%\useoutertheme{infolines}
+%\usecolortheme{wolverine}
+%\setbeamerfont{block title}{size={}}
+%\setbeamercolor{titlelike}{parent=structure,bg=yellow!85!orange}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{beamertexpower}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{amsmath,amssymb,amsfonts}
+% Beamer class for the ENST de Bretagne (GET/ ENST B)
+
+% based on the work done by  Madhusudan Singh for NCSU
+
+% modified by Gilles Bertrand
+
+% December 2006
+
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+
+\def \K {\mathbb{K} }
+\def \S {\mathbb{S} }
+\def \L {\mathbb{L} }
+\def \N {\mathbb{N} }
+\def \Z {\mathbb{Z} }
+\def \Q {\mathbb{Q} }
+\def \R {\mathbb{R} }
+\def \C {\mathbb{C} }
+\def \F {\mathfrak{F}}
+\def \B {\mathfrak{B}}
+\def \O {\mathfrak{O}}
+\def \U {\mathfrak{U}}
+\usepackage{tablists}
+\mode <all>
+\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+
+%\usepackage{epsfig,psfig}
+%ENSEMBLES USUELS
+\newcommand{\field}[1]{\mathbb{#1}}
+\newcommand{\rrr}{\field{R}}
+\newcommand{\nnn}{\field{N}}
+\newcommand{\zzz}{\field{Z}}
+\newcommand{\kkk}{\field{K}}
+\newcommand{\qqq}{\field{Q}}
+\usepackage{graphicx,float,placeins,subfigure}
+%pour importer des grahes construit Ã  partir de geogebra
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+%couleur des paragraphes
+%\usepackage{sectsty}
+%FIN DE LA DECLARATION DES FONTES ENSEMBLES USUELS
+\definecolor{orange}{rgb}{0.99,0.69,0.07}
+\definecolor{red}{rgb}{1,0,0}
+%\definecolor{blue}{rgb}{0,0,2}
+\newcommand{\blue}{\color{blue}}
+\newcommand{\green}{\color{green}}
+\newcommand{\red}{\color{red}}
+\newcommand{\brown}{\color{brown}}
+\newcommand{\white}{\color{white}}
+\newcommand{\yellow}{\color{yellow}}
+%\beamertemplatetransparentcovereddynamic
+\newcommand{\Lang}[1]{\operatorname{\text{\textsc{#1}}}}
+\newcommand{\Class}[1]{\operatorname{\mathchoice
+{\text{\sf \small #1}} {\text{\sf \small #1}}
+  {\text{\sf #1}}
+{\text{\sf #1}}}}
+%\newcommand{\R}{I\!\!R}
+%\newcommand{\N}{I\!\!N}
+\newcommand{\NumSAT}      {\text{\small\#SAT}}
+\newcommand{\NumA}        {\#_{\!A}}
+\newcommand{\barA}        {\,\bar{\!A}}
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\Set}[1]{\{#1\}}
+\newtheorem{proposition}{Proposition}[section]
+%\newtheorem{property}[proposition]{PropriÃƒÂ©tÃƒÂ©}
+%\renewtheorem{corollary}[proposition]{Corollaire}
+
+%\usetheme{Warsaw}
+%\usetheme{Frankfurt}
+%\usetheme{Antibes}
+%\usetheme{JuanLesPins}
+%\usetheme{Berkeley}
+\usetheme{CambridgeUS}
+%\usetheme[secheader]{Boadilla}
+%\usetheme[secheader]{Madrid}
+%\usetheme{AnnArbor}
+%\usetheme[compress]{berlin}
+%\usetheme{Warsaw}
+%\usetheme{Luebeck}
+%\usecolortheme{seahorse}
+\newtheorem{ex}{Exemple}[section]
+\usecolortheme{wolverine}
+\theoremstyle{plain}
+\newtheorem{Thm}{{\textbf{Théorème}}}[section] 
+\newtheorem*{theoreme*}{{Théorème}}
+\newtheorem{Prop}{\textbf{Proposition}}[section]
+\newtheorem*{proposition*}{Proposition}
+\newtheorem{Cor}{\textbf{Corollaire}}[section]
+\newtheorem*{corollaire*}{Corollaire}
+\newtheorem{Lem}{\textbf{Lemme}}[section]
+\newtheorem*{lemme*}{Lemme}
+\newtheorem{Defs}{\textbf{Définitions}}[section]
+\newtheorem{dfn}{\textbf{Définition}}[section]
+\newtheorem{Rem}{\textbf{Remarque}}[section]
+\newtheorem{Propr}{\textbf{Propriétés}}[section]
+%--------------------------------------------------
+\setbeamercolor{block title example} {fg=violet,bg=purple!50}
+\setbeamercolor{block title } {fg=violet,bg=piggypink}
+\setbeamercolor{block title alerted} {fg=teal,bg=teal!40}
+\pgfdeclaremask{tu}{beamer-tu-logo-mask}
+%\pgfdeclaremask{computer}{beamer-computer-mask}
+%\pgfdeclareimage[interpolate=true,mask=computer,height=4cm]{computerimage}{beamer-computer}
+%\pgfdeclareimage[interpolate=true,mask=computer,height=2cm]{computerworkingimage}{beamer-computerred}
+%\pgfdeclareimage[mask=tu,height=0.6cm]{logo}{ts_logo}
+%\pgfdeclareimage[height=0.6cm]{logo}{es} \logo{\pgfuseimage{logo}}
+\everymath{\displaystyle}
+% % % % % % % % % % %ù
+% % % % % % % % % %
+
+\title[Mathématique 1]{\textbf{\textcolor{red}{ Module:  Mathématique 1}}\vspace{0.4cm}\\\textbf{Chapitre 5: Suites}}
+\author{\textbf{Prof. Mohammed SRATI}}
+
+\institute[ENS-Fès]
+{
+\medskip\medskip
+\textbf{{Licence d'Éducation \\ Spécialité: Enseignement Primaire}}}
+\date{02-01-2023}
+
+\begin{document}
+\begin{frame}
+	\begin{center}  \vspace*{-0.3cm}  
+			\includegraphics[width=10cm, height=1.4cm]{logo}
+	\vspace*{-0.5cm}	\end{center}
+\titlepage
+\end{frame}
+%----------------------------------
+
+%--------------------------------
+
+%----------------------------------
+
+%--------------------------------
+
+\begin{frame}
+\frametitle{Sommaire}
+\textbf{3. Suites}
+
+\begin{itemize}
+\item Suites numériques 
+\item Suites arithmétiques
+\item Suites géométriques 
+\end{itemize}
+%2.3.	Calcul d'intégrale
+%\begin{itemize}
+%\item	Fonction primitive
+%\item	Surface et fonction primitive d'une fonction continue (fonction constante et positive sur un intervalle - fonction affine positive sur un intervalle - ...)
+%\item	Intégrale d'une fonction continue
+%\item	Calcul des volumes, calcul de la masse
+%\item	Vitesse et distance
+%\end{itemize}
+\end{frame}
+%%----------------------------------
+
+%--------------------------------
+
+
+\section{Suites num\'eriques}
+\begin{frame}
+\begin{definition}
+Une suite num\'erique est une application $u$ d\'efinie d'une
+partie $I$ de $\N$ dans $\R$: 
+$$
+\begin{aligned}
+u: \ & I\longrightarrow \R  \\
+& n \longrightarrow u(n)=u_n.
+\end{aligned}$$
+%\enq
+Le nombre r\'eel $u(n)=u_n$ s'appelle le terme g\'en\'eral de la suite. La
+suite d\'efinie par l'application $u$ est not\'ee $(u_n)_{n\in I}$
+ou tout simplement $(u_n)$ si $I=\N$. L'ensemble $\left\{
+u(n): n\in I\right\}$ est appel\'e ensemble des valeurs de la
+suite.
+\end{definition}
+\pause
+\begin{ex}
+ $u_n=\dfrac{1}{n+1}$\\
+$v_n =(-1)^n,\ n \ge 1.$
+\end{ex}
+\end{frame}
+\begin{frame}
+\begin{dfn} Une suite $(u_{n})_{n\in \N}$ définie par le couple $(a,f)$, où $a$
+est un réel et $f$ une fonction réelle de variable réelle, telle
+que
+\[\left\{\begin{array}{ll} u_{0}=a\\
+u_{n+1}=f(u_{n}) & \mbox{si $ n\geq 1$}\\
+\end{array}
+\right.\] est appelée suite récurrente (simple).
+\end{dfn}
+\pause
+\begin{dfn} 
+On dit que la suite $(u_n)$ converge vers  $\ell\in \R$ si $$
+ \forall  \varepsilon > 0 \hspace{3mm} \exists \ N_0\in \N: n \geq N_0  \Rightarrow \
+|u_n-\ell|<\varepsilon,$$
+on \'ecrit\ $\lim\limits_{n\to+\infty} u_n=\ell$ ou $u_n\rightarrow \ell.$
+\end{dfn}
+\pause
+\begin{block}{ }
+Une suite qui ne converge pas est dite divergente.
+\end{block}
+ \end{frame}
+ \begin{frame}
+ \begin{ex} La suite $(\frac{1}{n+1})$ converge vers 0.\\
+  Déterminons la limite de la suite de terme général
+  $u_n=\sqrt{n+1}-\sqrt{n}$. On a
+  $$\lim\limits_{n\rightarrow\infty} \sqrt{n+1}-\sqrt{n} = \lim\limits_{n\rightarrow\infty} \dfrac{1}{\sqrt{n+1}+\sqrt{n}}=0$$
+  \end{ex}
+  \pause
+\begin{dfn}{(Divergence vers $\pm \infty$)}\\
+On dit que $\left( u_n \right)_{n \in \N }$, une suite réelle, diverge vers $+\infty$ (resp. $-\infty$), si $\forall A > 0$, $\exists N_0 \in \N$ tel que $\forall n\geqslant N_0$ \[ u_n > A \qquad (\text{resp. } u_n < -A) \]\\
+\end{dfn}
+\pause
+\begin{ex}
+$u_n=n^2+1$, on a $\lim\limits_{n\rightarrow +\infty}u_n=+\infty$\end{ex}
+\end{frame}
+\begin{frame}
+\begin{Propr}
+  Si une suite est convergente, sa limite est unique.
+\end{Propr}
+\pause
+\textbf{Exercice}
+Déterminer la limite, si celle-ci existe, des suites suivantes :
+$$u_n=\sqrt{n^2+n+1}-\sqrt{n^2-n-1},~~v_n=\dfrac{n-\sqrt{n^2+1}}{n+\sqrt{n^2-1}},~~w_n=1+\dfrac{\sqrt{n}}{n+1}$$
+\end{frame}
+\begin{frame}{Suite majorée, minorée, bornée}
+\subsection{Suite majorée, minorée, bornée}
+
+\begin{dfn}
+Soit $(u_n)_{n\in \N}$ une suite.
+\begin{itemize}
+  \item $(u_n)_{n\in \N }$ est {majorée} si \ \ \ $\exists M \in \R \ \ \ \forall n\in \N \ \ \ u_n \leq M$.
+  \item $(u_n)_{n\in \N }$ est  {minorée} si \ \ \ $\exists m \in \R \ \ \  \forall n\in \N \quad u_n \geq m$.
+  \item $(u_n)_{n\in \N }$ est  {bornée} si elle est majorée et minorée, ce qui revient à dire :
+$$\exists M > 0 \ \ \  \forall n\in \N \ \ \ |u_n| \leq M.$$
+\end{itemize}
+\end{dfn}
+\pause
+\begin{ex}
+ La suite de terme général $u_n=\sin(n)$ est bornée car pour tout $n\in \N$ $|u_n|\leqslant 1$.
+\end{ex}
+\end{frame}
+ \begin{frame}
+\begin{Propr}
+Toute suite convergente est bornée.
+\end{Propr}
+\pause
+\begin{Rem}
+ La réciproque est fausse.
+ \end{Rem} 
+ \pause
+  \begin{ex}
+ La
+suite $(-1)^n$,\ $n\ge1$, est born\'ee mais n'est pas convergente.
+\end{ex}
+\end{frame}
+ \begin{frame}{Suites monotones}
+\subsection{Suites monotones}
+\begin{dfn}
+Soit $(u_n)_{n\in \N}$ une suite.
+\begin{itemize}
+  \item $(u_n)_{n\in \N}$ est {croissante} si \quad $\forall n\in \N \quad  u_{n+1} \ge u_n $.
+
+  \item $(u_n)_{n\in \N}$ est {décroissante} si \quad $\forall n\in \N \quad u_{n+1} \le u_n$.
+
+    \item $(u_n)_{n\in \N}$ est {monotone} si elle est croissante ou décroissante.
+
+  \end{itemize}
+\end{dfn}
+\pause
+\begin{Rem}
+Pour étudier la monotonie d'une suite $(u_n)$, on peut :
+\begin{itemize}
+\item[1.] étudier le signe de $u_{n+1}-u_n$ pour tout $n$,
+\item[2.] comparer le quotient $\frac{u_{n+1}}{u_n}$
+à 1 (pour tout $n$), à condition que la suite ($u_n$) ne comporte pas de termes nuls,
+\item[3.] étudier les variations de la fonction $f$ s'il existe $f$ telle que $f(n) = u_n$.
+\end{itemize}
+\end{Rem}
+\end{frame}
+\begin{frame}
+\begin{ex}
+\begin{itemize}
+\item Soit $(u_n)$ la suite de terme général $u_n=3n+2$. La fonction $f$ définie sur $\R^+$ par $f(x) = 3x + 2$
+vérifie bien la relation $\forall n\in \N$, 
+$f(n) = u_n$. Cette fonction étant strictement croissante sur $\R^+$, la
+suite $(u_n)$ l'est aussi.
+\pause
+\item Soit $(u_n)$ la suite de terme général $u_n = n^2$. Pour tout $n\in \N^*$
+$$u_{n+1}-u_n=(n+1)^2-n^2=(n+1-n)(n+1+n)=2n+1>0.$$
+La suite $(u_n)$ est donc strictement croissante.
+\end{itemize}
+\end{ex}
+\pause
+\begin{theorem}
+
+  \begin{itemize}
+  \item{Toute suite croissante et majorée est convergente.}
+   \item Toute suite décroissante et minorée est convergente.
+   \end{itemize}
+\end{theorem}
+\end{frame}
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+\begin{frame}
+
+\begin{Rem}
+
+  \begin{itemize}
+       \item Une suite croissante et qui n'est pas majorée tend vers $+\infty$.
+       \item Une suite décroissante et qui n'est pas minorée tend vers $-\infty$.
+  \end{itemize}
+  \end{Rem}
+  \pause
+\begin{ex}
+\begin{itemize}
+\item La suite de terme général $u_n=\dfrac{1}{n}$ pour $n\geqslant 1$ est  décroissante et minorée donc convergente. \pause
+\item La suite de terme général $u_n=e^n$ est  croissante mais pas majorée donc est une suite divergente.
+\end{itemize}
+\end{ex}
+\end{frame}
+\begin{frame}{Opération élémentaires sur les  suites convergentes}
+\subsection{Opération élémentaires sur les  suites convergentes}
+\begin{Propr}
+Soient $(u_n)$, $(v_n)$ deux suites r\'eelles. Si $(u_n)$ converge vers $l_1$ et $(v_n)$ converge
+vers $l_2$. Alors \begin{enumerate} \item  La suite $( u_n +
+v_n)$ converge vers $ l_1+  l_2$. \item  La suite
+produit $(u_nv_n)$ converge vers $l_1l_2$. \item  La suite $(|u_n|)$
+converge vers $|l_1|$. \item  Si $l_1\ne 0$, alors il existe un entier
+$N$ tel que $u_n\ne0$ si $n\ge N$ et la suite
+$\left(\dfrac{1}{u_n}\right)_{n\ge N}$ converge vers
+$\dfrac{1}{l_1}$.
+\end{enumerate}
+\end{Propr}
+\end{frame}
+\begin{frame}{Propriétés d'ordre des suites réelles convergentes}
+\subsection{Propriétés d'ordre des suites réelles convergentes}
+\begin{Propr}
+
+\begin{enumerate}
+    \item Soient $(u_n)_{n\in \N}$ et $(v_n)_{n\in \N}$ deux suites convergentes
+telles que : $\forall n \in \N$, $u_n\leq v_n$. Alors
+      \[\lim_{n\to +\infty} u_n \leq \lim_{n\to +\infty} v_n\]
+    \item  Soient $(u_n)_{n\in \N}$ et $(v_n)_{n\in \N}$ deux suites telles que
+$\lim_{n\to +\infty} u_n=+\infty$ et  $\forall n \in \N$, $v_n \geq u_n$.
+Alors $\lim_{n\to +\infty} v_n=+\infty$.
+
+  \end{enumerate}
+\end{Propr}
+\end{frame}
+\begin{frame}
+\begin{Rem}
+  \begin{enumerate}
+    \item Soit $(u_n)_{n\in \N}$ une suite convergente telle que :
+$\forall n \in \N$, $u_n\geq 0$. Alors $\lim\limits_{n\to +\infty} u_n\geq 0$.
+    \item Attention : si $(u_n)_{n\in \N}$ est une suite convergente telle que :
+$\forall n \in \N$, $u_n > 0$, on ne peut pas affirmer que la limite est strictement positive mais
+seulement que $\lim\limits_{n\to +\infty} u_n \ge 0$.
+Par exemple la suite $(u_n)_{n\in \mathbb{N}}$
+donnée par $$u_n=\dfrac{1}{n+1}$$ est à termes
+%donnée par $u_n=\dfrac{1}{n+1}$ est à  termes 
+strictement positifs, mais converge vers zéro.
+\end{enumerate}
+\end{Rem}
+\end{frame}
+\begin{frame}
+
+\begin{theorem}[\textsl{Théorème de gendarme}]\par Soient $(u_n)_{n}$, $(v_n)_{n}$ et $(w_n)_{n}$ trois suites
+réelles telles que:
+$$u_n\le v_n \le w_n \hspace{2mm}\mbox{pour tout}\hspace{2mm} n\in
+\N.$$ On a:
+\begin{enumerate}
+\item Si $\lim\limits_{n\to+\infty }u_n=\lim\limits_{n\to+\infty
+}w_n=l\in\R$ alors $\lim\limits_{n\to+\infty }v_n=l$. \item Si
+$\lim\limits_{n\to+\infty }u_n=+\infty $ alors
+$\lim\limits_{n\to+\infty }v_n=+\infty$. \item  Si
+$\lim\limits_{n\to+\infty }v_n=-\infty $ alors
+$\lim\limits_{n\to+\infty }u_n=-\infty$.
+\end{enumerate}
+\end{theorem}
+\end{frame}
+\begin{frame}
+\begin{ex}
+ Etudier la suite de terme général
+$$u_n=2+\dfrac{\sin(n)}{n+2}.$$
+On a
+$$-1\leqslant \sin(n)\leqslant 1 ~~ \forall n\in \N$$
+$\Rightarrow$
+$$\dfrac{-1}{n+2}\leqslant \dfrac{\sin(n)}{n+2}\leqslant \dfrac{1}{n+2} ~~ \forall n\in \N$$
+$\Rightarrow$
+$$2+\dfrac{-1}{n+2}\leqslant 2+ \dfrac{\sin(n)}{n+2}\leqslant 2+\dfrac{1}{n+2} ~~ \forall n\in \N.$$
+Or $\lim\limits_{n\rightarrow \infty}2+\dfrac{-1}{n+2}=\lim\limits_{n\rightarrow \infty}2+\dfrac{1}{n+2}=2$, ce qui implique 
+$$ \lim\limits_{n\rightarrow \infty}2+\dfrac{\sin(n)}{n+2}=2.$$
+\end{ex}
+\end{frame}
+\begin{frame}
+ \begin{Rem} Si
+$\lim\limits_{n\to+\infty }u_n= l$, $\lim\limits_{n\to+\infty
+}w_n=l'$, et $l \neq l'$, on ne peut rien dire de $v_{n}.$ 
+ \end{Rem}
+ \pause
+\begin{ex}
+$$u_{n}=-2+\frac{1}{n},\hspace{5mm} w_{n}=2+\frac{1}{n}.$$
+$$\lim\limits_{n\to+\infty }u_n= -2,\hspace{5mm}
+\lim\limits_{n\to+\infty }w_n= 2\hspace{5mm}$$ $ \mbox{Si on
+prend}\hspace{5mm} v_{n}=\frac{1}{n}, \hspace{5mm}\mbox{on a:}
+\lim\limits_{n\to+\infty }v_n= 0$ et
+$u_{n} \leq v_{n} \leq w_{n}.$\\
+$ \mbox{Si on prend}\hspace{5mm} v_{n}=(-1)^{n}$ n'a pas de
+limite bien que:
+  $u_{n} \leq
+v_{n} \leq w_{n}.$
+\end{ex}
+\end{frame}
+\begin{frame}
+\textbf{Exercice.}
+Déterminer par comparaison (théorème de gendarme) la limite, si celle-ci existe, des suites suivantes
+$$u_n=1+\dfrac{\sin(n^2)}{n+1},~~v_n=\dfrac{2n+(-1)^n}{2n+1},~~w_n=\dfrac{n^2+(-1)^n\sqrt{n}}{n^2+n+1}.$$
+Remarquer que $-1\leqslant (-1)^n \leqslant 1$ pour tout $n\in \N$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{frame}
+\begin{frame}
+\subsection {Suites adjacentes}
+\index{suite! --- adjacente}
+\begin{dfn} On dit que deux suites r\'eelles $(u_n)$ et $(v_n)$ sont
+adjacentes si:\\
+1. La suite $(u_n)$ est croissante.\\
+2. La suite $(v_n)$ est d\'ecroissante.\\
+3. La suite $(u_n-v_n)$ converge vers 0.
+\end{dfn}
+\pause
+\begin{ex}
+$u_n=\dfrac{-1}{n}$ et $v_n=\dfrac{1}{n}$ 
+sont deux suites adjacentes, car la première est croissante, la seconde est décroissante et leur différence est nulle.
+\end{ex}
+\end{frame}
+\begin{frame}
+\begin{Propr} Si $(u_n)$ et $(v_n)$ sont deux suites adjacentes alors elles
+convergent vers la m\^eme limite.
+\end{Propr}
+\pause
+\textbf{Exercice.} On considère les suites $(u_n)$ et $(v_n)$ définies comme suit 
+$$u_{n}=1+1+\dfrac{1}{2!}+\dfrac{1}{3!}+...+\frac{1}{n!},~~ v_{n}=u_n+\frac{1}{n n!}$$
+$$u_{n}=\sum_{k=1}^{n}\dfrac{1}{k^2},~~ v_{n}=u_n+\frac{1}{n}$$
+$$u_{n}=\sum_{k=1}^{n}\dfrac{1}{k^3},~~ v_{n}=u_n+\frac{1}{n^2}$$
+Montrer que les suites ($u_n)$ et $(v_n)$  sont adjacentes.
+\end{frame}
+\begin{frame}{Suites arithm\'etiques}
+\section{Suites arithm\'etiques} \index{suite!--- arithmétique}
+\begin{dfn}
+Une suite $(u_n)$  est dite arithm\'etique s'il existe un r\'eel
+$r$ tel que, pour tout entier naturel $n$ $$ u_{n+1} - u_n= r.$$
+Le nombre r\'eel $r$ est appel\'e la raison de la suite
+arithm\'etique $(u_n)$.\end{dfn}
+\end{frame}
+\begin{frame}
+\begin{ex} \text{ }\\
+\begin{itemize}
+\item La suite $(u_n)$ définie par : $u_n=7-9n$ est une suite arithmétique. En effet :
+ $$u_{n+1}-u_n =7-9(n+1)-7+9n=7-9n-9-7+9n= -9.$$
+ La différence entre un terme et son précédent reste constante et égale à $-9$.
+ $(u_n)$ est une suite arithmétique de raison $-9$.
+ \pause
+ \item La suite $(v_n)$ définie par : $v_n=n^2 + 3$ est-elle arithmétique ?
+ $$ v_{n+1} - v_n = (n + 1)^2+ 3- n^2 - 3 = n^2 + 2n + 1+ 3- n^2 - 3 = 2n + 1.$$
+ La différence entre un terme et son précédent ne reste pas constante.
+ $(v_n)$ n'est pas une suite arithmétique.
+\end{itemize}
+\end{ex}
+\end{frame}
+\begin{frame}
+\begin{Propr} Si $(u_n)$ est une suite arithm\'etique de
+raison r, alors $$u_n= u_0 +nr \quad\mbox{pour tout}\quad n \in
+\mathbb{N}.$$
+\end{Propr}
+\pause
+\textbf{Exercice.}
+Considérons la suite arithmétique $(u_n)$ tel que $u_5=7$ et $u_9 = 19$.
+\begin{enumerate}
+\item Déterminer la raison et le premier terme de la suite $(u_n)$.
+\item Exprimer $u_n$ en fonction de $n$. 
+\end{enumerate}
+\end{frame}
+\begin{frame}
+\begin{Rem} Soit $(u_n)$ une suite arithm\'etique de
+raison r. \\ Si $r=0$ la suite $(u_n) $ est constante. \\ Si
+$r>0$, la suite $(u_n) $ est strictement croissante.\\ Si $r<0$,
+la suite $(u_n) $ est strictement d\'ecroissante.
+\end{Rem}
+\pause
+\begin{Propr} Soit $(u_n)$ une suite arithm\'etique de raison r,
+alors:
+ $$ S_n= u_0+ u_1+\ldots+u_n=(n+1)\frac{u_0+u_n}{2}=(n+1)\frac{2u_0+nr}{2}$$
+\end{Propr}
+\pause
+\begin{Rem} Si le premier terme de la suite est $u_1$, alors $$S_n=n\frac{u_1+u_n}{2}.$$
+\end{Rem}
+\end{frame}
+\begin{frame}
+\begin{ex}
+\begin{itemize}
+\item La suite $(u_n)$ d\'efinie par $u_n=n$ est arithm\'etique
+de raison 1 donc: $$S_n= 1+ 2+.... +n=\dfrac{n(n+1)}{2}.$$ 
+\item La
+suite $(u_n)$ d\'efinie par $u_n=2n+1$ est arithm\'etique de
+raison 2 donc: $$S_n= 1+ 3+....
++(2n+1)=\frac{(n+1)(1+2n+1)}{2}=(n+1)^2.$$
+\end{itemize}
+\end{ex}
+\end{frame}
+\begin{frame}
+\textbf{Exercice.} 
+$(u_n)$ est une suite arithmétique de premier terme $u_0 = 3$ et de raison $10$.
+\begin{itemize}
+\item Donner le terme général de $(u_n)$ et calculer $u_{20}$ .
+\item Calculer la somme $S_{20}=u_0+u_1+...+u_{20}$. 
+\end{itemize}
+\pause
+\textbf{Exercice.} 
+Soit $(u_n)$ la suite défini sur $\N$, par 
+$$ u_{n+1}=u_n+3,~~\text{ et }~~u_0=1$$
+\begin{itemize}
+\item Justifier que cette suite est arithmétique.
+\item Calculer $u_1$, $u_2$, et $u_3$.
+\item Calculer $u_n$ en fonction de $n$.
+\item 	A partir   de quel rang la suite $u_n$ est elle supérieur ou égale à $100$.
+\end{itemize}
+\end{frame}
+\begin{frame}{Suites g\'eom\'etriques}
+\section{Suites g\'eom\'etriques} \index{suite!--- géométrique}
+\begin{dfn}
+Une suite $(u_n)$ est dite g\'eom\'etrique s'il existe un r\'eel
+$q$ tel que, pour tout entier naturel $n$, $$ u_{n+1} =qu_n$$ Le
+nombre r\'eel $q$ est appel\'e la raison de la suite
+g\'eom\'etrique $(u_n)$.\end{dfn}
+\pause
+\begin{ex}
+La suite $(u_n)$ définie par : $u_n = 3\times 5^n$ est-elle géométrique ?
+$$\dfrac{u_{n+1}}{u_n}= \dfrac{3\times 5^{n+1}}{3\times 5^n}= 5.$$
+Le rapport entre un terme et son précédent reste constant et égale à $5$.\\
+$(u_n)$ est une suite géométrique de raison $5$ et de premier terme $u_0 = 3\times 5^0 = 3.$
+\end{ex}
+\end{frame}
+\begin{frame}
+\textbf{Exercice.} Montrer que ces suites sont géométriques, et préciser leur raison et leur premier terme. 
+$$u_n=(-4)^{2n+1},~~v_n=2^n\times\dfrac{1}{3^{n+1}},~~w_n=(-1)^n\times 2^{3n+1}.$$
+\pause
+\begin{Rem}
+ Si $q=0$ tous les
+termes de la suite sont nuls sauf, peut \^etre, $u_0$. Nous
+supposerons dans la suite que $q\ne 0$.
+\end{Rem} 
+\end{frame}
+\begin{frame}
+\begin{Propr}
+Soit $(u_n)$ une suite g\'eom\'etrique de raison $q$, alors:
+$$u_n= q^nu_0\ \ \mbox{pour tout }\ \ n \in \mathbb{N}.$$
+\end{Propr}
+\end{frame}
+\begin{frame}
+\textbf{Exercice.}
+Considérons la suite géométrique $(u_n)$ tel que $u_4=8$ et $u_7=512$.
+\begin{enumerate}
+\item Déterminer la raison et le premier terme de la suite $(u_n).$
+\item Exprimer $u_n$ en fonction de $n$. 
+\end{enumerate}
+\pause
+\begin{Propr}
+Soit $(u_n)$ une suite g\'eom\'etrique de raison $q$, alors:
+ %\beq
+ $$ S_n = u_0+ u_1+\cdots+u_n=u_0\frac{1-q^{n+1}}{1-q}\quad\mbox{si}
+ \quad q\ne 1$$
+$$S_n =(n+1)u_0\quad\mbox{si}\quad q=1 .$$%\enq
+En particulier, si \
+$0<|q|<1$ \ alors
+$\lim\limits_{n\rightarrow+\infty}S_n=u_0\dfrac{1}{1-q}.$
+\end{Propr}
+\end{frame}
+\begin{frame}
+\textbf{Exercice.}
+On considère la suite $(u_n)$ de réels strictement positifs, définie par : $u_0=2$, et pour tout $n\in \N$, $\ln(u_{n+1})=1+\ln(u_n)$.
+\begin{itemize}
+\item Exprimer $u_{n+1}$ en fonction de $u_{n}$ et préciser la nature de la suite $u_n$. 
+\item Déterminer la monotonie de la suite $u_n$, et préciser sa limite.
+\item Exprimer la somme $\sum_{k=0}^{n}u_k$ en fonction de $n$.
+\end{itemize} 
+\end{frame}
+%--------------------------------
+\end{document}

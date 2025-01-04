@@ -1,0 +1,8 @@
+\beamer@endinputifotherversion {3.26pt}
+\select@language {french}
+\beamer@sectionintoc {1}{Ensembles de nombres}{8}{0}{1}
+\beamer@subsectionintoc {1}{1}{Nombres entiers naturels}{8}{0}{1}
+\beamer@subsectionintoc {1}{2}{Nombres entiers relatifs}{85}{0}{1}
+\beamer@subsectionintoc {1}{3}{Nombres d\'ecimaux, p\'eriodiques et rationnels}{93}{0}{1}
+\beamer@sectionintoc {2}{Nombres r\'eels}{108}{0}{2}
+\beamer@subsectionintoc {2}{1}{Approximation}{122}{0}{2}

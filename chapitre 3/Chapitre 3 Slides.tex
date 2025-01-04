@@ -1,0 +1,554 @@
+\documentclass[leqno,10pt,tick,mathserif,xcolor=dvipsnames,oneside,fleqn]{beamer}
+%\documentclass[slidestop,usepdftitle=false]{beamer}
+%\documentclass[leqno,10pt,tick,mathserif,xcolor=dvipsnames]{beamer}
+%\usepackage{xcolor}
+\usepackage{etex}
+\reserveinserts{28}
+\usepackage[all]{xy}
+\usepackage[latin1]{inputenc}
+\usepackage[frenchb]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{frcursive}
+\usepackage{pdftricks}
+\usepackage{palatino}
+%\input{../preamb-pres.tex}
+%\beamertemplateshadingbackground{white!30}{white!100}
+%\usepackage{beamerthemeshadow}
+%\usepackage{beamerthemesplit}
+\usepackage{hyperref}
+%\usetheme{Warsaw}
+%\documentclass{beamer}
+
+%\usetheme{Blackboard}
+%\usetheme{Copenhagen}
+%\usetheme{S}
+\usepackage{dsfont}
+\usepackage{hyperref}
+\everymath{\displaystyle}
+\usecolortheme{crane}
+\usecolortheme{beaver}
+%%%%%%%%%%%%%%%%%%%pour la gaune%%%%%%%%%%%%%%%%%%%%%
+%\useinnertheme[shadow=true]{rounded}
+%\useoutertheme{infolines}
+%\usecolortheme{wolverine}
+%\setbeamerfont{block title}{size={}}
+%\setbeamercolor{titlelike}{parent=structure,bg=yellow!85!orange}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{beamertexpower}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{amsmath,amssymb,amsfonts}
+% Beamer class for the ENST de Bretagne (GET/ ENST B)
+
+% based on the work done by  Madhusudan Singh for NCSU
+
+% modified by Gilles Bertrand
+
+% December 2006
+
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+
+\def \K {\mathbb{K} }
+\def \S {\mathbb{S} }
+\def \L {\mathbb{L} }
+\def \N {\mathbb{N} }
+\def \Z {\mathbb{Z} }
+\def \Q {\mathbb{Q} }
+\def \R {\mathbb{R} }
+\def \C {\mathbb{C} }
+\def \F {\mathfrak{F}}
+\def \B {\mathfrak{B}}
+\def \O {\mathfrak{O}}
+\def \U {\mathfrak{U}}
+\usepackage{tablists}
+\mode <all>
+\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+
+%\usepackage{epsfig,psfig}
+%ENSEMBLES USUELS
+\newcommand{\field}[1]{\mathbb{#1}}
+\newcommand{\rrr}{\field{R}}
+\newcommand{\nnn}{\field{N}}
+\newcommand{\zzz}{\field{Z}}
+\newcommand{\kkk}{\field{K}}
+\newcommand{\qqq}{\field{Q}}
+\usepackage{graphicx,float,placeins,subfigure}
+%pour importer des grahes construit Ã  partir de geogebra
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+%couleur des paragraphes
+%\usepackage{sectsty}
+%FIN DE LA DECLARATION DES FONTES ENSEMBLES USUELS
+\definecolor{orange}{rgb}{0.99,0.69,0.07}
+\definecolor{red}{rgb}{1,0,0}
+%\definecolor{blue}{rgb}{0,0,2}
+\newcommand{\blue}{\color{blue}}
+\newcommand{\green}{\color{green}}
+\newcommand{\red}{\color{red}}
+\newcommand{\brown}{\color{brown}}
+\newcommand{\white}{\color{white}}
+\newcommand{\yellow}{\color{yellow}}
+%\beamertemplatetransparentcovereddynamic
+\newcommand{\Lang}[1]{\operatorname{\text{\textsc{#1}}}}
+\newcommand{\Class}[1]{\operatorname{\mathchoice
+{\text{\sf \small #1}} {\text{\sf \small #1}}
+  {\text{\sf #1}}
+{\text{\sf #1}}}}
+%\newcommand{\R}{I\!\!R}
+%\newcommand{\N}{I\!\!N}
+\newcommand{\NumSAT}      {\text{\small\#SAT}}
+\newcommand{\NumA}        {\#_{\!A}}
+\newcommand{\barA}        {\,\bar{\!A}}
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\Set}[1]{\{#1\}}
+\newtheorem{proposition}{Proposition}[section]
+%\newtheorem{property}[proposition]{PropriÃƒÂ©tÃƒÂ©}
+%\renewtheorem{corollary}[proposition]{Corollaire}
+
+%\usetheme{Warsaw}
+%\usetheme{Frankfurt}
+%\usetheme{Antibes}
+%\usetheme{JuanLesPins}
+%\usetheme{Berkeley}
+\usetheme{CambridgeUS}
+%\usetheme[secheader]{Boadilla}
+%\usetheme[secheader]{Madrid}
+%\usetheme{AnnArbor}
+%\usetheme[compress]{berlin}
+%\usetheme{Warsaw}
+%\usetheme{Luebeck}
+%\usecolortheme{seahorse}
+\newtheorem{ex}{Exemple}[section]
+\usecolortheme{wolverine}
+\theoremstyle{plain}
+\newtheorem{Thm}{{\textbf{Théorème}}}[section] 
+\newtheorem*{theoreme*}{{Théorème}}
+\newtheorem{Prop}{\textbf{Proposition}}[section]
+\newtheorem*{proposition*}{Proposition}
+\newtheorem{Cor}{\textbf{Corollaire}}[section]
+\newtheorem*{corollaire*}{Corollaire}
+\newtheorem{Lem}{\textbf{Lemme}}[section]
+\newtheorem*{lemme*}{Lemme}
+\newtheorem{Defs}{\textbf{Définitions}}[section]
+\newtheorem{Def}{\textbf{Définition}}[section]
+\newtheorem{Rem}{\textbf{Remarque}}[section]
+\newtheorem{Propr}{\textbf{Propriétés}}[section]
+%--------------------------------------------------
+\setbeamercolor{block title example} {fg=violet,bg=purple!50}
+\setbeamercolor{block title } {fg=violet,bg=piggypink}
+\setbeamercolor{block title alerted} {fg=teal,bg=teal!40}
+\pgfdeclaremask{tu}{beamer-tu-logo-mask}
+%\pgfdeclaremask{computer}{beamer-computer-mask}
+%\pgfdeclareimage[interpolate=true,mask=computer,height=4cm]{computerimage}{beamer-computer}
+%\pgfdeclareimage[interpolate=true,mask=computer,height=2cm]{computerworkingimage}{beamer-computerred}
+%\pgfdeclareimage[mask=tu,height=0.6cm]{logo}{ts_logo}
+%\pgfdeclareimage[height=0.6cm]{logo}{es} \logo{\pgfuseimage{logo}}
+\everymath{\displaystyle}
+% % % % % % % % % % %ù
+% % % % % % % % % %
+
+\title[Mathématique 1]{\textbf{\textcolor{red}{ Module:  Mathématique 1}}\vspace{0.4cm}\\\textbf{Chapitre 3: Calcul d'intégrale}}
+\author{\textbf{Prof. Mohammed SRATI}}
+
+\institute[ENS-Fès]
+{
+\medskip\medskip
+\textbf{{Licence d'Éducation \\ Spécialité: Enseignement Primaire}}}
+\date{30-11-2022}
+
+\begin{document}
+\begin{frame}
+	\begin{center}  \vspace*{-0.3cm}  
+			\includegraphics[width=10cm, height=1.4cm]{logo}
+	\vspace*{-0.5cm}	\end{center}
+\titlepage
+\end{frame}
+%----------------------------------
+
+%--------------------------------
+
+%----------------------------------
+
+%--------------------------------
+
+\begin{frame}
+\frametitle{Sommaire}
+\textbf{3. Calcul d'intégrale}
+
+\begin{itemize}
+\item Primitive d'une Fonction
+\item Intégrale d'une Fonction Continue 
+\item Propriétés de l'Intégrale Simple
+\item Méthodes pour calculer les intégrales classiques
+\end{itemize}
+%2.3.	Calcul d'intégrale
+%\begin{itemize}
+%\item	Fonction primitive
+%\item	Surface et fonction primitive d'une fonction continue (fonction constante et positive sur un intervalle - fonction affine positive sur un intervalle - ...)
+%\item	Intégrale d'une fonction continue
+%\item	Calcul des volumes, calcul de la masse
+%\item	Vitesse et distance
+%\end{itemize}
+\end{frame}
+%%----------------------------------
+
+%--------------------------------
+
+
+%--------------------------------
+
+ \section{Primitive d'une Fonction}
+\begin{frame}
+\begin{Def}
+Soit $f$ une fonction définie sur un intervalle $I$ de $\R$.
+On appelle primitive de $f$ sur $I$;, toute fonction $F$ définie sur $I$ telle que $F$ est dérivable
+et $F'(x) = f(x)$ pour tout $x \in I$.
+\end{Def}
+\pause
+ \textbf{\textcolor{blue}{Exemples:}}\\\vspace{0.2cm}
+\begin{itemize}
+\item La fonction $x\mapsto lnx + x^3 + x + 1$ est une primitive de $x\mapsto \dfrac{1}{x}+3x^2 + 1$ sur $]0, +\infty[$. \pause
+\item La fonction $x \mapsto e^x - 1$ est une primitive de $x\mapsto e^x$ sur $\R$.
+\end{itemize}
+\end{frame}
+\begin{frame}
+\begin{theorem}
+Soit $I$ un intervalle r\'{e}el et $x_{0}\in I$ un r\'{e}el.
+\begin{itemize}
+\item[$\bullet$] Toute fonction r\'{e}elle $f$ continue sur $I$ admet une primitive sur $I.$\pause
+
+\item[$\bullet$] Si $f$ admet une primitive $F$ sur $I$ alors $f$ admet une infinit\'{e} de primitives sur $I$ qui s'\'{e}crivent $F(x)+k$ avec $k$ un r\'{e}el quelconque.\pause
+
+\item[$\bullet$] Si $\mathrm{k}$ est un r\'{e}el quelconque et $f$ une fonction r\'{e}elle alors: il existe une seule et unique primitive de $f$ sur $I$ v\'{e}rifiant: $F(x_{0})=k.$
+\end{itemize}
+\end{theorem}
+\begin{ex}
+
+D\'{e}terminer la primitive $F$ sur $\R$ de $f(x)=3x^{2}+2x$ v\'{e}rifiant: $F(1)=-3.$\\ \pause La fonction: $x\mapsto x^{3}+x^{2}$ est une primitive de $f$ sur $\R$. \pause Donc d'apr\'{e}s ce qui pr\'{e}c\'{e}de $F(x)=x^{3}+x^{2}+k$, calculons $k$? \pause D'apr\'{e}s la condition de l'\'{e}xercice $F(1)=-3$ on \'{e}crit alors: $1^{3}+1^{2}+k=-3$.\\ \pause
+Par cons\'{e}quent: $2+k=-3$ d'o\'{u}: $k=-5.$
+La primitive qu'on cherche est $F(x)=x^{3}+x^{2}-5.$
+\end{ex}
+\end{frame}
+
+\begin{frame}
+\begin{Propr}
+Soient $f$ et $g$ deux fonctions continues sur un intervalle r\'{e}el $I$ et $k$ un r\'{e}el. \pause
+\begin{itemize}
+\item Si $F$ et $G$ sont les primitives sur $I$ de $f$ et $g$ respectivement, alors: $F+G$ est une primitive de la fonction $f+g$ sur $I.$ \pause
+\item Si $F$ est une primitive de $f$ sur $I$ alors: $kF$ est une primitive de la fonction $kf$ sur $I.$
+\end{itemize}
+\end{Propr}
+\end{frame}
+\begin{frame}
+\begin{ex}\text{  }\\
+\begin{itemize}
+\item[(a)] Consid\'{e}rons la fonction $h(x)=\displaystyle \frac{-1}{x^{2}}+sinx$ cherchons une primitive de la fonction  $h$ sur $[1, 5]$.\\ \pause
+La fonction $F(x)=\dfrac{1}{x}$ une primitive de la fonction $x\displaystyle \mapsto\frac{-1}{x^{2}}$ sur $[1, 5]$.\\ \pause
+La fonction $G(x)=-cosx$ est une primitive de la fonction $x\mapsto sinx$ sur $[1, 5]$.\\ \pause
+donc : $F(x)+G(x)=\displaystyle \frac{1}{x}-cosx$ est une primitive de la fonction $h$ sur $[1, 5]$. \pause
+\item[(b)] Cherchons une primitive de la fonction $f(x)=\displaystyle \frac{\sqrt{3}}{1+x^{2}}$ sur $\R$.\\ \pause
+On sait que: $x\mapsto \displaystyle \frac{1}{1+x^{2}}$ est la d\'{e}riv\'{e}e de la fonction $arctg$ \pause donc: $F(x)=\sqrt{3}arctg$ est une primitive de la fonction $f$ sur $\R$.
+\end{itemize}
+\end{ex}
+\end{frame}
+\begin{frame}{Intégrale d'une Fonction Continue}
+\begin{Def}
+Soit $f$ une fonction continue sur un intervalle $[a,\ b]$ de $\mathbb{R}$ et $F$ une primitive de $f$ sur $[a,\ b].$
+On appelle int\'{e}grale de $f$ de $a$ \`{a} $b$, le r\'{e}el noté $\displaystyle\int_{a}^{b}f(t)dt$ d\'{e}ni par : \pause
+$$
+\int_{a}^{b}f(t)dt=[F(t)]_{a}^{b}=F(b)-F(a)\ .
+$$
+\end{Def} 
+\end{frame}
+\begin{frame}
+\begin{ex}
+Calculons l'int\'{e}grale suivante: $\displaystyle \int_{1}^{5}\frac{-1}{t^2}dt.$ \pause
+La fonction int\'{e}gr\'{e}e est : $f(t)=\displaystyle \frac{-1}{t^{2}}$ et on sait que $t\displaystyle \mapsto\frac{-1}{t^{2}}$ est la d\'{e}riv\'{e}e de la fonction $t\displaystyle \mapsto\frac{1}{t}$, \pause d'o\'{u}: $F(t)=\displaystyle \frac{1}{t}$ est une primitive de la fonction $f$ sur $[1, 5]$.\\ \pause
+En appliquant la d\'{e}finition pr\'{e}c\'{e}dente on trouve: 
+$$
+\int_{1}^{5}\frac{-1}{t^{2}}dt=\ \left[ \frac{1}{t}\right]_{1}^{5}=F(5)-F(1)=\frac{1}{5}-1=\frac{-4}{5}
+$$
+\end{ex}
+\end{frame}
+\begin{frame}{Interprétation Géométrique et aire}
+Soit $f$ une fonction continue sur un intervalle $[a;b]$ et $C_f$ sa courbe repr\'{e}sentative dans un rep\`{e}re $(O;\vec{i};\vec{j})$ .
+On appelle int\'{e}grale de $a$ \`{a} $b$ de la fonction $f$ la mesure de l'aire de la surface de partie hachur\'{e}e du plan d\'{e}limit\'{e}e par l'axe des abscisses, les droites d'\'{e}quations $x=a$ et $x=b$ et la courbe $C_f$.\\ \pause
+\begin{center}
+\includegraphics[width=45.62mm,height=50.37mm]{./int1}\end{center}
+\end{frame}
+\begin{frame}
+Une aire est une mesure de surface qui est toujours \textbf{positive}. \pause Nous avons jusque à présent
+rencontré des fonctions dont le graphe était situé au-dessus de l'axe des $x$. Pour ces cas, on a vu
+que l'intégrale définie $\int_{a}^{b}f(t)dt$ était positive (l'adjectif définie indique que les bornes $a$ et $b$ ont
+des valeurs fixées). La situation est différente dans le cas où la courbe se situe sous l'axe des $ox$. \pause En
+effet, dans ces cas, la valeur de $f(x)$ prise pour calculer la hauteur des rectangles est négative et
+le résultat que nous calculons est \textbf{l'opposé} de l'aire des rectangles concernés. La relation
+entre l'aire $A$ et la valeur de l'intégrale $\int_{a}^{b}f(t)dt$ est donnée ci-dessous :
+\end{frame}
+\begin{frame}
+\begin{center}
+\includegraphics[width=89.62mm,height=84.37mm]{./int2}\end{center}
+\end{frame}
+\begin{frame}
+\begin{ex}
+ Calculer l'aire de la surface d\'{e}limit\'{e}e par la parabole $x\mapsto x^{2}$, pour $x\in[-1,1].$
+\end{ex}
+\end{frame}
+\begin{frame}{Propriétés de l'Intégrale Simple}
+\begin{Propr}
+ Soit $f$ une fonction continue sur un intervalle $[a,\ b]$. Alors: \pause
+ \begin{itemize}
+  \item[$\bullet$] $\displaystyle \int_{a}^{b}f(t)dt=-\int_{b}^{a}f(t)dt.$ \pause
+\item[$\bullet$] $\displaystyle \int_{a}^{a}f(t)dt=0$.
+ \end{itemize}
+\end{Propr} \pause
+\begin{Propr}
+Soient $f, g$ deux fonctions continues sur $[a,\ b]$ et $\alpha$ un r\'{e}el. Alors, \pause
+$$
+\int_{a}^{b}( f(t)+ g(t))dt=\int_{a}^{b}f(t)dt+\int_{a}^{b}g(t)dt
+$$
+\pause
+$$
+\int_{a}^{b}( \alpha f(t))dt=\alpha\int_{a}^{b} f(t)dt
+$$
+\end{Propr}
+\end{frame}
+\begin{frame}
+\begin{Propr} (Relation de Chasles)\\
+Soit $f$ une fonction continue sur un intervalle $I$ et $a, b, c$ des \'{e}l\'{e}ments de  $I$. Alors,\pause
+$$
+\int_{a}^{b}f(t)dt=\int_{a}^{c}f(t)dt+\int_{c}^{b}f(t)dt
+$$
+\end{Propr}
+ \textbf{\textcolor{blue}{Exemples:}}\\\vspace{0.2cm}
+1) Calculer $J=\displaystyle \int_{-2}^{2}|t-1|dt.$
+\pause
+ En utilisant la relation de Chasles, on a
+$$ \begin{aligned}
+J=\int_{-2}^{2}|t-1|dt&=\int_{-2}^{1}|t-1|dt+\int_{1}^{2}|t-1|dt\\
+&=\int_{-2}^{1}(1-t)dt+\int_{1}^{2}(t-1)dt\\
+&=\left[ t-\frac{t^{2}}{2}\right]_{-2}^{1}+\left[ \frac{t^{2}}{2}-t\right]_{1}^{2}\\
+&=5
+ \end{aligned}$$
+ Par l'int\'{e}grale suivante on va montrer l'utilit\'{e} de la relation de chales.
+ \end{frame}
+ \begin{frame}
+2) Calculer $I=\displaystyle \int_{0}^{4}|t^{2}-3t+2|dt.$\\ \pause
+  Pour calculer cette int\'{e}grale il faut trouver une primitive de la fonction int\'{e}gr\'{e}e et pour cela il faut enlever la valeur absolue!!!\\ \pause
+ Pour ce fait nous allons \'{e}tudier le signe de la fonction $t\mapsto t^{2}-3t+2$ sur $[0,4].$ On commence par r\'{e}soudre l'\'{e}quation $t^{2}-3t+2=0$, \pause les solutions sont $1$ et $2$ et en donnant le tableau de signe du polyn\^{o}me $t^{2}-3t+2$ on trouve que \pause
+ 
+ $t^{2}-3t+2\leq 0$ sur $[1, 2]$.
+ 
+ $t^{2}-3t+2\geq 0$ sur $]-\infty, 1]\cup[2, +\infty[.$\\ \pause
+ Comme le polyn\^{o}me change de signe sur $[0,4]$ et que $[0,4]=[0,1]\cup[1,2]\cup[2,4]$, sur chaque int\'{e}rvalle des trois la fonction int\'{e}gr\'{e}e aura un signe constant!!. On \'{e}crit alors:
+ $$I=\displaystyle \int_{0}^{4}|t^{2}-3t+2|dt=\int_{0}^{1}(t^{2}-3t+2)dt+\int_{1}^{2}-(t^{2}-3t+2)dt+\int_{2}^{4}(t^{2}-3t+2)dt$$ et en calculons une primitive pour chaque int\'{e}grale on trouve la valeur de l'int\'{e}grale. Le calcul est simple je vous laisse le soin de le faire.
+ \end{frame}
+ \begin{frame}
+\begin{Propr}\label{int2}
+Si $f$ et $g$ sont deux fonctions continues sur $[a,\ b].$ \pause
+
+$\bullet f\geq 0$ {\it sur} $[a,\displaystyle \ b]\Rightarrow\int_{a}^{b}f(t)dt\geq 0.$ \pause
+
+$\bullet f\displaystyle \leq g$ sur $[a,\ b]\Rightarrow\int_{a}^{b}f(t)dt\leq\int_{a}^{b}g(t)dt.$ \pause
+
+$\bullet |\displaystyle \int_{a}^{b}f(t)dt|\leq\int_{a}^{b}|f(t)|dt.$
+\end{Propr}
+\begin{theorem}
+Soit $f$ une fonction r\'{e}elle d\'{e}finie  sur $[a,\ b].$ \pause
+\begin{itemize}
+\item[$\bullet$] Si $m\leq f(x)\leq M, \forall x\in[a,\ b]$ alors: $m(b-a)\displaystyle \leq\int_{a}^{b}f(x)dx\leq M(b-a)$ \pause
+ \item[$\bullet$] Si $|f(x)|\leq M$ $\forall x\in[a,\ b]$ alors : $|\displaystyle \int_{a}^{b}f(t)dt|\leq M(b-a)$. \pause
+\end{itemize}
+\end{theorem}
+ \end{frame}
+ \begin{frame}
+ \textbf{\textcolor{blue}{Preuve:}}\\\vspace{0.2cm}
+$\bullet$ Si $m\leq f(x)\leq M$, la double in\'{e}galit\'{e} est conserv\'{e}e par passage au signe int\'{e}grale d'apr\'{e}s la Propri\'{e}t\'{e}s \ref{int2} ci-dessus et on a:
+$$
+\int_{a}^{b}mdx\leq\int_{a}^{b}f(x)dx\leq\int_{a}^{b}Mdx.
+$$ \pause
+D'une part:
+
+$$\displaystyle \int_{a}^{b}mdx=m \displaystyle \int_{a}^{b} 1.dx=m[1]_{a}^{b}=m.(b-a)$$ (car: $m$ est une constante).\\ \pause
+de même :
+$$\displaystyle \int_{a}^{b}Mdx=M. \displaystyle \int_{a}^{b} 1.dx=M[1]_{a}^{b}=M.(b-a)$$ (car: $M$ est une constante). Finalement on trouve:
+$$
+m.(b-a)\leq\int_{a}^{b}f(x)dx\leq M.(b-a)
+$$
+\end{frame}
+ \begin{frame}
+$\bullet$ Pour d\'{e}montrer le deuxi\'{e}me r\'{e}sultat de ce Th\'{e}or\`{e}me on va faire appelle une fois de plus {\it \`{a}} la propri\'{e}t\'{e}s \ref{int2} ci-dessus : \pause
+
+$$|\displaystyle \int_{a}^{b}f(x)dx|\leq\int_{a}^{b}|f(x)|dx.$$
+et d'autre on a: \pause
+$$
+|f(x)|\leq M,\ \forall x\in[a,\ b]\Rightarrow\int_{a}^{b}|f(x)|dx\leq\int_{a}^{b}Mdx=M(b-a)
+$$ \pause
+donc: $$|\displaystyle \int_{a}^{b}f(x)dx|\leq\int_{a}^{b}|f(x)|dx\leq M(b-a).$$ 
+Le th\'{e}or\`{e}me est d\'{e}montr\'{e}.
+\end{frame}
+ \begin{frame}
+\begin{theorem}(Th\'{e}or\`{e}me de la moyenne)
+Si $f$ est une fonction r\'{e}elle continue sur $[a.b]$, alors:
+$\exists c\in]a, b[$ {\it tel que} $$f(c)=\displaystyle \frac{1}{(b-a)}\int_{a}^{b}f(x)dx$$
+$m:=f(c)$ est appelé valeur moyenne de f sur  l'intervalle $[a.b]$.
+\end{theorem} \pause
+\begin{ex}
+Soit $f(x)=3x-2$, déterminons la moyenne de $f$ sur $[1, \ 4]$.\\
+$$
+\begin{aligned}
+m&=\displaystyle \frac{1}{(4-1)}\int_{1}^{4}3x-2dx\\
+&=\dfrac{1}{3}\left[ \dfrac{3}{2}x^2-2x\right]_1^4\\
+&=5,5
+\end{aligned}
+$$
+Or $f(1)=1$ et $f(4)=10$. $5,5$ est la moyenne entre $1$ et $10$. 
+\end{ex}
+\end{frame}
+ \begin{frame}
+\begin{theorem}
+Si $f$ est continue sur $[a,\ b]$ alors:\\
+la fonction $F(x)=\displaystyle \int_{a}^{x}f(t)dt$ est d\'{e}rivable sur $[a,\ b].$ De plus: $F'(x)=f(x), \forall x\in[a,\ b].$
+\end{theorem}
+\end{frame}
+ \begin{frame}
+\begin{ex}
+Soit $f(t)=\displaystyle \frac{t}{t^{2}+1}$ d\'{e}finie sur $[1, 5]$. Chercher la primitive de $f$ d\'{e}finie sur $[1, 5]$ et qui s'annule au point $1$. \pause
+ D'apr\'{e}s la d\'{e}finition ci-dessus la primitive de $f$ sur $[1, 5]$ qui s'annule au point $1$ est donn\'{e}e par: \pause
+$$
+F(x)=\int_{1}^{x}\frac{t}{t^{2}+1}dt,\ \forall x\in[1,5]
+$$ \pause
+Et: $$\displaystyle \int_{1}^{x}\frac{t}{t^{2}+1}dt= [\displaystyle \frac{1}{2}ln(t^{2}+1)]_{1}^{x}=\frac{1}{2}(ln(x^{2}+1)-ln(2))$$ \pause
+D'o\'{u}: $F(x)=ln(x^{2}+1)-ln(2)$ , $\forall x\in[1,5]$ (effectivement $F(1)=0$).
+De plus d'apr\'{e}s le th\'{e}or\`{e}me pr\'{e}c\'{e}dent on a : $F'(x)=\displaystyle \frac{x}{x^{2}+1}\ \forall x\in[1,5].$
+\end{ex}
+\end{frame}
+ \begin{frame}{Méthodes pour calculer les intégrales classiques}
+En g\'{e}n\'{e}rale il ya 3 principales m\'{e}thodes pour calculer une int\'{e}grale classique: \pause
+
+$\bullet$ M\'{e}thode de la primitive. \pause
+
+$\bullet$ M\'{e}thode d'int\'{e}gration par parties. \pause
+
+$\bullet$ M\'{e}thode de changement de variable.
+\subsection*{M\'{e}thode de la primitive:}
+\begin{theorem}(Th\'{e}or\`{e}me fondamentale de l'int\'{e}gration)\\
+Soit $f$ une fonction continue sur $[a,\ b]$ et $F$ une primitive de $f$ sur $[a,\ b],$ alors:
+$$
+\int_{a}^{b}f(t)dt=[F(t)]_{a}^{b}=F(b)-F(a)\ .
+$$
+\end{theorem}
+\end{frame}
+ \begin{frame}
+\begin{ex}
+Calculons les int\'{e}grales suivantes: $I=\displaystyle \int_{0}^{1}\frac{5}{t^{2}+1}dt$ et $J=\displaystyle \int_{1}^{2}\frac{1}{t}dt.$
+\pause
+$I=\displaystyle \int_{0}^{1}\frac{5}{t^{2}+1}dt=5\int_{0}^{1}\frac{1}{t^{2}+1}dt$, \pause or on sait que  $arct g' (t)=\displaystyle \frac{1}{t^{2}+1}$ sur $\R$. \pause
+Donc: $$I=\displaystyle \int_{0}^{1}\frac{5}{t^{2}+1}dt=5[arctg(t)]_{0}^{1}=5(arctg(1)-arctg(\mathrm{0}))=\frac{5\pi}{4}$$
+(car: $arctg(1) =\displaystyle \frac{\pi}{4}$  et $arctg (0)=0.$)
+
+Pour l'int\'{e}grale $J$, on sait que: $ln'(t)=\displaystyle \frac{1}{t}$ sur $]0, +\infty[$, \pause donc $t \mapsto ln(t)$ c'est une primitive de $t \mapsto\frac{1}{t}$ sur $[1, 2]$, donc: \pause
+$$J=\displaystyle \int_{1}^{2}\frac{1}{t}dt=[ln(t)]_{1}^{2}=ln(2)-ln(1)=ln(2)$$ {\it car} $ln(1)=0.$
+\end{ex}
+\end{frame}
+ \begin{frame}{Primitives des Fonctions Usuelles}
+
+1. $\displaystyle \int\frac{u'(x)}{u(x)}dx=\ln|u(x)|+\mathrm{c}\mathrm{t}\mathrm{e}.$
+
+2. $\displaystyle \int u'(x)e^{u(x)}dx=e^{u(x)}+\mathrm{c}\mathrm{t}\mathrm{e}.$
+
+3. $\displaystyle \int u'(x)u^{\alpha}(x)dx=\frac{u^{\alpha+1}(x)}{\alpha+1}+\mathrm{c}\mathrm{t}\mathrm{e}, \alpha\neq-1.$
+
+
+4. $\displaystyle \int u'(x)\cos(u(x))dx=\sin(u(x))+\mathrm{c}\mathrm{t}\mathrm{e}.$
+
+5. $\displaystyle \int u'(x)\sin(u(x))dx=-\cos(u(x))+\mathrm{c}\mathrm{t}\mathrm{e}.$
+
+6. $\displaystyle \int\frac{u'(x)}{1+u^{2}(x)}dx=\arctan(u(x))+\mathrm{c}\mathrm{t}\mathrm{e}.$
+
+7. $\displaystyle \int\frac{u'(x)}{\sqrt{1-u^{2}(x)}}dx=\arcsin(u(x))+\mathrm{c}\mathrm{t}\mathrm{e}.$
+
+8. $\displaystyle \int\frac{-u'(x)}{\sqrt{1-u^{2}(x)}}dx=\arccos(u(x))+\mathrm{c}\mathrm{t}\mathrm{e}.$
+\end{frame}
+ \begin{frame}
+ \subsection*{M\'{e}thode d'int\'{e}gration par parties} 
+\begin{theorem}
+Soient $f$ et $g$ deux fonctions de $C^1$ sur un int\'{e}rvalle $[a,\ b]$.
+On a l'\'{e}galit\'{e} suivante:
+$$
+\int_{a}^{b}f'(t)g(t)dt=[f(t)g(t)]_{a}^{b}-\int_{a}^{b}f(t)g'(t)dt.
+$$
+\end{theorem} \pause
+ \textbf{\textcolor{blue}{Exemples:}}\\\vspace{0.2cm}
+Calculer en utilisant une int\'{e}gration par parties les int\'{e}grales qui suivent: $\displaystyle \int_{0}^{\frac{\pi}{3}} xcosxdx$ et $\displaystyle \int_{1}^{3}xe^{(2x)}dx.$ \pause
+
+$\bullet$ Calculons $\displaystyle \int_{0}^{\frac{\pi}{3}}xcosxdx$ \pause
+
+$\displaystyle \int_{0}^{\frac{\pi}{3}}xcosxdx=\displaystyle \int_{0}^{\frac{\pi}{3}}x(sinx)'dx=[xsinx]_{0}^{\frac{\pi}{3}}-\displaystyle \int_{0}^{\frac{\pi}{3}}sinxdx=\displaystyle \frac{\pi}{3}sin(\frac{\pi}{3})-\left[ -cosx\right]_0^{\frac{\pi}{3}}.$ \pause
+
+En effectuant les calculs n\'{e}c\'{e}ssaires on trouve: 
+
+$$\displaystyle \int_{0}^{\frac{\pi}{3}} x.cosxdx =\displaystyle \frac{1}{2}[\sqrt{3}\frac{\pi}{3}-1]$$
+\end{frame}
+ \begin{frame}
+$\bullet$ Calculons $\displaystyle \int_{1}^{3}xe^{(2x)}dx$: \pause
+
+$$
+\begin{aligned}
+\int_{1}^{3}x.e^{(2x)}dx&=\int_{1}^{3}x.(\dfrac{1}{2}e^{(2x)})'dx\\
+&=[x.\frac{1}{2}e^{(2x)}]_{1}^{3}-\int_{1}^{3}\frac{1}{2}e^{(2x)}dx\\
+&=[x\frac{1}{2}e^{(2x)}]_{1}^{3}-\frac{1}{2}\int_{1}^{3}e^{(2x)}dx.
+\end{aligned}
+$$ \pause
+Apr\'{e}s calcul on trouve:
+$$
+\int_{1}^{3}x e^{(2x)}dx= [\frac{3}{2}e^{(6)}-\frac{1}{2}e^{(2)}]-\frac{1}{4}[e^{(6)}-e^{(2)}]
+$$ \pause
+Finalement: $\displaystyle \int_{1}^{3}x e^{(2x)}dx=\frac{5}{4}e^{(6)}-\frac{1}{4}e^{(2)}.$
+\end{frame}
+ \begin{frame}{Méthode de changement de variable}
+\begin{theorem}
+Soient $f$ : $[a,\ b]\rightarrow \mathbb{R}$ continue et $\varphi$ : $[\alpha,\ \beta]\rightarrow[a,\ b]$ une fonction de classe $C^{1}$ avec $\varphi(\alpha)=a$ et $\varphi(\beta)=b$. Alors \pause
+$$ 
+\int_{a}^{b}f(x)dx=\int_{\alpha}^{\beta}f(\varphi(t))\varphi'(t)dt.
+$$
+La transformation $x=\varphi(t)$ s'appelle changement de variable.
+\end{theorem} \pause
+ \textbf{\textcolor{blue}{Exemples:}}\\\vspace{0.2cm}
+Moyennant un changement de variable calculer l'int\'{e}grale suivante:
+$$
+K=\int_{0}^{3}\frac{1}{t^{2}+3}dt
+$$ 
+\end{frame}
+ \begin{frame}
+ D'abord on va commencer par factoriser par 3 au niveau du d\'{e}nominateur: $$K=\displaystyle \int_{0}^{3}\frac{1}{t^{2}+3}dt=\frac{1}{3}\int_{0}^{3}\frac{1}{\frac{t^{2}}{3}+1}dt=\frac{1}{3}\int_{0}^{3}\frac{1}{(\frac{t}{\sqrt{3}})^2+1}dt.$$ \pause
+ 
+Le but c'est de faire appara\^{i}tre la d\'{e}riv\'{e}e de la fonction  $arctg$. D'apr\'{e}s l'expression obtenue le changement de variable est le suivant:
+$X=\dfrac{t}{\sqrt{3}}$. Pour calculer notre int\'{e}grale on va suivre les \'{e}tapes suivantes: \pause
+
+$\bullet$ Etape.1: Calculer les nouvelles bornes de l'int\'{e}grale:
+
+Si: $\mathrm{t}=0$ alors: $X=\displaystyle \dfrac{0}{\sqrt{3}}=0$
+
+Si: $\mathrm{t}=3$ alors: $X=\displaystyle \dfrac{3}{\sqrt{3}}=\sqrt{3}.$ \pause
+
+$\bullet$ Etape.2: Calculer l'\'{e}l\'{e}ment d'int\'{e}gration $dt$ en fonction de $dX$:
+$$
+X=\dfrac{t}{\sqrt{3}}\Rightarrow dX=\frac{dt}{\sqrt{3}}\Rightarrow dt=\sqrt{3}dX
+$$ 
+\end{frame}
+ \begin{frame}
+$\bullet$ Etape.3: Exprimer l'int\'{e}grale moyennant les nouvelles valeurs calcul\'{e}es:
+
+$K=\displaystyle \int_{0}^{3}\frac{1}{t^{2}+3}dt=\frac{1}{3}\int_{0}^{\sqrt{3}}\frac{1}{X^{2}+1}\sqrt{3}dX=\frac{\sqrt{3}}{3}\int_{0}^{\sqrt{3}}\frac{1}{X^{2}+1}dX.$ \pause
+
+Par cons\'{e}quent: $K=\displaystyle \frac{\sqrt{3}}{3}\int_{0}^{\sqrt{3}}\frac{1}{X^{2}+1}.dX=\frac{\sqrt{3}}{3}[arctgX]_{0}^{\sqrt{3}}.$ \pause
+
+Finalement: $K=\displaystyle \dfrac{\sqrt{3}}{3}[arctg(\sqrt{3})-arctg(0)]=\frac{\sqrt{3}}{3}\frac{\pi}{3}.$
+
+Car  $arctg \sqrt{3}=\frac{\pi}{3}$  et $arctg(0)=0$.
+\end{frame}
+\end{document}

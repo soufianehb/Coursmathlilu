@@ -1,0 +1,1208 @@
+\documentclass[leqno,10pt,tick,mathserif,xcolor=dvipsnames,oneside,fleqn]{beamer}
+%\documentclass[slidestop,usepdftitle=false]{beamer}
+%\documentclass[leqno,10pt,tick,mathserif,xcolor=dvipsnames]{beamer}
+%\usepackage{xcolor}
+\usepackage{etex}
+\reserveinserts{28}
+\usepackage[all]{xy}
+\usepackage[latin1]{inputenc}
+\usepackage[frenchb]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{frcursive}
+\usepackage{pdftricks}
+\usepackage{palatino}
+%\beamertemplateshadingbackground{white!30}{white!100}
+%\usepackage{beamerthemeshadow}
+%\usepackage{beamerthemesplit}
+\usepackage{hyperref}
+%\usetheme{Warsaw}
+%\documentclass{beamer}
+
+%\usetheme{Blackboard}
+%\usetheme{Copenhagen}
+%\usetheme{S}
+\usepackage{dsfont}
+\usepackage{hyperref}
+\everymath{\displaystyle}
+\usecolortheme{crane}
+\usecolortheme{beaver}
+%%%%%%%%%%%%%%%%%%%pour la gaune%%%%%%%%%%%%%%%%%%%%%
+%\useinnertheme[shadow=true]{rounded}
+%\useoutertheme{infolines}
+%\usecolortheme{wolverine}
+%\setbeamerfont{block title}{size={}}
+%\setbeamercolor{titlelike}{parent=structure,bg=yellow!85!orange}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{beamertexpower}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{amsmath,amssymb,amsfonts}
+% Beamer class for the ENST de Bretagne (GET/ ENST B)
+
+% based on the work done by  Madhusudan Singh for NCSU
+
+% modified by Gilles Bertrand
+
+% December 2006
+
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+
+\def \K {\mathbb{K} }
+\def \S {\mathbb{S} }
+\def \L {\mathbb{L} }
+\def \N {\mathbb{N} }
+\def \Z {\mathbb{Z} }
+\def \Q {\mathbb{Q} }
+\def \R {\mathbb{R} }
+\def \C {\mathbb{C} }
+\def \F {\mathfrak{F}}
+\def \B {\mathfrak{B}}
+\def \O {\mathfrak{O}}
+\def \U {\mathfrak{U}}
+\usepackage{tablists}
+\mode <all>
+\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+
+%\usepackage{epsfig,psfig}
+%ENSEMBLES USUELS
+\newcommand{\field}[1]{\mathbb{#1}}
+\newcommand{\rrr}{\field{R}}
+\newcommand{\nnn}{\field{N}}
+\newcommand{\zzz}{\field{Z}}
+\newcommand{\kkk}{\field{K}}
+\newcommand{\qqq}{\field{Q}}
+\usepackage{graphicx,float,placeins,subfigure}
+%pour importer des grahes construit Ã  partir de geogebra
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+%couleur des paragraphes
+%\usepackage{sectsty}
+%FIN DE LA DECLARATION DES FONTES ENSEMBLES USUELS
+\definecolor{orange}{rgb}{0.99,0.69,0.07}
+\definecolor{red}{rgb}{1,0,0}
+%\definecolor{blue}{rgb}{0,0,2}
+\newcommand{\blue}{\color{blue}}
+\newcommand{\green}{\color{green}}
+\newcommand{\red}{\color{red}}
+\newcommand{\brown}{\color{brown}}
+\newcommand{\white}{\color{white}}
+\newcommand{\yellow}{\color{yellow}}
+%\beamertemplatetransparentcovereddynamic
+\newcommand{\Lang}[1]{\operatorname{\text{\textsc{#1}}}}
+\newcommand{\Class}[1]{\operatorname{\mathchoice
+{\text{\sf \small #1}} {\text{\sf \small #1}}
+  {\text{\sf #1}}
+{\text{\sf #1}}}}
+%\newcommand{\R}{I\!\!R}
+%\newcommand{\N}{I\!\!N}
+\newcommand{\NumSAT}      {\text{\small\#SAT}}
+\newcommand{\NumA}        {\#_{\!A}}
+\newcommand{\barA}        {\,\bar{\!A}}
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\Set}[1]{\{#1\}}
+\newtheorem{proposition}{Proposition}[section]
+%\newtheorem{property}[proposition]{PropriÃƒÂ©tÃƒÂ©}
+%\renewtheorem{corollary}[proposition]{Corollaire}
+
+%\usetheme{Warsaw}
+%\usetheme{Frankfurt}
+%\usetheme{Antibes}
+%\usetheme{JuanLesPins}
+%\usetheme{Berkeley}
+\usetheme{CambridgeUS}
+%\usetheme[secheader]{Boadilla}
+%\usetheme[secheader]{Madrid}
+%\usetheme{AnnArbor}
+%\usetheme[compress]{berlin}
+%\usetheme{Warsaw}
+%\usetheme{Luebeck}
+%\usecolortheme{seahorse}
+\usecolortheme{wolverine}
+\theoremstyle{plain}
+\newtheorem{Thm}{{\textbf{Théorème}}}[section] 
+\newtheorem*{theoreme*}{{Théorème}}
+\newtheorem{Prop}{\textbf{Proposition}}[section]
+\newtheorem*{proposition*}{Proposition}
+\newtheorem{Cor}{\textbf{Corollaire}}[section]
+\newtheorem*{corollaire*}{Corollaire}
+\newtheorem{Lem}{\textbf{Lemme}}[section]
+\newtheorem*{lemme*}{Lemme}
+\newtheorem{Defs}{\textbf{Définitions}}[section]
+\newtheorem{Def}{\textbf{Définition}}[section]
+\newtheorem{Rem}{\textbf{Remarque}}[section]
+\newtheorem{Propr}{\textbf{Propriétés}}[section]
+%--------------------------------------------------
+\setbeamercolor{block title example} {fg=violet,bg=purple!50}
+\setbeamercolor{block title } {fg=violet,bg=piggypink}
+\setbeamercolor{block title alerted} {fg=teal,bg=teal!40}
+\pgfdeclaremask{tu}{beamer-tu-logo-mask}
+%\pgfdeclaremask{computer}{beamer-computer-mask}
+%\pgfdeclareimage[interpolate=true,mask=computer,height=4cm]{computerimage}{beamer-computer}
+%\pgfdeclareimage[interpolate=true,mask=computer,height=2cm]{computerworkingimage}{beamer-computerred}
+%\pgfdeclareimage[mask=tu,height=0.6cm]{logo}{ts_logo}
+%\pgfdeclareimage[height=0.6cm]{logo}{es} \logo{\pgfuseimage{logo}}
+\everymath{\displaystyle}
+% % % % % % % % % % %ù
+% % % % % % % % % %
+
+\title[Mathématique 1]{\textbf{\textcolor{red}{ Module:  Mathématique 1}}\vspace{0.4cm}\\\textbf{Chapitre 1: Ensembles numériques et opérations}}
+\author{\textbf{Prof. Mohammed SRATI}}
+
+\institute[ENS-Fès]
+{
+\medskip\medskip
+\textbf{{Licence d'Éducation \\ Spécialité: Enseignement Primaire}}}
+\date{07-11-2022}
+
+\begin{document}
+\begin{frame}
+	\begin{center}  \vspace*{-0.3cm}  
+			\includegraphics[width=10cm, height=1.4cm]{logo}
+	\vspace*{-0.5cm}	\end{center}
+\titlepage
+\end{frame}
+%----------------------------------
+
+%--------------------------------
+\iffalse
+\begin{frame}
+	\setbeamercolor{block title}{bg=Bittersweet!80}
+\begin{block}{
+ \textbf{\begin{center}
+ \Huge{\textbf{  \textcolor{white}{Le Programme du module :}}}
+ \end{center}}}
+ \end{block}
+\end{frame}
+
+\begin{frame}
+
+\textbf{1.	Ensembles numériques et opérations.}
+
+1.1.	Ensemble $\N$ : numération et système de numération
+\begin{itemize}
+
+
+\item	Étude des quatre opérations sur l'ensemble $\N$
+\item	Étude de la structure $(\N;+;\times;\leqslant)$
+\item	Puissance
+\item	Multiples et diviseurs
+\item	Division euclidienne
+\item	Relation de congruence
+	\end{itemize}
+1.2.	 Ensemble $\Q$
+\begin{itemize}
+\item	Étude des quatre opérations sur l'ensemble $\Q$
+
+\item	Étude de la structure $(\Q;+;\times;\leqslant)$
+
+	\end{itemize}
+
+\end{frame}
+%----------------------------------
+
+%--------------------------------
+
+\begin{frame}
+
+1.3.	Ensemble $\R$
+\begin{itemize}
+\item	Étude des quatre opérations sur l'ensemble $\R$
+\item	Valeur approchée d'un nombre réel, cas du nombre $\pi$
+\end{itemize}
+\textbf{2.	Fonctions numériques.}
+
+2.1.	Généralités sur les fonctions numériques
+\begin{itemize}
+\item	Définitions
+\item	Limite et continuité
+\item	Fonction réciproque d'une fonction continue
+\item	Fonctions dérivables
+\end{itemize}
+2.2.	Étude des variations et représentation des fonctions numériques.
+
+2.3.	Calcul d'intégrale
+\begin{itemize}
+\item	Fonction primitive
+\item	Surface et fonction primitive d'une fonction continue (fonction constante et positive sur un intervalle - fonction affine positive sur un intervalle - ...)
+\item	Intégrale d'une fonction continue
+\item	Calcul des volumes, calcul de la masse
+\item	Vitesse et distance
+\end{itemize}
+
+\end{frame}
+%----------------------------------
+
+%--------------------------------
+
+\begin{frame}
+\textbf{3.	Dénombrement et suites.}
+
+3.1.	Dénombrement
+\begin{itemize}
+\item	Ensembles finis
+\item	Applications (injective, surjective, bijective, correspondance)
+\item	Exemples d'applications (arrangements, permutations, combinaisons)
+\end{itemize}
+3.2.	Suites numériques
+\begin{itemize}
+\item	Suite monotone
+\item	Suite arithmétique
+\item	Suite géométrique
+\end{itemize}
+\textbf{4.	Statistiques}
+
+4.1.	Terminologie
+\begin{itemize}
+\item	Population statistique et échantillon
+\item	Caractère statistique ou variable statistique
+\item	Ordre des valeurs d'une variable statistique quantitative
+\end{itemize}
+
+\end{frame}
+%----------------------------------
+
+%--------------------------------
+
+\begin{frame}
+4.2.	Série statistique d'une seule variable 
+\begin{itemize}
+\item	Statistiques exprimées en intervalles
+\item	Fréquence et pourcentage
+\item	Représente graphique
+\item	Paramètres de position (mode, valeur médiane, moyenne arithmétique)
+\item	Paramètres de dispersion (écart quadratique moyen, écart type et variance)
+\item	Collecte des données, organisation et la représentation graphique, analyse des données
+\end{itemize}
+4.3.	Série statistique à deux variables
+\begin{itemize}
+\item	Définitions
+\item	Nuage statistique
+\item	Ajustement linéaire
+\end{itemize}
+ \end{frame}
+\fi
+ \begin{frame}
+ \frametitle{Sommaire}
+ \tableofcontents
+ \end{frame}
+ \section{Ensembles numériques et opérations}
+ \subsection{Nombres entiers naturels}
+ \begin{frame}{Motivation}
+ \textcolor{blue}{$1;$ $2;$ $3;$ $4;$ $5;$ $...$} sont les premiers nombres que l'on apprend déjà avant d'entrer à l'école.\pause\\\vspace{0.2cm}
+ Ces nombres permettent de compter des objets quelconques.\pause\\\vspace{0.2cm}
+ Cette suite de nombres est illimitée: on n'a jamais fini de les énumérer.\pause\\\vspace{0.2cm}
+ Assez rapidement dans l'histoire, on a éprouvé la nécessité de représenter l'absence d'objet à dénombrer par un symbole: 0 (zéro).\pause\\\vspace{0.2cm}
+ \begin{center}{\large Ces nombres sont appelés nombres entiers naturels.} \end{center}
+\end{frame}
+ \begin{frame}
+ \begin{Def}
+ Tous les nombres entiers naturels forment un ensemble qu'on note $\mathbb{N}$ appelé l'ensemble des entiers naturels et qui est défini comme suit :
+ $$\mathbb{N}=\{0;\, 1;\, 2;\, 3;\, 4;\, 5;\, ...\}.$$
+ \end{Def}\pause
+  Pour dire qu'un nombre tel que 17 est un élément de cet ensemble, on écrit, $17\in \mathbb{N}$ qui se lit "17 appartient à" $\mathbb{N}$.\\\vspace{0.2cm}\pause
+  On désigne par $\mathbb{N}^*= \mathbb{N}\setminus\{0\}$ l'ensemble des entiers naturels non nuls. $\mathbb{N}^*$ se lit $\mathbb{N}$ privé de zéro.
+ \end{frame}
+  \begin{frame}{Puissance d'un nombre naturel}
+ \begin{definition}
+ Soient $n$ un entier supérieur ou égal à 1 et $a$ un nombre naturel
+ $$a^n=a\times a \times ...\times a$$
+ $$ n \text{  facteurs} $$
+ $a^n$ se lit " $a$ à la puissance $n$ ".
+
+ 
+ \end{definition}
+ 
+ \textcolor{blue}{\textbf{Exemple : }} 
+ $5^4=5\times 5\times 5\times 5$
+  \end{frame}
+  \begin{frame}
+  \begin{Propr}
+  Soient $n$ et $m$ deux entiers supérieurs ou égaux à 1 et $a$ $b$ deux nombres naturels. On a 
+  \begin{itemize}
+\item  $a^n\times a^m =a^{n+m}$
+  
+\item  $(a^n)^m=a^{nm}$
+  
+\item  $\dfrac{a^n}{a^m} =a^{n-m}$ avec $a \neq 0$
+  
+\item   $a^{-n} =\dfrac{1}{a^n}$ avec $a \neq 0$
+   
+\item $a^n\times b^n =(a\times b)^n$
+   
+\item  $\dfrac{a^n}{b^n} =\left( \dfrac{a}{b}\right)^n$  avec $b \neq 0$
+      \end{itemize}
+   \end{Propr} 
+  \end{frame}
+ \begin{frame}{Les nombres pairs et les nombres impairs}
+ \begin{Def}
+\begin{itemize}
+\item On dit qu'un entier n est un entier pair s'il divisible par $2$.\pause
+\item Un entier qui n'est pas pair est un entier impair.
+\end{itemize}
+ \end{Def}\pause \vspace{0.2cm}
+\textcolor{blue}{\textbf{Exemple : }} 
+\vspace{0.2cm}\begin{itemize}
+\item[$\bullet$] L'ensemble des entiers naturels pairs peut être écrit comme ceci :\\\pause\vspace{0.2cm}
+Entiers naturels pairs $= \{0, 2, 4, 6, 8, 10, 12, 14, ...\}$\pause\vspace{0.2cm}
+\vspace{0.2cm}\item[$\bullet$] L'ensemble des entiers naturels impairs peut être écrit comme ceci :\\\pause\vspace{0.2cm}
+Entiers naturel impair = \{1, 3, 5, 7, 9, 11, ...\}
+\end{itemize}
+ \end{frame}
+ \begin{frame}
+ \begin{Propr}
+ \begin{itemize}
+ \item Un entier naturel $n$ est pair si et seulement s'il s'écrit sous la forme
+ $n = 2 \times k \text{ avec }  k \in \mathbb{N}.$ \pause\vspace{0.2cm}
+\item Un entier naturel $n$ est impair si et seulement s'il s'écrit sous la forme
+ $n = 2 \times k+1 \text{ avec }  k \in \mathbb{N}.$ 
+  \end{itemize}
+   \end{Propr}\vspace{0.2cm}\pause
+\textcolor{blue}{\textbf{Exercice : }} 
+Soit n un entier naturel.\pause
+\vspace{0.1cm}\begin{enumerate}
+\item Montrer que si $n$ est pair alors $n^2$ pair.\pause\vspace{0.1cm}
+\item Montrer que si $n$ est impair alors $n^2$ impair.
+\end{enumerate}
+ \end{frame}
+ \begin{frame}
+ \begin{Prop}
+ La somme de deux entiers naturels de même parité est un entier naturel pair.
+ (C-à-d: \textcolor{red}{pair + pair = pair} et \textcolor{red}{impair + impair = pair}.)
+ \end{Prop}\pause\vspace{0.2cm}
+  \textcolor{blue}{\textbf{Exercice : }} \\\vspace{0.3cm}
+  Soit n un entier naturel.  Montrer que $n(n + 1)$ est pair.
+ \end{frame}
+ \begin{frame}{Diviseurs et Multiples d'un entier}
+ \begin{Def}
+ Soient $a$ et $b$ deux entiers naturels. S'il existe un entier naturel $k$ tel que
+ $$a = k \times b$$
+ On dit que
+ \begin{itemize}
+ \item $b$ divise $a$ (ou $b$ est un diviseur de $a$). On note $b | a$.\pause
+ \item $a$ est un multiple de $b$.\pause
+ \item $a$ est divisible par $b$.
+ \end{itemize} 
+\end{Def} \vspace{0.2cm}\pause
+\textcolor{blue}{\textbf{Exemple : }}  \\\vspace{0.2cm}
+$7$ divise $56$ car $56 = 7 \times 8.$\\\pause
+$7$ est un diviseur de $56$ et $56$ est un multiple de $7$. \\\pause
+On peut écrire $7|56$.
+\end{frame}
+\begin{frame}
+\begin{Rem}
+\begin{itemize}
+\item $0$ est un multiple de tous les entiers naturels non nuls.\pause\vspace{0.2cm}
+\item $1$ est un diviseur de tous les entiers naturels.\pause\vspace{0.2cm}
+\item Tous les entiers naturels sont divisible par $1$ et par eux-mêmes.\pause\vspace{0.2cm}
+\item Tout entiers naturel non nul a un nombre fini de diviseurs. Pour simplifier les écritures, on notera souvent $D(n)$. L'ensemble des diviseurs de $n$ dans $\mathbb{N}$.
+\end{itemize}
+\end{Rem}\pause\vspace{0.2cm}
+\textcolor{blue}{\textbf{Exemple : }}  \pause\vspace{0.2cm}
+\begin{itemize}
+\item Les diviseurs de $30$ sont : $D(30) = \{1, 2, 3, 5, 6, 10, 15, 30\}.$\pause
+\item Les multiples de $30$ sont : $M(30) = \{0, 30, 60, 90, ...\}$ (il y'en a une infinité).
+\end{itemize}
+\end{frame}
+\begin{frame}
+\begin{Propr}
+{(La divisibilité par : $2,$ $3,$ $5,$ $9$)}
+\pause\vspace{0.2cm}\begin{itemize}
+\item Un entier est divisible par $2$ si son chiffre des unités est pair (c-à-d : $0;$ $2;$  $4 ;$ $6 ;$ $8$).\pause\vspace{0.2cm}
+\item Un entier est divisible par $3$ si la somme de ses chiffres est divisible par $3$.\pause\vspace{0.2cm}
+\item Un entier est divisible par $5$ s'il se termine par $0$ ou $5$.\pause\vspace{0.2cm}
+\item Un entier est divisible par $9$ si la somme de ses chiffres est divisible par $9$.\pause\vspace{0.2cm}
+\end{itemize}
+\end{Propr} 
+\end{frame}
+
+	\begin{frame}{Division euclidienne}
+\begin{Propr}
+Soit $a$ un entier naturel et $b$ entier naturel non nul.
+Il existe un unique couple d'entiers $(q ; r)$ tel que $a = bq + r$ avec $0 \leqslant r < b$.
+\end{Propr} 
+\pause
+\begin{Def}
+
+- $q$ est appelé le quotient de la division euclidienne de $a$ par $b$,
+
+- $r$ est appelé le reste.
+\end{Def}
+\textcolor{blue}{\textbf{Exemple : }}  \\\vspace{0.2cm}
+Dans la division euclidienne de 412 par 15, on a : $$412 = 15 \times 27 + 7$$
+\textcolor{blue}{\textbf{Exercice : }} 
+Calculer la division euclidienne de 164 par 5, et de 487 par 4.
+	\end{frame}
+\iffalse
+\begin{frame}{Division euclidienne}
+\begin{Propr}
+On peut étendre la propriété précédente au cas où $a$ est un entier relatif.
+\end{Propr} 
+\begin{example}
+Déterminer le quotient et le reste de la division de -5000 par 17.
+
+A l'aide de la calculatrice, on obtient :
+
+Ainsi : 5000 = 17 x 294 + 2
+
+\pause
+Donc : -5000 = 17 x (-294) - 2
+
+\pause
+Le reste est un entier positif inférieur à 17.
+
+\pause
+Donc : -5000 = 17 x (-294) - 17 - 2 + 17
+
+\pause
+Soit : -5000 = 17 x (-295) + 15
+
+\pause
+D'où, le quotient est -295 et le reste est 15.
+
+\end{example}
+
+\textcolor{blue}{\textbf{Exercice : }} 
+Calculer la division euclidienne de -164 par 5, et de -487 par 4.
+\end{frame}
+\fi
+\begin{frame}{Relation de congruence}	
+	On considère la suite de nombres : 1, 6, 11, 16, 21, 26, 31, 36.
+	\pause
+	
+	Si on prend deux quelconques de ces nombres, alors leur différence est divisible par
+	5.
+	
+	\pause
+	Par exemple : 21 -6 = 15 qui est divisible par 5.
+	On dit que 21 et 6 sont congrus modulo 5.
+	
+	\begin{Def}
+	Soit $n$ un entier naturel non nul.
+	Deux entiers $a$ et $b$ sont congrus modulo $n$ lorsque $a - b$ est divisible par $n$.
+	On note $a \equiv b [n]$ .
+	\end{Def}
+	\pause
+	\textcolor{blue}{\textbf{Exemple : }}  \\\vspace{0.2cm}
+	$11 \equiv 7 [4]$
+	
+	$42 \equiv 6 [6]$
+\end{frame}
+
+\begin{frame}{Relation de congruence}
+	\begin{Propr} 
+	Soit $n$ un entier naturel non nul.
+	Deux entiers $a$ et $b$ sont congrus modulo $n$, si et seulement si, la division euclidienne
+	de $a$ par $n$ à le même reste que la division euclidienne de $b$ par $n$.	
+	\end{Propr} 
+	\pause
+\textcolor{blue}{\textbf{Exemple : }}  \\\vspace{0.2cm}
+$11 = 4\times 2 + 3$ et $7=4\times 1 + 3$, donc 	$11 \equiv 7 [4]$.	\\\vspace{0.2cm}
+\textcolor{blue}{\textbf{Exercice : }} 			
+	Vérifier que 	$25 \equiv 1 [12]$, 	$21 \equiv 6 [5]$.		.			
+\end{frame}	
+\begin{frame}{Relation de congruence}
+	\begin{Propr} 
+	 Soit $n$ un entier naturel non nul.
+	 \begin{itemize}
+
+
+	\item[a] $a \equiv a [n]$ pour tout entier relatif $a$.
+	
+	\item[b] Si $a \equiv b [n]$ et $b \equiv c [n]$ alors $a \equiv c [n]$ (Relation de transitivité)
+	
+		 \end{itemize}
+	\end{Propr} 
+	\textcolor{blue}{\textbf{Démonstration :  }} 		
+		\pause
+
+a) $a - a = 0 $ est divisible par $n$.
+
+\pause
+b) $a \equiv b [n]$ et $b \equiv c [n]$ donc $n$ divise $a - b$ et $b - c$ donc $n$ divise $a - b + b - c = a - c$ .
+					
+\end{frame}	
+	 
+	 
+	 \begin{frame}{Relation de congruence}
+	 	\begin{Propr} 
+	 		 Soit $n$ un entier naturel non nul.
+	 		 Soient $a, b, a'$ et $b'$ des nombres relatifs tels que $a \equiv b [n]$ et $a' \equiv b' [n]$ alors on a :
+	 	\pause
+	 \begin{itemize}
+	 	 		 \item $a+a' \equiv b+b' [n]$ 	 	\pause
+	 	 		 \item $a-a' \equiv b-b' [n]$	 	\pause
+	 	 		 \item $a\times a' \equiv b\times b' [n]$	 	\pause
+	 	 		 \item $a^p \equiv b^p [n]$ avec $p\in \N$
+	 	 		 \item $ka \equiv kb [n]$ avec $k\in \N$
+	 	 		 \end{itemize}		 
+	 		 	\end{Propr}
+		\textcolor{blue}{\textbf{Démonstration : (Exercice) }} 	 		 	
+	 \end{frame}	
+	 
+\begin{frame}{PGCD de deux entiers}
+\begin{Def}
+Soit $a$ et $b$ deux entiers naturels non nuls.
+On appelle PGCD de $a$ et $b$ le plus grand cdiviseur ommun de $a$ et $b$ et note
+$PGCD(a;b)$.
+\end{Def}\pause\vspace{0.2cm}
+\textcolor{blue}{\textbf{Exemple : }}  \\\pause\vspace{0.2cm}
+$$PGCD(60;100)=20$$
+
+
+	 	\begin{Propr} 
+	 		 Soit $a$ et $b$ deux entiers naturels non nuls.
+	 		 \begin{itemize}
+	 		
+
+	 		\item[a)] $PGCD(a ; 0) = a$
+	 		\item[b)] $PGCD(a ; 1) = 1$
+	 		\item[c)] $\text{ Si } b \text{ divise } a \text{ alors } PGCD(a ; b) = b$
+	 			 		 \end{itemize}
+	 			\end{Propr}
+		\textcolor{blue}{\textbf{Démonstration : (Exercice) }} 	 		 	
+	
+ \end{frame}	
+	 
+\begin{frame}{Les nombre premiers}
+\begin{Def}
+Un nombre qui a exactement deux diviseurs est appelé nombre premier. c-à-d n'admet que deux diviseurs $1$ et lui même.
+\end{Def}\pause\vspace{0.2cm}
+\textcolor{blue}{\textbf{Exemple : }}  \\\pause\vspace{0.2cm}
+Les nombre premiers inférieurs à $30$ sont : $2;$ $3;$ $5;$ $7;$ $11;$ $13;$ $17;$ $19;$ $23;$ $29$.
+%\iffalse
+%\begin{Rem}
+% Pour savoir si un nombre $n$ est premier ou non, la recherche de diviseurs peut
+% s'arrêter au dernier entier premier inférieur à $\sqrt{n}$.
+% \end{Rem}
+% \textcolor{blue}{\textbf{Exemple : }}  \\\pause\vspace{0.2cm}
+% 391 est-il premier ?
+ %\fi
+\end{frame}
+
+	 
+\begin{frame}{Décomposition en produit de facteurs premiers}
+ 	\begin{Propr} 
+ 	 		Tout entier naturel non premier supérieur à $1$ peut s'écrire sous la forme d'un produit de
+ 	 		nombres premiers. On dit alors qu'il est décomposé en produit de facteurs premiers.
+	\end{Propr}
+Pour obtenir la décomposition d'un entier naturel en produit de facteurs premiers on  effectue des divisions successives par les nombres premiers $(2, 3, 5, 7, 11,...)$ tant que c'est
+possible.\pause \vspace{0.2cm}
+	 \textcolor{blue}{\textbf{Exemple : }}  \\\pause\vspace{0.2cm}
+	 350 \pause
+ \textcolor{blue}{\textbf{Exercice : }}  \\\pause\vspace{0.2cm}
+ 	 Décomposer  640 et 435 en produits de facteurs premiers.
+  \end{frame}
+  
+  \begin{frame}{Nombres premiers entre eux}
+  \begin{definition}
+  Soit $a$ et $b$ deux entiers naturels non nuls.
+  On dit que $a$ et $b$ sont premiers entre eux ssi leur $PGCD$ est égal à $1$.
+  \end{definition}
+  
+ \textcolor{blue}{\textbf{Exemple :}} 
+   
+  42 et 55 sont premiers entre eux en effet $PGCD(42 ; 55) = 1$.
+  \begin{block}{Théorème d'Euclide}
+  Soient $a$, $b$ et $c$ trois entiers naturels. Si $a$ divise le produit $bc$ et si $a$ est premier avec $b$, alors $a$ divise $c$. On note $a\wedge b=1$
+  
+  Formellement : si $a|bc$ et $PGCD(a, b) = 1$, alors $a|c$.
+  \end{block}
+   \textcolor{blue}{\textbf{Exemple :}} 
+  $\dfrac{2}{20} =\dfrac{2}{4\times 5}$, Or $2\wedge 5 =1$, alors $2$ divise $4$.
+   
+%   \begin{block}{Théorème Gauss }
+ %  Soient $a$, $b$ et $c$ deux entiers naturels.  Si un nombre premier $p$ divise le produit $bc$, alors $p$ divise $b$ ou $c$.
+  %  \end{block}
+    
+    \end{frame}
+ \subsection{Nombres entiers relatifs}
+ \begin{frame}{Nombres entiers relatifs}
+
+ Dans l'ensemble des nombres entiers naturels, on peut additionner, multiplier, soustraire ou diviser. Cependant, le résultat n'est pas toujours un nombre entier naturel.\\\pause
+ L'addition de deux nombres entiers naturels est un nombre entier naturel: par exemple,
+ $8 +4 = 12,$ $5+ 10 =15,$ $7+ 3 = 10.$\\\pause
+ La multiplication de deux nombres entiers naturels est un nombre entier naturel: par
+ exemple: $ 8 \times 4=32,$ $5\times 10= 50,$ $7 \times 3= 21.$
+ \end{frame}
+ \begin{frame}{Nombres entiers relatifs}
+ Cependant, la soustraction de deux nombres entiers naturels n'est pas toujours un nombre entier naturel: $8 - 4= 4$ ou $7-3 =4$ sont bien des nombres entiers naturels, mais pas  $5 - 10.$\\\pause
+ Pour remédier  à ce problème, on agrandit l'ensemble des nombres entiers naturels pour y englober tous les résultats possibles des soustractions de deux nombres de $\mathbb{N}.$\\\pause
+ Si on regarde ce qu'il se passe pour les températures, on sait qu'une chute de $10°C$ depuis une température de $5°C$ nous donne une température de $-5°C$ ("moins" $5°C$).
+  \end{frame}
+  \begin{frame}{Nombres entiers relatifs}
+ Ainsi, une soustraction de deux nombres entiers naturels peut nous donner soit un nombre entier naturel, soit un nombre entier mais avec un signe "-" devant.\\\pause
+ L'ensemble de tous ces résultats possibles est appelé l'ensemble des nombres entiers relatifs, ensemble que l'on désigne par $\mathbb{Z}$. On a donc:
+ \begin{definition}
+  L'ensemble des nombres entiers relatifs est noté 
+ $\mathbb{Z}$
+ $$\mathbb{Z} = \{...;\, - 5;\, - 4;\, - 3;\, -2;\, -1;\, 0;\, 1;\, 2;\, 3;\, 4;\, 5;\,...\}.$$
+  \end{definition}
+ \end{frame}
+ \subsection{Nombres décimaux, périodiques et rationnels}
+ \begin{frame}
+ Dans l'ensemble des nombres entiers relatifs, on peut additionner, multiplier, soustraire ou diviser. Cependant, le résultat n'est pas toujours un nombre entier relatif.\\
+ L'addition de deux nombres entiers relatifs est un nombre entier relatif: par exemple,
+ $8 + 4 = 12$ ou $5 + 10 = 15$ ou $7 + 3= 10.$
+ La soustraction de deux nombres entiers relatifs est un nombre entier relatif: par exemple,
+ $8 - 4 = 4$ ou $5- 10=-5$ ou $7 - 3 = 4.$\\
+ La multiplication de deux nombres entiers relatifs est un nombre entier relatif: par exemple: , $8 \times 4 =32$ ou $5 \times 10= 50$ ou  $7 \times 3= 21.$\\
+ Cependant, la division de deux nombres entiers relatifs n'est pas toujours un nombre entier relatif: $8\div 4=2$ est bien un nombre entier relatif, mais pas $5 \div 10$ ou  $7 \div 3.$\\
+ Afin de pallier à ce problème, on agrandit l'ensemble des nombres entiers relatifs pour y
+ englober tous les résultats possibles des divisions de deux nombres de $\mathbb{Z}.$\\
+ On remarque tout d'abord que $5\div 10=0.5$, ce qui est un nombre à virgule ayant un nombre fini de décimales (chiffres après la virgule).
+ \end{frame}
+ \begin{frame}
+ Si on considère tous les résultats des divisions qui nous donnent des nombres ayant un nombre fini de décimales, on obtient un nouvel ensemble, celui des nombres \textcolor{red}{décimaux}, désigné par la lettre $\mathbb{D}$. $\mathbb{D}$ est donc l'ensemble de tous les nombres entiers (positifs, nuls ou négatifs) ou ayant un nombre fini de décimales.\\
+ 
+ \begin{definition}
+  L'ensemble des nombres décimaux est noté  $\mathbb{D}$.
+  
+  $\mathbb{D}$ est l'ensemble des nombres qui peuvent s'écrire sous la forme d'une fraction
+ dont le dénominateur est une puissance de $10$ : c'est-à-dire sous la forme d'une
+ fraction décimale.
+ 
+ En résumé un nombre décimal est un nombre qui peut s'écrire sous la forme
+ $$\dfrac{a}{10^n}$$ avec le nombre $a\in  \mathbb{Z}$ et $n\in  \mathbb{N}$, $n$ étant non nul.
+ \end{definition}
+ 
+  \textcolor{blue}{\textbf{Exemple : }}  \\\pause\vspace{0.2cm}
+ $0,75\in \mathbb{D}$,  $1/3\notin \mathbb{D}$
+  \end{frame}
+
+   \begin{frame}{Les nombres rrationnels et  irrationnels}
+   
+  
+ Cependant, cet ensemble ne contient pas encore tous les résultats des divisions de deux
+ nombres entiers relatifs. En effet, $7 \div 3 = 2, 3333333...=2,\bar{3}$ ce qui n'est pas un nombre ayant un nombre fini de décimales. On remarque qu'ici le se répète 3 indéfiniment après la virgule dans le résultat de (c'est pourquoi on le surmonte d'une  barre dans le code à virgule).
+ \end{frame}
+ \begin{frame}
+ En essayant plusieurs divisions de deux nombres entiers relatifs, on constate que le
+ quotient est soit un nombre décimal (voir ci-dessus), soit un nombre dont un ou plusieurs
+ chiffres après la virgule se répètent indéfiniment (par exemple: $3 \div 7= 0.428571428571428571...=0,\overline{428571}.$)
+ \end{frame}
+ \begin{frame}
+ On appelle un nombre qui a un ou plusieurs chiffres après la virgule qui se répètent
+ indéfiniment un nombre \textcolor{red}{périodique} (en mathématique et en physique, une période est
+ un phénomène qui se reproduit continuellement).\\
+ L'ensemble formé des nombres décimaux et des nombres périodiques forme un nouvel ensemble de nombre, les nombres rationnels (de "ratio", qui signifie rapport, division).\\
+ Comme un nombre entier relatif pour toujours être considéré comme le quotient de
+ lui-même par 1, l'ensemble des nombres rationnels est donc constitué de l'ensemble des
+ nombres entiers relatifs, des nombres décimaux et des nombres périodiques.\\
+ L'ensemble des nombres rationnels est noté $\mathbb{Q}$.
+ 
+ \begin{definition}
+ L'ensemble des nombres rationnels est noté est $\mathbb{Q}$.
+ 
+  $\mathbb{Q}$ l'ensemble des nombres qui peuvent s'écrire sous la forme d'un quotient
+ $\dfrac{a}{b}$
+ avec $a$ entier relatif et $b$ entier relatif non nul.
+ \end{definition}
+ 
+   \textcolor{blue}{\textbf{Exemple : }}  \\\pause\vspace{0.2cm}
+   
+   $\dfrac{1}{3}\in \mathbb{Q}$,    $\dfrac{3}{4}\in \mathbb{Q}$,...
+ \end{frame}
+  \begin{frame}
+  \begin{definition}
+  Les nombres qui ne sont pas rationnels s'appellent les nombres irrationnels.
+  Ce sont tous les nombres ayant une infinité de chiffre après la virgule et qui ne
+  peuvent pas s'écrire sous la forme
+   $\dfrac{a}{b}$
+   avec $a$ entier relatif et $b$ entier relatif non nul.
+   \end{definition}
+   \pause
+   \textcolor{blue}{\textbf{Rappel : }}  \\\pause\vspace{0.2cm}
+  
+  Une fraction est irréductible lorsque son numérateur et son dénominateur n'ont aucun diviseur commun (autre que 1).
+  Pour rendre irréductible une fraction, on simplifie le numérateur et le dénominateur par leur(s) diviseur(s) commun(s). Pour cela, on peut utiliser la décomposition en produits de facteurs premiers du numérateur et du dénominateur.
+  
+    \textcolor{blue}{\textbf{Exemple 2: }}  \\\pause\vspace{0.2cm}
+          La fraction $\dfrac{67}{15}$ est-elle irréductible ?
+          
+          
+          Les nombres 15 et 67 n'ont  aucun diviseur commun autre que 1, donc la fraction $\dfrac{67}{15}$ est irréductible.
+  \end{frame}
+         \begin{frame}
+   \textcolor{blue}{\textbf{Exemple 1: }}  \\\pause\vspace{0.2cm}
+   
+   Rendre irréductible la fraction $\dfrac{68}{51}$.
+   
+   On $$\dfrac{68}{51}=\dfrac{2^2\times 17}{3\times 17}=\dfrac{4}{3},$$
+   qui est une fraction irréductible.
+     
+    \textcolor{blue}{\textbf{Exemple 2: }}  \\\pause\vspace{0.2cm}
+        La fraction $\dfrac{67}{15}$ est-elle irréductible ?
+        
+        
+        Les nombres 15 et 67 n'ont  aucun diviseur commun autre que 1, donc la fraction $\dfrac{67}{15}$ est irréductible.
+     \iffalse   
+   \textcolor{blue}{\textbf{Exercice 1: }}  \\\pause\vspace{0.2cm} 
+   
+   Prouver que $\sqrt{2}$ est irrationnel  
+   
+     \textcolor{blue}{\textbf{Exercice 2: }}  \\\pause\vspace{0.2cm} 
+      
+      Prouver que $\sqrt{5}$ est irrationnel 
+      
+      \textbf{Indication :} Utiliser le théorème d'Euclide.    \fi
+ \end{frame}
+ \subsection{Nombres réels}
+ \begin{frame}{Nombres réels}
+ Si on adjoint à l'ensemble des nombres rationnels tous les nombres irrationnels, on
+ obtient l'ensemble appelé ensemble des nombres réels. Cet ensemble, noté $\mathbb{R}$, contient tous les nombres que l'on peut écrire avec les symboles $0,$ $1,$ $2,$ $3,$ $4,$ $5,$ $6,$ $7,$ $8$ et $9$ et le symbole "," (virgule).
+ 
+ \begin{definition}
+ L'ensemble des nombres réels est formé de l'ensemble de tous les nombres
+ rationnels et irrationnels. Cet ensemble est noté $\mathbb{R}$.
+ \end{definition}
+ \end{frame}
+ \begin{frame}
+ Hiérarchie des ensembles de nombres:\\
+ Les ensembles des nombres entiers naturels, des nombres entiers relatifs, des nombres
+ rationnels et des nombres réels peuvent représentés par le diagramme suivant:
+ \begin{center}
+\includegraphics[width=0.7\linewidth]{./ensembles}
+\end{center}
+ Ainsi, l'ensemble des nombres entiers naturels est inclus dans l'ensemble des nombres
+ entiers relatifs, qui est inclus dans l'ensemble des nombres rationnels, qui est inclus dans
+ l'ensemble des nombres réels.
+ $$\mathbb{N}\subset\mathbb{Z}\subset\mathbb{D}\subset\mathbb{Q}\subset\mathbb{R}$$
+ \end{frame}
+ \begin{frame}{Régles de calcul dans $\mathbb{R}$}
+ \begin{block}{Addition}
+ L'addition des réels possède les propriétés suivantes :
+\begin{itemize}
+\item Commutativité : $\forall x, y \in \R : x + y = y + x.$
+
+\item Associativité : $\forall x, y , z \in \R : x + (y + z) = (x + y) + z$
+
+\item $0$ est élément neutre : $\forall x \in \R : x + 0 = 0 + x = x$
+
+\item Tout réel a un opposé : $x + (x) = (x) + x = 0$
+\end{itemize}
+ \end{block}
+ On résume ces propriétés en disant que $(\R, +)$ est un groupe commutatif
+ 
+ \end{frame}
+ 
+  \begin{frame}{Régles de calcul dans $\mathbb{R}$}
+  \begin{block}{ Multiplication}
+ La multiplication des réels possède les propriétés suivantes :
+ \begin{itemize}
+ \item Commutativité : $\forall x, y \in \R  : xy = yx$.
+ 
+\item Associativité : $\forall x, y \in \R  : x (yz) = (xy) z$
+ 
+\item $1$ est élément neutre : $\forall x, y \in \R  : x 1 = 1 x = x$
+ 
+\item Tout réel non nule a un inverse : $x\dfrac{1}{x}=\dfrac{1}{x}x=1$
+ \end{itemize}
+  \end{block}
+ De plus, les deux opérations sont liées par la propriété suivante :
+ 
+ \textbf{Distributivité de la multiplication par rapport à l'addition :}
+ 
+$$\forall x, y, z \in \R ~~:~~ x(y+z)=xy+xz$$
+$$\forall x, y, z \in \R ~~:~~ (y+z)x=yx+zx$$
+  
+ On résume toutes ces propriétés en disant que $(\R, + , \times )$ est un corps commutatif.
+  
+  \end{frame}
+ \begin{frame}{Opérations sur les fractions}
+ Soient $a$, $b$, $c$ et $d$ des nombres réels tels que $b\neq 0$, $c\neq 0$ et $d\neq 0$:\\
+ \begin{block}{}
+\begin{tabenum}
+\vspace{0.5cm}\item[$\bullet$] $\frac{a}{b}+\frac{c}{b}=\frac{a+c}{b}$
+  \hspace{3cm}\item[$\bullet$] $\frac{a}{b}+\frac{c}{d}=\frac{ad+bc}{bd}$\\\vspace{0.5cm}
+\item[$\bullet$] $\frac{a}{b}-\frac{c}{d}=\frac{ad-bc}{bd}$
+ \item[$\bullet$] $\frac{a}{b}\times\frac{c}{d}=\frac{ac}{bd}$\\
+\vspace{0.5cm} \item[$\bullet$] $\frac{\frac{a}{b}}{c}=\frac{a}{b}\times\frac{1}{c}=\frac{a}{bc}$
+ \item[$\bullet$] $\frac{a}{\frac{b}{c}}=a\times\frac{c}{b}=\frac{ac}{b}$\\
+\hspace{1.5cm} \item[$\bullet$] $\frac{\frac{a}{b}}{\frac{c}{d}}=\frac{a}{b}\times\frac{d}{c}=\frac{ad}{bc}$
+\end{tabenum}
+ \end{block}
+ \end{frame}
+ \begin{frame}{L'écriture scientifique}
+ \begin{Def}
+ L'écriture scientifique d'un nombre décimal positif $x$ est de la forme 
+  $$x=a\times 10^p~~~avec~a\in\mathbb{D},~1\leq a<10,~et~p\in\mathbb{Z}$$
+ \end{Def}
+ \begin{Rem}
+ Si $x$ est négatif on écrit $x=-a\times 10^p$.
+ \end{Rem}
+\vspace{0.2cm}
+\textbf{\textcolor{blue}{Exemple: }}\\\vspace{0.2cm}
+ $$54739=5,4739\times 10^4~~;~~~0,4219=4,219\times 10^{-1}~~;~~~-0,00435=-4,35\times 10^{-3}$$
+ \end{frame}
+ \begin{frame}{Identités remarquables}
+  Soient $a$ et $b$ dans $\mathbb{R}$.
+  \begin{block}{}
+  \begin{tabenum}
+  \vspace{0.2cm}\item[$\bullet$] $ (a+b)^2=a^2+2ab+b^2$
+   \hspace{2cm}\item[$\bullet$] $ (a-b)^2=a^2-2ab+b^2$\\\vspace{0.2cm}
+     \item[$\bullet$] $ (a+b)(a-b)=a^2-b^2$
+     \item[$\bullet$] $ (a+b)^3=a^3+3a^2b+3ab^2+b^3$\\\vspace{0.2cm}
+     \item[$\bullet$] $ (a-b)^3=a^3-3a^2b+3ab^2-b^3$
+     \item[$\bullet$] $ a^3+b^3=(a+b)(a^2-ab+b^2)$\\\vspace{0.2cm}
+     \item[$\bullet$] $ a^3-b^3=(a-b)(a^2+ab+b^2)$
+\end{tabenum}
+\end{block}
+ \end{frame}
+ \subsection{Les intervalles}
+ \begin{frame}{Les intervalles bornés}
+ Soient $a$ et $b$ deux réels tels que $a<b$.
+ \begin{enumerate}
+ \item $[a,b]=\{x\in\mathbb{R}: a\leq x\leq b \}$ (c'est un intervalle fermé).\pause
+ \begin{center}
+ \definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+ \definecolor{qqqqff}{rgb}{0,0,1}
+ \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+ \clip(-2,0.5) rectangle (7.1,1.5);
+ \draw [->] (-2,1) -- (7,1);
+ \begin{scriptsize}
+ \draw [fill=qqqqff] (0.48,0.76) node {$a$};
+ \draw [fill=qqqqff] (5.28,0.76) node {$b$};
+ \draw [fill=xdxdff] (0.8,1) node {$\bigg[$};
+ \draw [fill=xdxdff] (5,1) node {$\bigg]$};
+ \draw [fill=qqqqff] (2.8,1.3) node {$x$};
+ \end{scriptsize}
+ \end{tikzpicture}
+ \end{center}\pause
+ \item $]a,b]=\{x\in\mathbb{R}: a< x\leq b \}$ (c'est un intervalle semi ouvert ou semi fermé).\pause
+ \begin{center}
+ \definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+ \definecolor{qqqqff}{rgb}{0,0,1}
+ \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+ \clip(-2,0.5) rectangle (7.1,1.5);
+ \draw [->] (-2,1) -- (7,1);
+ \begin{scriptsize}
+ \draw [fill=qqqqff] (0.48,0.76) node {$a$};
+ \draw [fill=qqqqff] (5.28,0.76) node {$b$};
+ \draw [fill=xdxdff] (0.8,1) node {$\bigg]$};
+ \draw [fill=xdxdff] (5,1) node {$\bigg]$};
+ \draw [fill=qqqqff] (2.8,1.3) node {$x$};
+ \end{scriptsize}
+ \end{tikzpicture}
+ \end{center}\pause
+ \item $[a,b[=\{x\in\mathbb{R}: a\leq x< b \}$ (c'est un intervalle semi ouvert ou semi  fermé).\pause
+ \begin{center}
+ \definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+ \definecolor{qqqqff}{rgb}{0,0,1}
+ \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+ \clip(-2,0.5) rectangle (7.1,1.5);
+ \draw [->] (-2,1) -- (7,1);
+ \begin{scriptsize}
+ \draw [fill=qqqqff] (0.48,0.76) node {$a$};
+ \draw [fill=qqqqff] (5.28,0.76) node {$b$};
+ \draw [fill=xdxdff] (0.8,1) node {$\bigg[$};
+ \draw [fill=xdxdff] (5,1) node {$\bigg[$};
+ \draw [fill=qqqqff] (2.8,1.3) node {$x$};
+ \end{scriptsize}
+ \end{tikzpicture}
+ \end{center}\pause
+ \item $]a,b[=\{x\in\mathbb{R}: a< x< b \}$ (c'est un intervalle ouvert).\pause
+ \begin{center}
+ \definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+ \definecolor{qqqqff}{rgb}{0,0,1}
+ \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+ \clip(-2,0.5) rectangle (7.1,1.5);
+ \draw [->] (-2,1) -- (7,1);
+ \begin{scriptsize}
+ \draw [fill=qqqqff] (0.48,0.76) node {$a$};
+ \draw [fill=qqqqff] (5.28,0.76) node {$b$};
+ \draw [fill=xdxdff] (0.8,1) node {$\bigg]$};
+ \draw [fill=xdxdff] (5,1) node {$\bigg[$};
+ \draw [fill=qqqqff] (2.8,1.3) node {$x$};
+ \end{scriptsize}
+ \end{tikzpicture}
+ \end{center}
+ \end{enumerate}
+ \end{frame}
+ \begin{frame}{Les intervalles non bornés}
+ Soient $a$ un nombre réel.\pause
+ \begin{enumerate}
+ \item $[a,+\infty[=\{x\in\mathbb{R}: x\geq a \}$\pause
+ \begin{center}
+ \definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+ \definecolor{qqqqff}{rgb}{0,0,1}
+ \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+ \clip(-2,0.5) rectangle (7.1,1.5);
+ \draw [->] (-2,1) -- (7,1);
+ \begin{scriptsize}
+ \draw [fill=qqqqff] (0.48,0.76) node {$a$};
+ \draw [fill=xdxdff] (0.8,1) node {$\bigg[$};
+ \draw [fill=qqqqff] (2.8,1.3) node {$x$};
+ \end{scriptsize}
+ \end{tikzpicture}
+ \end{center}\pause
+ \item $]a,+\infty[=\{x\in\mathbb{R}: x> a \}$\pause
+ \begin{center}
+ \definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+ \definecolor{qqqqff}{rgb}{0,0,1}
+ \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+ \clip(-2,0.5) rectangle (7.1,1.5);
+ \draw [->] (-2,1) -- (7,1);
+ \begin{scriptsize}
+ \draw [fill=qqqqff] (0.48,0.76) node {$a$};
+ \draw [fill=xdxdff] (0.8,1) node {$\bigg]$};
+ \draw [fill=qqqqff] (2.8,1.3) node {$x$};
+ \end{scriptsize}
+ \end{tikzpicture}
+ \end{center}\pause
+ \item $]-\infty,a]=\{x\in\mathbb{R}: x\leq a \}$\pause
+ \begin{center}
+ \definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+ \definecolor{qqqqff}{rgb}{0,0,1}
+ \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+ \clip(-2,0.5) rectangle (7.1,1.5);
+ \draw [->] (-2,1) -- (7,1);
+ \begin{scriptsize}
+ \draw [fill=qqqqff] (5.28,0.76) node {$a$};
+ \draw [fill=xdxdff] (5,1) node {$\bigg]$};
+ \draw [fill=qqqqff] (2.8,1.3) node {$x$};
+ \end{scriptsize}
+ \end{tikzpicture}
+ \end{center}\pause
+ \item $]-\infty,a[=\{x\in\mathbb{R}: x< a \}$\pause
+ \begin{center}
+ \definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+ \definecolor{qqqqff}{rgb}{0,0,1}
+ \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+ \clip(-2,0.5) rectangle (7.1,1.5);
+ \draw [->] (-2,1) -- (7,1);
+ \begin{scriptsize}
+ \draw [fill=qqqqff] (5.28,0.76) node {$a$};
+ \draw [fill=xdxdff] (5,1) node {$\bigg[$};
+ \draw [fill=qqqqff] (2.8,1.3) node {$x$};
+ \end{scriptsize}
+ \end{tikzpicture}
+ \end{center}
+ \end{enumerate}\pause
+ \end{frame}
+ \begin{frame}
+ \begin{Rem}
+  $$\mathbb{R}^+=[0,+\infty[~~;~\mathbb{R}_+^*=]0,+\infty[~~;~\mathbb{R}^-=]-\infty,0]~~;~\mathbb{R}_-^*=]-\infty,0[~~;~\mathbb{R}=]-\infty,+\infty[.$$
+  \end{Rem}
+ \end{frame}
+ \begin{frame}{Encadrement}
+ \begin{Def}
+ Soit $x$ un réel. Encadrer le point $x$ c'est trouver deux réels $a$ et $b$ tels que $a\leq x\leq b$ ou $a< x\leq b$ ou $a\leq x< b$ ou $a< x< b$.\\
+ Le nombre $b-a$ appelé amplitude de cet encadrement.
+ \end{Def}
+ Soient $a$ et $b$ deux réels tels que $a\leq b$.
+ \begin{enumerate}
+ \item Le centre d'un intervalle dont les extrémités sont $a$ et $b$ est $c=\frac{a+b}{2}.$
+ \item Le rayon d'un intervalle dont les extrémités sont $a$ et $b$ est $r=\frac{b-a}{2}.$
+ \end{enumerate}
+ \begin{center}
+ \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+ \clip(-2,0) rectangle (7.1,2);
+ \draw (-2,1) -- (7,1);
+ \begin{scriptsize}
+ \draw (0.48,0.76) node {$a$};
+ \draw (5.28,0.76) node {$b$};
+ \draw (2.88,0.76) node {$c$};
+ \draw (2.88,1) node {$|$};
+ \draw (0.8,1) node {$\bigg]$};
+ \draw (0.85,1) node {$\bigg[$};
+ \draw (5,1) node {$\bigg[$};
+ \draw (4.95,1) node {$\bigg]$};
+ \draw [<->,color=red] (0.8,0.6) -- (5,0.6);
+ \draw [color=red] (2.88,0.4) node {$b-a$};
+ \draw [<->,color=blue] (0.8,1.4) -- (2.88,1.4);
+ \draw [color=blue] (2,1.6) node {$r$};
+ \end{scriptsize}
+ \end{tikzpicture}
+ \end{center}
+ \end{frame}
+ \begin{frame}
+ \textbf{\textcolor{blue}{Exemple : }}\\\vspace{0.2cm}
+ Soit $I=[-5,3]$.\\\vspace{0.2cm}
+ \begin{enumerate}
+ \item L'amplitude de l'intervalle $I$ est $3-(-5)=8$.
+ \item Le centre de l'intervalle $I$ est $\frac{3+(-5)}{2}=-1$.
+ \item Le rayon de l'intervalle $I$ est $\frac{3-(-5)}{2}=4$.
+ \end{enumerate}
+ \end{frame}
+ \begin{frame}{Valeur absolue}
+\begin{Def}
+Soit $x$ un nombre réel et $M$ le point d'abscisse $x$ sur un axe gradué $D(O;I)$. La valeur absolu de nombre réel $x$ est la distance $OM$, noté $|x|$. Et on a:\\
+\begin{minipage}[l]{7cm}
+$\bullet$ Si $x\geq 0$, alors $|x|=x$
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-2,-1) rectangle (4.1,1);
+\draw [->] (-2,0) -- (4,0);
+\begin{scriptsize}
+\draw (0,0.3) node {$O$};
+\draw (0,0) node {$|$};
+\draw (0,-0.3) node {$0$};
+\draw (1,0.3) node {$I$};
+\draw (1,0) node {$|$};
+\draw (1,-0.3) node {$1$};
+\draw (3.3,0.3) node {$M$};
+\draw (3.3,0) node {$|$};
+\draw (3.3,-0.3) node {$x$};
+\draw [<->,color=red] (0,-0.5) -- (3.3,-0.5);
+\draw [color=red] (1.7,-0.7) node {$|x|=OM=x$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\begin{minipage}[l]{7cm}
+$\bullet$ Si $x<0$, alors $|x|=-x$
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-2,-1) rectangle (4.1,1);
+\draw [->] (-2,0) -- (4,0);
+\begin{scriptsize}
+\draw (2,0.3) node {$O$};
+\draw (2,0) node {$|$};
+\draw (2,-0.3) node {$0$};
+\draw (3,0.3) node {$I$};
+\draw (3,0) node {$|$};
+\draw (3,-0.3) node {$1$};
+\draw (-1.3,0.3) node {$M$};
+\draw (-1.3,0) node {$|$};
+\draw (-1.3,-0.3) node {$x$};
+\draw [<->,color=red] (-1.3,-0.5) -- (2,-0.5);
+\draw [color=red] (0.7,-0.7) node {$|x|=OM=-x$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{Def}
+ \end{frame}
+ \begin{frame}
+ \vspace{0.2cm}
+  	  	\textbf{\textcolor{blue}{Exemple}}\\\vspace{0.1cm}
+  	  	$$|\frac{7}{3}|=\frac{7}{3} ~~;~|-3|=3 ~~;~|2-\sqrt{3}|=2-\sqrt{3} ~~;$$$$~|3-\sqrt{11}|=-(3-\sqrt{11})=\sqrt{11}-1. $$
+ 	\begin{Propr} 
+ 	 Soient $x$, $y$ et $r$ trois réels telles que $r\geq 0$.
+ 	 \begin{itemize}
+ 	 \item[$\blacktriangleright$] $|x|\leq r$ si et seulement si $-r\leq x\leq r$.
+ 	 \item[$\blacktriangleright$] $|x|< r$ si et seulement si $-r< x< r$.
+ 	 \item[$\blacktriangleright$] $|x|>r$ si et seulement si  $x>r$ ou $x<-r$.
+ 	 \end{itemize}
+ 	  	\end{Propr} 
+ 	  	\end{frame}
+ 	  	 
+ 	  	 \begin{frame}{Valeur absolue}    
+ 	\begin{Propr} 
+ 	Soient $x$ et $y$ deux réels. On a
+ 	\begin{itemize}
+ 	\item $|x|=0 \Longrightarrow x=0$
+ 	
+ 	\item $|xy|=|x||y|$
+ 	
+ 	\item $|x+y|\leqslant |x|+|y|$
+ 	
+ 	\item $ \left|  x-y\right|  \geqslant\left|  |x|-|y|\right| $
+ 	\end{itemize}
+  	\end{Propr} 	 	    
+	  \end{frame}
+\iffalse\begin{frame}{Intervalles de $\R$}
+	   \begin{definition}On appelle intervalle, un ensemble de nombres dé-
+	   limité par deux bornes qui sont des nombres réels. Cet intervalle contient tous les
+	   nombres réels compris entre ces deux bornes.
+	   \end{definition}
+	 \begin{block}{Les diférents types d'intervalles}
+Soient $a$ et $b$ deux
+nombres réels tels que $a < b$. On a :
+
+\begin{itemize}
+\item $[a,b]=\left\lbrace x\in \R, ~~ a\leqslant x\leqslant b\right\rbrace $ (Intervalle fermé
+)
+
+\item $]a,b[=\left\lbrace x\in \R, ~~ a< x < b\right\rbrace $ (Intervalle ouvert
+)
+
+\item $[a,b[=\left\lbrace x\in \R, ~~ a\leqslant x< b\right\rbrace $ (Intervalle semi-ouvert
+ à droit)
+
+\item $]a,b]=\left\lbrace x\in \R, ~~ a< x\leqslant b\right\rbrace $ (Intervalle semi-ouvert à gauche)
+
+
+\item $[a,+\infty[=\left\lbrace x\in \R, ~~ a\leqslant x\right\rbrace $
+
+\item $]a,+\infty[=\left\lbrace x\in \R, ~~ a< x\right\rbrace $
+
+\item $]+\infty,b]=\left\lbrace x\in \R, ~~  x\leqslant  b\right\rbrace $
+
+\item $]+\infty,b[=\left\lbrace x\in \R, ~~  x<  b\right\rbrace $
+\end{itemize}
+	 \end{block}  
+	   	  \end{frame}\fi
+	   	  \subsection{Approximation}
+	   	  \begin{frame}{Valeur approchée}
+	   	  \begin{Def}
+	   	  Soit $x\in\mathbb{R}$ et $r\in\mathbb{R}_+^*$. Tout nombre réel $a$ qui vérifier $|x-a|\leq r$ est appelé valeur approchée (ou approximation) du nombre $x$ à  $r$ près (ou à  la précision $r$).
+	   	  \end{Def}
+	   	   \vspace{0.2cm}
+	   	    	  	\textbf{\textcolor{blue}{Exemple}}\\\vspace{0.1cm}
+	   	  On a $|\sqrt{3}-1.73|\leq 0.003$. Donc $1.73$ est une valeur approchée de $\sqrt{3}$ à  la précision $0.003=3\times 10^{-3}$.
+	   	  \end{frame}
+	   	  \begin{frame}{Approximation par défaut et par excès}
+	   	  \begin{Def}
+	   	  Si $a\leq x\leq b$ (ou $a< x\leq b$ ou $a\leq x< b$ ou $a< x< b$). Alors:
+	   	  \begin{itemize}
+	   	  \item $a$ est une valeur approchée de $x$ à  $(b-a)$ près par défaut.
+	   	  \item $b$ est une valeur approchée de $x$ à  $(b-a)$ près par excès.
+	   	  \end{itemize}
+	   	  \end{Def}
+\vspace{0.2cm}
+\textbf{\textcolor{blue}{Exemple}}\\\vspace{0.1cm}
+On a $2.6457\leq \sqrt{7}\leq 2.6458$.\\
+	   	  Donc $b-a=2.6458-2.6457=0.0001=10^{-4}$. D'o\`{u}
+	   	  \begin{itemize}
+	   	  \item $2.6457$ est une valeur approchée de $\sqrt{7}$ à  $10^{-4}$ près par défaut.
+	   	  \item $2.6458$ est une valeur approchée de $\sqrt{7}$ à  $10^{-4}$ près par excès.
+	   	  \end{itemize}
+	   	  \end{frame}
+	   	  \begin{frame}{Approximation décimale}
+\begin{Def}
+Soit $x$ un réel tel que $p\times 10^{-n}\leq x\leq (p+1)\times 10^{-n}$ avec $p\in\mathbb{Z}$ et $\in\mathbb{N}$.
+\begin{itemize}
+\item $p\times 10^{-n}$ est appelé l'approximation de réel $x$ à  $10^{-n}$ près par défaut.
+\item $(p+1)\times 10^{-n}$ est appelé l'approximation de réel $x$ à  $10^{-n}$ près par excès.
+\end{itemize}
+\end{Def}
+\vspace{0.2cm}
+\textbf{\textcolor{blue}{Exemple}}\\\vspace{0.1cm}
+On a $3.14\leq \pi\leq 3.15$ donc $314\times 10^{-2}\leq \pi\leq 315\times 10^{-2}$. Donc:
+\begin{itemize}
+\item $314\times 10^{-2}$ est appelé l'approximation de réel $\pi$ à  $10^{-2}$ près par défaut.
+\item $315\times 10^{-2}$ est appelé l'approximation de réel $\pi$ à  $10^{-2}$ près par excès.
+\end{itemize}
+\end{frame}
+ %---------------------------------------
+  %--------------------------------------
+ \begin{frame}
+ \setbeamercolor{block title}{bg=GreenYellow}
+ \begin{Def}[Monotonie, Majoration, Minoration] 
+ 
+ \end{Def}
+ %--
+ \setbeamercolor{block title}{bg=red!50}
+ \begin{Thm}[khkh]
+ .....
+ \end{Thm}
+ %---
+ \setbeamercolor{block title}{bg=blue!20}
+ \begin{Prop}
+ 
+ \end{Prop}
+ %------
+ \setbeamercolor{block title}{bg=green!50}
+ \begin{Rem}
+ contenu...
+ \end{Rem}
+ \end{frame}
+
+ %--------------------------------------
+ %--------------------------------------
+
+\end{document}

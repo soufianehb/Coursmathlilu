@@ -1,0 +1,7 @@
+\beamer@endinputifotherversion {3.26pt}
+\select@language {french}
+\beamer@sectionintoc {1}{Fonctions num\'eriques}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{G\'en\'eralit\'es}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Limites}{38}{0}{1}
+\beamer@subsectionintoc {1}{3}{Continuit\'{e}}{88}{0}{1}
+\beamer@subsectionintoc {1}{4}{D\'{e}rivabilit\'{e}}{118}{0}{1}

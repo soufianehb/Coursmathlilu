@@ -1,0 +1,1321 @@
+\documentclass[leqno,10pt,tick,mathserif,xcolor=dvipsnames,oneside,fleqn]{beamer}
+%\documentclass[slidestop,usepdftitle=false]{beamer}
+%\documentclass[leqno,10pt,tick,mathserif,xcolor=dvipsnames]{beamer}
+%\usepackage{xcolor}
+\usepackage{etex}
+\reserveinserts{28}
+\usepackage[all]{xy}
+\usepackage[latin1]{inputenc}
+\usepackage[frenchb]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{frcursive}
+\usepackage{pdftricks}
+\usepackage{palatino}
+%\input{../preamb-pres.tex}
+%\beamertemplateshadingbackground{white!30}{white!100}
+%\usepackage{beamerthemeshadow}
+%\usepackage{beamerthemesplit}
+\usepackage{hyperref}
+%\usetheme{Warsaw}
+%\documentclass{beamer}
+
+%\usetheme{Blackboard}
+%\usetheme{Copenhagen}
+%\usetheme{S}
+\usepackage{dsfont}
+\usepackage{hyperref}
+\everymath{\displaystyle}
+\usecolortheme{crane}
+\usecolortheme{beaver}
+%%%%%%%%%%%%%%%%%%%pour la gaune%%%%%%%%%%%%%%%%%%%%%
+%\useinnertheme[shadow=true]{rounded}
+%\useoutertheme{infolines}
+%\usecolortheme{wolverine}
+%\setbeamerfont{block title}{size={}}
+%\setbeamercolor{titlelike}{parent=structure,bg=yellow!85!orange}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{beamertexpower}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{amsmath,amssymb,amsfonts}
+% Beamer class for the ENST de Bretagne (GET/ ENST B)
+
+% based on the work done by  Madhusudan Singh for NCSU
+
+% modified by Gilles Bertrand
+
+% December 2006
+
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+
+\def \K {\mathbb{K} }
+\def \S {\mathbb{S} }
+\def \L {\mathbb{L} }
+\def \N {\mathbb{N} }
+\def \Z {\mathbb{Z} }
+\def \Q {\mathbb{Q} }
+\def \R {\mathbb{R} }
+\def \C {\mathbb{C} }
+\def \F {\mathfrak{F}}
+\def \B {\mathfrak{B}}
+\def \O {\mathfrak{O}}
+\def \U {\mathfrak{U}}
+\usepackage{tablists}
+\mode <all>
+\addtobeamertemplate{footline}{\insertframenumber/\inserttotalframenumber}
+
+%\usepackage{epsfig,psfig}
+%ENSEMBLES USUELS
+\newcommand{\field}[1]{\mathbb{#1}}
+\newcommand{\rrr}{\field{R}}
+\newcommand{\nnn}{\field{N}}
+\newcommand{\zzz}{\field{Z}}
+\newcommand{\kkk}{\field{K}}
+\newcommand{\qqq}{\field{Q}}
+\usepackage{graphicx,float,placeins,subfigure}
+%pour importer des grahes construit Ã  partir de geogebra
+\usepackage{pgf,tikz}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+%couleur des paragraphes
+%\usepackage{sectsty}
+%FIN DE LA DECLARATION DES FONTES ENSEMBLES USUELS
+\definecolor{orange}{rgb}{0.99,0.69,0.07}
+\definecolor{red}{rgb}{1,0,0}
+%\definecolor{blue}{rgb}{0,0,2}
+\newcommand{\blue}{\color{blue}}
+\newcommand{\green}{\color{green}}
+\newcommand{\red}{\color{red}}
+\newcommand{\brown}{\color{brown}}
+\newcommand{\white}{\color{white}}
+\newcommand{\yellow}{\color{yellow}}
+%\beamertemplatetransparentcovereddynamic
+\newcommand{\Lang}[1]{\operatorname{\text{\textsc{#1}}}}
+\newcommand{\Class}[1]{\operatorname{\mathchoice
+{\text{\sf \small #1}} {\text{\sf \small #1}}
+  {\text{\sf #1}}
+{\text{\sf #1}}}}
+%\newcommand{\R}{I\!\!R}
+%\newcommand{\N}{I\!\!N}
+\newcommand{\NumSAT}      {\text{\small\#SAT}}
+\newcommand{\NumA}        {\#_{\!A}}
+\newcommand{\barA}        {\,\bar{\!A}}
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\Set}[1]{\{#1\}}
+\newtheorem{proposition}{Proposition}[section]
+%\newtheorem{property}[proposition]{PropriÃƒÂ©tÃƒÂ©}
+%\renewtheorem{corollary}[proposition]{Corollaire}
+
+%\usetheme{Warsaw}
+%\usetheme{Frankfurt}
+%\usetheme{Antibes}
+%\usetheme{JuanLesPins}
+%\usetheme{Berkeley}
+\usetheme{CambridgeUS}
+%\usetheme[secheader]{Boadilla}
+%\usetheme[secheader]{Madrid}
+%\usetheme{AnnArbor}
+%\usetheme[compress]{berlin}
+%\usetheme{Warsaw}
+%\usetheme{Luebeck}
+%\usecolortheme{seahorse}
+\newtheorem{ex}{Exemple}[section]
+\usecolortheme{wolverine}
+\theoremstyle{plain}
+\newtheorem{Thm}{{\textbf{Théorème}}}[section] 
+\newtheorem*{theoreme*}{{Théorème}}
+\newtheorem{Prop}{\textbf{Proposition}}[section]
+\newtheorem*{proposition*}{Proposition}
+\newtheorem{Cor}{\textbf{Corollaire}}[section]
+\newtheorem*{corollaire*}{Corollaire}
+\newtheorem{Lem}{\textbf{Lemme}}[section]
+\newtheorem*{lemme*}{Lemme}
+\newtheorem{Defs}{\textbf{Définitions}}[section]
+\newtheorem{Def}{\textbf{Définition}}[section]
+\newtheorem{Rem}{\textbf{Remarque}}[section]
+\newtheorem{Propr}{\textbf{Propriétés}}[section]
+%--------------------------------------------------
+\setbeamercolor{block title example} {fg=violet,bg=purple!50}
+\setbeamercolor{block title } {fg=violet,bg=piggypink}
+\setbeamercolor{block title alerted} {fg=teal,bg=teal!40}
+\pgfdeclaremask{tu}{beamer-tu-logo-mask}
+%\pgfdeclaremask{computer}{beamer-computer-mask}
+%\pgfdeclareimage[interpolate=true,mask=computer,height=4cm]{computerimage}{beamer-computer}
+%\pgfdeclareimage[interpolate=true,mask=computer,height=2cm]{computerworkingimage}{beamer-computerred}
+%\pgfdeclareimage[mask=tu,height=0.6cm]{logo}{ts_logo}
+%\pgfdeclareimage[height=0.6cm]{logo}{es} \logo{\pgfuseimage{logo}}
+\everymath{\displaystyle}
+% % % % % % % % % % %ù
+% % % % % % % % % %
+
+\title[Mathématique 1]{\textbf{\textcolor{red}{ Module:  Mathématique 1}}\vspace{0.4cm}\\\textbf{Chapitre 2: Fonctions numériques}}
+\author{\textbf{Prof. Mohammed SRATI}}
+
+\institute[ENS-Fès]
+{
+\medskip\medskip
+\textbf{{Licence d'Éducation \\ Spécialité: Enseignement Primaire}}}
+\date{14-11-2022}
+
+\begin{document}
+\begin{frame}
+	\begin{center}  \vspace*{-0.3cm}  
+			\includegraphics[width=10cm, height=1.4cm]{logo}
+	\vspace*{-0.5cm}	\end{center}
+\titlepage
+\end{frame}
+%----------------------------------
+
+%--------------------------------
+
+%----------------------------------
+
+%--------------------------------
+
+\begin{frame}
+\frametitle{Sommaire}
+\textbf{2.	Fonctions numériques.}
+
+\begin{itemize}
+\item Généralités sur les fonctions numériques
+\item	Définitions
+\item	Limite et continuité
+\item	Fonction réciproque d'une fonction continue
+\item	Fonctions dérivables
+\item	Étude des variations et représentation des fonctions numériques.
+
+
+\end{itemize}
+%2.3.	Calcul d'intégrale
+%\begin{itemize}
+%\item	Fonction primitive
+%\item	Surface et fonction primitive d'une fonction continue (fonction constante et positive sur un intervalle - fonction affine positive sur un intervalle - ...)
+%\item	Intégrale d'une fonction continue
+%\item	Calcul des volumes, calcul de la masse
+%\item	Vitesse et distance
+%\end{itemize}
+\end{frame}
+%%----------------------------------
+
+%--------------------------------
+
+
+%--------------------------------
+
+ \section{Fonctions numériques}
+ \subsection{Généralités}
+ \begin{frame}
+\begin{Def}
+Une fonction numérique est une relation mathématique entre deux ensembles numériques (un
+ensemble de départ et un ensemble d'arrivée) tel qu'à chaque élément de l'ensemble de départ,
+on fait correspondre au plus (Soit un seul élément ou aucun élément.) un élément de l'ensemble d'arrivée.\\\pause
+On note la fonction f d'une partie $I$ de $\R$ et à valeurs dans $\R$, comme suit :
+
+$$f : I\subseteq \R \longrightarrow \R$$
+$$\hspace{2cm}x \longmapsto f(x)$$
+où $x$ désigne la variable de $f$ (ou l'antécédent de $y = f(x)$) et $f(x)$ est l'image de $x$ par $f$
+($f(x)$ est unique si elle existe).
+\end{Def}
+ \end{frame}
+ \begin{frame}
+ \begin{Def}
+ Le domaine de définition de $f$ (ou l'ensemble de définition de $f$) est l'ensemble qui regroupe
+ tous les réels admettant une image par $f$ :
+ $$ D_f =\left\lbrace x \in \R / f(x) \text{ existe }\right\rbrace.$$\pause
+ \end{Def}\vspace{0.2cm}
+ \textbf{\textcolor{blue}{Exemples:}}\\\vspace{0.2cm}
+ \begin{itemize}
+ \item La fonction $f(x) = \dfrac{1}{x}$
+ est définie sur \pause $D_f = \R \setminus \left\lbrace 0\right\rbrace  = \R^*$.
+ \pause
+ \item La fonction $f(x)= \sqrt{x^2-1}$ est définie sur \pause $D_f =]-\infty, -1] \cup [1, +\infty[$.
+ \pause
+ \item La fonction $f(x) = \sqrt{1-x^2}$ est définie sur \pause $D_f =[-1, 1]$
+ \pause
+ \item La fonction $f(x)=sin(x)$ est définie sur \pause tout  $D_f =\R$.
+ \end{itemize}
+ \end{frame}
+ \begin{frame}
+ \begin{definition}
+ La courbe représentative de $f$ (ou le graphe de $f$) est l'ensemble des couples de réels de la forme
+ $(x, f(x))$ où $x$ est un élément du domaine de définition de $f$ :
+ $$C_f=\left\lbrace (x,f(x)/x\in D_f)\right\rbrace (\text{note aussi } G_f).$$
+ \end{definition}
+ \pause
+ La représentation graphique de la fonction $f$ est schématisée géométriquement dans le plan
+ cartésien $(xoy)$ sous forme d'une courbe $C_f$ d'équation : $y = f(x)$.
+ 
+ \includegraphics[width=0.7\linewidth]{./graphe}
+  \end{frame}
+ \begin{frame}{Fonctions paires, impaires et périodiques}
+ \begin{Def}
+ Soit $f : I\longrightarrow \R$ une fonction.\pause
+ \begin{itemize}
+ \item \textbf{Fonction paire}. $f$ est paire si et seulement si $\forall x \in D_f$  on a : $-x\in D_f$ et  $f(-x) = f(x)$. 
+ \pause
+ \item \textbf{Fonction impaire}. $f$ est impaire si et seulement si $\forall x \in D_f$  on a : $-x\in D_f$ et  $f(-x) = -f(x)$.
+ \pause
+ \item \textbf{Périodicité}. $f$ est périodique s'il existe un réel $T \neq 0$ (appelé période) tel que  $\forall x \in D_f$ on a : $x+T\in D_f$ et
+ $f(x + T ) = f(x)$.
+ \end{itemize}
+ \end{Def}\pause
+ \vspace{0.2cm}
+  \textbf{\textcolor{blue}{Exemples:}}\\\vspace{0.2cm}
+ \begin{itemize} 
+ \item La fonction définie sur $\R$ par $f(x)=x^2$ est paire.\pause
+ \item La fonction définie sur $\R$ par $f(x)=x^3$ est impaire.\pause
+ \item La fonction définie sur $\R$ par $f(x)=sin(x)$ est périodique de période $T=2\pi$.
+  \end{itemize}
+ \end{frame}
+ \begin{frame}
+ \begin{Rem}
+ \begin{itemize}
+ \item Le graphe d'une fonction paire est symétrique par rapport à l'axe
+ des ordonnées (l'axe (oy)),
+ \pause
+ \item Le graphe d'une fonction impaire est symétrique par rapport à l'origine.
+ \pause
+ \item  Le graphe d'une fonction périodique de période $T$ est invariant par
+ la translation de vecteur $\overrightarrow{T}$
+ \end{itemize}
+  \end{Rem}
+ \end{frame}
+ \begin{frame}
+  \includegraphics[width=0.9\linewidth]{./sym}\\
+  \pause
+   \includegraphics[width=0.9\linewidth]{./period}
+    \end{frame}
+ \begin{frame}{Opérations sur les fonctions}
+\begin{block}{}
+\vspace{-0.1cm}
+ $1)$. Soient $f, g : I \longrightarrow \R$ deux fonctions.\pause
+ \begin{itemize}
+ \item \textbf{Égalité de deux fonctions}. L'égalité de $f$ et $g$ $(f = g)$ est définie par :
+ $f(x) = g(x)$, $\forall x \in I$.
+ \pause
+ \item \textbf{Somme de deux fonctions}. La somme de $f$ et $g$ est la fonction définie sur $I$ par :
+ $(f + g)(x) = f(x) + g(x)$, $\forall x \in I$.
+ \pause
+ \item \textbf{Produit de deux fonctions}. Le produit de $f$ et $g$ est la fonction définie sur $I$ par :
+ $(fg)(x) = f(x) g(x)$, $\forall x \in I$.
+ \pause
+ \item \textbf{Produit d'une fonction par un réel}. Le produit de $f$ par $\alpha \in \R$ est la fonction
+ définie sur $I$ par : $(\alpha f)(x) = \alpha f(x)$, $\forall x \in I$.
+ \pause
+ \item \textbf{Quotient de deux fonctions}. Le quotient de $f$ et $g$ est la fonction définie sur $I$ par : $\dfrac{f}{g}(x)=\dfrac{f(x)}{g(x)},$ $\forall x \in \R$ (avec $g(x)\neq 0,~~ \forall x\in I$).\pause
+ \end{itemize}
+ \end{block}
+ \begin{block}{}
+ \vspace{-0.1cm}
+ $2)$. Soient $f : I \longrightarrow J$ et $g :  J \longrightarrow \R$ deux fonctions ($I, J \subseteq \R$).\pause
+ \begin{itemize}
+  \item \textbf{Composée de deux fonctions}. La composée de $f$ et $g$ est la fonction $g\circ f : I \longrightarrow \R$
+ définie par : $g \circ f(x) = g(f(x)), \forall x \in I$.
+ \end{itemize}
+  \end{block}
+ \end{frame}
+ \begin{frame}
+ \textbf{\textcolor{blue}{Exemples:}}\\\vspace{0.2cm}
+ 1.  Soient $f(x)=\displaystyle \frac{x-1}{\sqrt{x^{2}-1}}$, et  $g(x)=\displaystyle \frac{\sqrt{x^{2}-1}}{x+1}$ On a : $f(x)=g(x)$.\\\vspace{0.3cm}\pause
+ 2.  Soient $f(x)=\ln x$ et  $g(x)=\sqrt{x^{2}+1}$: {\it on a :} $$g\circ f(x)=\sqrt{(\ln x)^{2}+1} \text{ et } f\circ g(x)=\ln(\sqrt{x^{2}+1})$$.
+ \end{frame}
+ \subsection{Limites}
+ \begin{frame}{Limites}
+ \begin{Def}
+ Soit $f : I \longrightarrow \R$ une fonction ($I$ un intervalle de $\R$) et soit $x_0\in I$ ou une extrémité de $I$.
+ On dit que $f$ admet la limite $l\in \R$ en $x_0$ (ou $f$ tend vers $l$ quand $x$ tend vers $x_0$) si:
+ $$\forall \epsilon > 0, \exists \eta > 0, \forall x \in I \text{ tel que } |x - x_0| < \eta \Rightarrow |f(x) -l| < \epsilon.$$
+ On écrit : $\lim\limits_{x\rightarrow x_0}f(x) = l$.
+ \end{Def}\pause
+ Cela signifie que la limite de $f$ en $x_0$ est le réel $l$ vers lequel se rapproche les valeurs $f(x)$
+ quand $x$ se rapproche aussi près que l'on veut de $x_0$
+ \end{frame}
+ \begin{frame}{Limites}
+ \begin{Def}
+ On dit que $f$ admet la limite $l\in \R$ au voisinage de $+\infty$ ou tend vers $l$ quand $x$ tend vers $+\infty$
+ (resp. vers $-\infty$) si :
+ 
+ $$\forall \epsilon > 0, \exists B > 0, \forall x \in I \text{ tel que }   x>B (\text{ resp. } x < -B)   \Rightarrow |f(x) -l| < \epsilon.$$
+ 
+ On écrit : $\lim\limits_{x\rightarrow \pm \infty}f(x) = l$.
+ \end{Def}\pause
+ Dire que la limite de $f$ en $+\infty$ (resp. $-\infty$) est égale à $l\in \R$, signifie que $f(x)$ reste dans
+ un voisinage de $l$ (c-à-d dans un intervalle de la forme $]l-\epsilon, l + \epsilon[$) dès que $x$ est suffisamment
+ grand (resp. suffisamment petit).
+ \end{frame}
+ \begin{frame}
+ \begin{Def}
+ $1)$. On dit que $f(x)$ tend vers $+\infty$ au point $x_0$ si :
+ $$\forall A > 0, \exists \eta > 0, \forall x \in I \text{ tel que }   |x-x_0|< \eta  \Rightarrow |f(x)| >A.$$
+ 
+ On écrit : $\lim\limits_{x\rightarrow  x_0}f(x) = +\infty$.\pause
+ 
+ $2)$. On dit que $f(x)$ tend vers $-\infty$ au point $x_0$ si :
+ $$\forall A > 0, \exists \eta > 0, \forall x \in I \text{ tel que }   |x-x_0|<\eta  \Rightarrow |f(x)| <-A.$$
+ 
+ On écrit : $\lim\limits_{x\rightarrow  x_0}f(x) = -\infty$.
+ \end{Def}\pause
+ Dire que la limite de $f$ en $x_0$ est égale à $+\infty$ (resp. $-\infty$) est  signifie que $f(x)$ devient de
+ plus en plus grand (resp. petit) dès que $x$ est suffisamment proche de $x_0$.
+ \end{frame}
+ \begin{frame}
+ \vspace{-0.2cm}
+ \begin{Def}
+ $1)$. On dit que $f(x)$ tend vers $+\infty$ quand $x$ tend vers $+\infty$ si :
+ $$\forall A > 0, \exists B > 0, \forall x \in I \text{ tel que }   x> B  \Rightarrow |f(x)| >A.$$
+ On écrit : $\lim\limits_{x\rightarrow +\infty }f(x) = +\infty$.\pause
+ 
+ $2)$. On dit que $f(x)$ tend vers $+\infty$ quand $x$ tend vers $-\infty$ si :
+ $$\forall A > 0, \exists B > 0, \forall x \in I \text{ tel que }   x<- B  \Rightarrow |f(x)| >A.$$
+ On écrit : $\lim\limits_{x\rightarrow -\infty }f(x) = +\infty$.\pause
+ 
+ $3)$. On dit que $f(x)$ tend vers $-\infty$ au point $+\infty$ si :
+ $$\forall A > 0, \exists \eta > 0, \forall x \in I \text{ tel que }   x>B  \Rightarrow |f(x)| <-A.$$\vspace{-0.1cm}
+ On écrit : $\lim\limits_{x\rightarrow + +\infty}f(x) = -\infty$.\pause
+ 
+ $3)$. On dit que $f(x)$ tend vers $-\infty$ au point $-\infty$ si :
+ $$\forall A > 0, \exists \eta > 0, \forall x \in I \text{ tel que }   x<-B  \Rightarrow |f(x)| <-A.$$
+ \vspace{-0.1cm}
+ On écrit : $\lim\limits_{x\rightarrow + -\infty}f(x) = -\infty$.
+ \end{Def}
+ \end{frame}
+ \begin{frame}
+ \textbf{\textcolor{blue}{Exemples:}}\\\vspace{0.2cm}
+ \begin{itemize}
+ \item[$\bullet$] $\displaystyle \lim_{x\rightarrow 0}\frac{\sin x}{x}=1.$
+ 
+ \item[$\bullet$] $\displaystyle \lim_{x\rightarrow\pm\infty}\frac{1}{x}=0.$
+ 
+ \item[$\bullet$] $\displaystyle \lim_{x\rightarrow 1}\frac{x}{x^{2}-1}=\pm\infty.$
+ 
+ 
+ \item[$\bullet$] $\displaystyle \lim_{x\rightarrow\pm\infty}\sqrt{|x|}=+\infty.$
+ \end{itemize}
+ \end{frame}
+ \begin{frame}{Limite à gauche et à droite}
+ \begin{Def}
+ On dit que f admet $l\in I$ pour limite à droite en $x_0$ si :
+ 
+ $$\forall \epsilon > 0, \exists \eta > 0, \forall x \in I \text{ tel que } 0<x - x_0 < \eta \Rightarrow |f(x) -l| < \epsilon.$$
+ 
+ On écrit : $\lim\limits_{x\rightarrow x_0^+}f(x) = l$.\pause\vspace{1cm}
+ 
+ On dit que f admet $l\in I$ pour limite à gauche en $x_0$ si :
+ 
+ $$\forall \epsilon > 0, \exists \eta > 0, \forall x \in I \text{ tel que } 0<x_0 - x < \eta \Rightarrow |f(x) -l| < \epsilon.$$
+ 
+ On écrit : $\lim\limits_{x\rightarrow x_0^-}f(x) = l$.
+ \end{Def}
+  \end{frame}
+ \begin{frame}
+ \textbf{\textcolor{blue}{Exemples:}}\\\vspace{0.2cm}
+ Soit $f$ la fonction définie par :
+ 
+  $$
+  	    f(x)=  \left\{ 
+  	       \begin{array}{cllll}
+  	    
+  	      x-1 & si & x> 1   & \text{  }&, \\\\
+  	        x+1 & si & x\leqslant  1   & \text{  } & 
+  	        \label{eq1}
+  	       \end{array}
+  	       \right. 
+  	    $$
+  	    
+ Alors $\lim\limits_{x\rightarrow 1^+}f(x)=0$ et $\lim\limits_{x\rightarrow 1^-}f(x)=2.$
+ \end{frame}
+ \begin{frame}
+ \begin{Thm}
+ $l$ est la limite de $f$ quand $x$ tend vers $x_0$ si et seulement si les deux limites à droite et à gauche
+ de $f$ en $x_0$ existent et sont égales à $l$ :
+ $$\lim\limits_{x\rightarrow x_0}f(x)=l\Longleftrightarrow \lim\limits_{x\rightarrow x_0^+}f(x) =\lim\limits_{x\rightarrow x_0^-}f(x)=l .$$
+ \end{Thm}
+ \end{frame}
+ \begin{frame}{Propriétés des limites}
+\begin{block}{Unicité de la limite}
+La limite quand elle existe (finie ou infinie) est unique.
+\end{block}
+\pause
+\begin{block}{Inégalité des limites}
+Soient $f, g : I \longrightarrow \R$ et $x_0 \in I$ ou une extrémité de $I$.
+Si $f(x) \leqslant g(x)$ sur un voisinage de $x_0$, alors $$\lim\limits_{x\rightarrow x_0}f(x) \leqslant \lim\limits_{x\rightarrow x_0} g(x)$$
+\end{block}
+\pause
+\textbf{En particulier} : si $f(x) \geqslant 0$ (resp. $f(x) \leqslant 0$) sur un voisinage de $x_0$, alors 
+$$\lim\limits_{x\rightarrow x_0}f(x) \geqslant 0 ~~(\text{ resp. } \lim\limits_{x\rightarrow x_0}f(x) \leqslant 0)$$
+\end{frame}
+ \begin{frame}{Propriétés des limites}
+\begin{block}{Théorème des gendarmes}
+Soient $f, g, h : I \longrightarrow \R$ et $x_0 \in I$ ou une extrémité de $I$ tels que : $g(x) \leqslant f(x) \leqslant h(x)$ (sur un
+voisinage de $x_0$). Si $\lim\limits_{x\rightarrow x_0}g(x)=\lim\limits_{x\rightarrow x_0}h(x)=l$ alors $\lim\limits_{x\rightarrow x_0}f(x)=l$.
+\end{block}
+\pause
+\begin{ex}
+$\displaystyle \lim_{x\rightarrow+\infty}\frac{\cos x}{\sqrt{x}}$ (Notons qu'au voisinage de $+\infty$ la limite de $\cos$ n'existe pas).\\ \pause
+Puisqu'on a : $-1\leq\cos x\leq 1, ~~\forall x>0$, alors \pause $\dfrac{-1}{\sqrt{x}}<\dfrac{cos(x)}{\sqrt{x}}<\dfrac{1}{\sqrt{x}}~~\forall x>0$ de plus : \pause $\displaystyle \lim_{x\rightarrow+\infty}\frac{-1}{\sqrt{x}}=\lim_{x\rightarrow+\infty}\frac{1}{\sqrt{x}}=0$ (m\^{e}me limite des deux fonctions encadrantes), alors \pause $$\displaystyle \lim_{x\rightarrow+\infty}\frac{\cos x}{\sqrt{x}}=0.$$
+
+\end{ex}
+\pause
+\end{frame}
+ \begin{frame}{Propriétés des limites}
+\begin{block}{Limite par majoration ou minoration}
+Soient $f, g : I\longrightarrow  \R$ et $x_0 \in I$ ou une extrémité de $I$. Si $f(x) \leqslant g(x)$, $\forall x \in I$ alors on a :
+\pause
+
+Si $\lim\limits_{x\rightarrow x_0}f(x)=+\infty$  alors $\lim\limits_{x\rightarrow x_0}g(x)=+\infty.$
+
+Si $\lim\limits_{x\rightarrow x_0}g(x)=-\infty$ alors $\lim\limits_{x\rightarrow x_0}f(x)=-\infty.$
+\end{block}
+\pause
+\begin{ex}
+$\displaystyle \lim_{x\rightarrow-\infty}x-\sin(x)$.\\ \pause
+En majorant la fonction comme suit: $x-sin(x)\leq x+1, \forall x\in \mathbb{R}$, et comme $\displaystyle \lim_{x\rightarrow-\infty}x+1=-\infty$, alors par majoration, $$\displaystyle \lim_{x\rightarrow-\infty}x-\sin(x)=-\infty.$$
+\end{ex}
+ \end{frame}
+ \begin{frame}{Opérations sur les limites}
+ \begin{Thm} \text{  }\\
+ $I)$. Soient $f, g : I \longrightarrow \R$ deux fonctions et $x_0 \in I$ ou une extrémité de $I$. Alors :
+ \begin{itemize}
+ 
+ \item \textbf{Limite de la somme}. $\lim\limits_{x\rightarrow x_0}(f + g)(x) = \lim\limits_{x\rightarrow x_0}f(x) + \lim\limits_{x\rightarrow x_0}g(x).$\pause
+ 
+ \item \textbf{Limite du produit}. $\lim\limits_{x\rightarrow x_0}(fg)(x) = \lim\limits_{x\rightarrow x_0}f(x) \lim\limits_{x\rightarrow x_0}g(x).$\pause
+ 
+ En particulier : $\lim\limits_{x\rightarrow x_0}(\alpha f)(x) = \alpha \lim\limits_{x\rightarrow x_0}
+ f(x) ~~(\alpha \in \R)$.\pause
+ 
+ \item \textbf{Limite du quotient}.
+ $\lim\limits_{x\rightarrow x_0}\dfrac{f}{g}(x) =\dfrac{\lim\limits_{x\rightarrow x_0}f(x)}{\lim\limits_{x\rightarrow x_0}g(x)}$ 
+  (avec : $g(x)\neq 0$  $\forall x \in I$ et $\lim\limits_{x\rightarrow x_0} g(x) \neq 0$).\pause
+ \end{itemize}
+ $II)$. Soient $f : I \longrightarrow J$ et $g : J \longrightarrow \R$ deux fonctions et $x_0 \in I$ ou une extrémité de $I$.
+ Si $\lim\limits_{x\rightarrow x_0}f(x)= y_0$ et $\lim\limits_{y\rightarrow y_0}g(x) = l$, alors $\lim\limits_{x\rightarrow x_0}g\circ f(x)
+  = \lim\limits_{x\rightarrow x_0}g(f(x)) = l$.
+ \end{Thm}
+ \end{frame}
+  \begin{frame}
+ \begin{ex}
+  $\displaystyle \lim_{x\rightarrow+\infty}\sin(\frac{1}{x})$.
+  Puisque $$\displaystyle \lim_{x\rightarrow+\infty}\frac{1}{x}=0 \text{ et } \displaystyle \lim_{x\rightarrow 0}\sin(x)=0,$$ alors $$\displaystyle \lim_{x\rightarrow+\infty}\sin(\frac{1}{x})=0$$ (Compos\'{e}e de fonctions).
+ \end{ex}
+ \end{frame}
+ \begin{frame}
+ \begin{block}{Conventions de calcul}
+ $(+\infty) + (+\infty) = +\infty$,~~~~~~ $(-\infty) + (-\infty) = -\infty$.
+ 
+ $\pm\infty + \alpha = \pm\infty$,~~~~~~~~~~~~~~ $(+\infty) \times (+\infty) = +\infty$.
+ 
+ $(-\infty) \times (-\infty) = +\infty$,~~~~~~ $(+\infty) \times (-\infty) = -\infty$.
+ 
+ $\alpha \times (+\infty) = (\text{ signe } \alpha)\infty$,~~~~~~ $\alpha \times (-\infty) = (-\text{ signe } \alpha)\infty$  $(\alpha \in \R)$~.\pause
+ \end{block}
+ \begin{block}{Formes indéterminées}
+$(+\infty)+(-\infty)$ ,
+$\dfrac{\infty}{\infty}$,~~ $\dfrac{0}{0}$, ~~ $0\times\infty,$~~ $0^{0}$,~~ $\infty^{\infty},~~ \infty^{0}$,~~ $1^{\infty}.$
+ \end{block}
+ \end{frame}
+ 
+ \begin{frame}{Exemples de calcul de limites.}
+  $1)$ $\displaystyle \lim_{x\rightarrow 0^{+}}\sqrt{1+\frac{1}{x}}-\sqrt{\frac{1}{x}}=+\infty-\infty~$ (FI).\\ \pause
+ En multipliant par le conjugu\'{e}, on obtient:
+ $$
+ \begin{aligned}
+ \lim_{x\rightarrow 0^{+}}\sqrt{1+\frac{1}{x}}-\sqrt{\frac{1}{x}}&=\lim_{x\rightarrow 0^{+}}\frac{(\sqrt{1+\frac{1}{x}}-\sqrt{\frac{1}{x}})(\sqrt{1+\frac{1}{x}}+\sqrt{\frac{1}{x}})}{\sqrt{1+\frac{1}{x}}+\sqrt{\frac{1}{x}}}\\
+ &=\lim_{x\rightarrow 0^{+}}\frac{1+\frac{1}{x}-\frac{1}{x}}{\sqrt{1+\frac{1}{x}}+\sqrt{\frac{1}{x}}}\\
+ &=\lim_{x\rightarrow 0^{+}}\frac{1}{\sqrt{1+\frac{1}{x}}+\sqrt{\frac{1}{x}}}\ ~~(\lim_{x\rightarrow 0^{+}}\frac{1}{x}=+\infty)
+ \end{aligned}
+ $$
+ Ainsi : $\displaystyle \lim_{x\rightarrow 0^{+}}\sqrt{1+\frac{1}{x}}-\sqrt{\frac{1}{x}}=0.$\\
+ \end{frame}
+  
+  \begin{frame}{Exemples de calcul de limites.}
+ $2)$ $\displaystyle \lim_{x\rightarrow 0}\dfrac{\sin (3x)}{x}.$\\ \pause
+ On pose le changement de variable $u=3x$ et $(x\rightarrow 0\Leftrightarrow u\rightarrow 0)$ , ainsi :
+ $$
+ \lim_{x\rightarrow 0}\frac{\sin 3x}{x}=\lim_{u\rightarrow 0}\frac{3\sin u}{u}=3\lim_{u\rightarrow 0}\frac{\sin u}{u}=3\times 1.
+ $$
+ Donc : $\displaystyle \lim_{x\rightarrow 0}\frac{\sin 3x}{x}=3.$
+ \end{frame}
+ \begin{frame}{Branches infinies et asymptotes}
+ \begin{itemize}
+ \item[1.] Si $\displaystyle \lim_{x\rightarrow x_{0}}f(x)=\pm\infty$, alors $C_{f}$ admet la droite d'\'{e}quation $x=x_{0}$ comme asymptote verticale.\pause
+ 
+ \item[2.] Si $\displaystyle \lim_{x\rightarrow\pm\infty}f(x)=y_{0}$, alors $C_{f}$ admet la droite d'\'{e}quation $y=y_{0}$ comme asymptote horizontale.\pause
+ 
+ \item[3.] Si $\displaystyle \lim_{x\rightarrow\pm\infty}f(x)=\pm\infty$, dans ce cas on calcule $\displaystyle \lim_{x\rightarrow\pm\infty}\frac{f(x)}{x}$ et l\`{a} on distingue les sous-cas ci-dessous :\pause
+ \begin{itemize}
+ \item[$\mathrm{a}$.] Si $\displaystyle \lim_{x\rightarrow\pm\infty}\dfrac{f(x)}{x}=0$, alors $C_{f}$ admet une branche parabolique de direction asymptotique $(ox)$.\pause
+ 
+ \item[$\mathrm{b}$.] Si $\displaystyle \lim_{x\rightarrow\pm\infty}\dfrac{f(x)}{x}=\pm\infty$, alors $C_{f}$ admet une branche parabolique de direction asymptotique $(oy)$.\pause
+ 
+ \item[$\mathrm{c}$.] Si $\displaystyle \lim_{x\rightarrow\pm\infty}\dfrac{f(x)}{x}=a\neq 0$, alors on distingue \`{a} nouveau deux cas :\pause
+ \begin{itemize}
+ \item[$\mathrm{c}_{1}$.] Si $\displaystyle \lim_{x\rightarrow\pm\infty}f(x)-ax=\pm\infty$, alors $C_{f}$ admet une branche parabolique de direction asymptotique d'\'{e}quation $y=ax.$\pause
+ 
+ \item[$\mathrm{c}_{2}$.] Si $\displaystyle \lim_{x\rightarrow\pm\infty}f(x)-ax=b$, alors $C_{f}$ admet une asymptote oblique de direction
+ $
+ y=ax+b.
+ $
+ \end{itemize}
+ \end{itemize}
+ \end{itemize}
+ \end{frame}
+ \subsection{Continuit\'{e}}
+ \begin{frame}{Continuit\'{e}}
+ Soient $f$ : $I\rightarrow \mathbb{R}$ une fonction et $x_{0}\in I$ ({\it I} est un intervalle de $\mathbb{R}$).
+ \begin{Def}[Continuité en un point] 
+ $f$ {\it est continue en} $x_{0}$ ({\it ou au point} $x_{0}$) {\it si}: $\displaystyle \lim_{x\rightarrow x_{0}}f(x)=f(x_{0})$ .
+ \end{Def}\pause
+ \begin{Def}[Continuité sur un intervalle] $f$ {\it est continue sur I si} $f$ {\it est continue en tout point de} $I.$
+ \end{Def}
+ \end{frame}
+ \begin{frame}
+ \textbf{\textcolor{blue}{Exemples:}}\\\vspace{0.2cm}
+ 1. Les fonctions polynomiales sont continues sur $\mathbb{R}$ :
+ $$
+ a_{0}+a_{1}x+a_{2}x^{2}+\cdots+a_{n-1}x^{n-1}+a_{n}x^{n}(a_{i}\in \mathbb{R})\ .
+ $$\pause
+ 2. Les fonctions racine carr\'{e}e et racines $n^{\grave{\mathrm{e}}\mathrm{m}\mathrm{e}}$ sont continues sur $\mathbb{R}^{+}$:
+ $$
+ \sqrt{x},\ \sqrt[n]{x}=x^{\frac{1}{n}}.
+ $$\pause
+ 3. Les fonctions circulaires (ou trigonom\'{e}triques) sont continues sur $\mathbb{R}$ :
+ $$\cos x, ~~\sin x,~~ tg x.$$\pause
+ 4. Les fonctions logarithmiques sont continues sur $\mathbb{R}^{+*}$:
+ $$
+ \ln x,\ \log x,\ \log_{a}x.
+ $$\pause
+ 5. Les fonctions exponentielles sont continues sur $\mathbb{R}$ :
+ $$
+ \mathrm{e}^{x}=\exp x,\ a^{x}=\mathrm{e}^{x\ln a}~~(a>0)\ .
+ $$\pause
+ 6. La fonction partie enti\`{e}re est discontinue en tout entier relatif $n\in \mathbb{Z}$ :
+ $$E(x)=n \textit{ tel que} ~~n\leq x<n+1.$$
+ \end{frame}
+ \begin{frame}{Continuité \`{a} droite et \`{a} gauche en un point}
+ \begin{Def}
+ \begin{itemize}
+ \item $f$ {\it est continue \`{a} droite} {\it en} $x_{0}$ {\it si}: $\displaystyle \lim_{x\rightarrow x_{0}+}f(x)=f(x_{0})~~ $.\pause
+ \item $f$ est continue \`{a}  gauche en
+  $x_{0}$  si:  $\displaystyle \lim_{x\rightarrow x_{0}^{-}}f(x)=f(x_{0})$.
+ \end{itemize}
+ \end{Def}\pause
+ \begin{Thm}
+ $f$ {\it est continue en} $x_{0}$ {\it si et seulement si} $f$ {\it est continue \`{a} gauche et \`{a} droite en} $x_{0}.$
+ \end{Thm}
+ \end{frame}
+ \begin{frame}
+ \textbf{\textcolor{blue}{Exemples:}}\\\vspace{0.2cm}
+ $f(x)=\left\{\begin{array}{l}
+ 0\ ~~ \mathrm{s}\mathrm{i}\ ~~ x=0\\
+ \dfrac{1}{x}\ ~~ \mathrm{s}\mathrm{i}\ ~~ 0<x\leqslant\dfrac{1}{2}\\
+ 1+x\ ~~\mathrm{s}\mathrm{i}\ ~~ \frac{1}{2}<x\leqslant 1
+ \end{array}\right.$\pause
+ 
+ $\bullet$ f est continue sur $]0, \displaystyle \frac{1}{2}]$ et sur $] \displaystyle \frac{1}{2},1]$.\pause
+ 
+ $\bullet$ Au point $ 0,\displaystyle \lim_{x\rightarrow 0^{+}}f(x)=\lim_{x\rightarrow 0^{+}}\frac{1}{x}=+\infty$, donc $f$ n'est pas continue \`{a} droite de $0.$\pause
+ 
+ $\bullet$ Au point $\displaystyle \frac{1}{2},~~ \displaystyle \lim_{x\rightarrow\frac{1}{2}}f(x)=\lim_{x\rightarrow\frac{1}{2}^+}(1+x)=1+\frac{1}{2}=\frac{3}{2}$ et $\displaystyle \lim_{x\rightarrow\frac{1}{2}^-}f(x)=\lim_{x\rightarrow\frac{1}{2}^-}\frac{1}{x}=2=f(2)$.\pause
+ 
+ Donc $f$ n'est pas continue en $\displaystyle \frac{1}{2}.$
+ \end{frame}
+ \begin{frame}{Prolongement par continuit\'{e}}
+ \begin{Thm}
+ {\it Soit I un intervalle} d' extrémité {\it droite} ({\it resp. gauche}) $a$ {\it et ne contenant pas} $a.$
+ 
+ {\it Si} $f$ : $I\rightarrow \mathbb{R}$  une fonction définie et continue sur $I$ sauf en $a$ et si $f${\it admet en a une limite} {\it finie} $l$, {\it alors la fonction not\'{e}e}
+ $\tilde{f}$, {\it d\'{e}finie sur} $I\cup\{a\}$ par
+ $$\tilde{f}(x)=\left\{\begin{array}{ll}
+ f(x) & si\ x\in I\\
+ \ell & si\ x=a
+ \end{array}\right.$$
+ {\it est une fonction  continue sur $I\cup\{a\}$}
+  {\it  appel\'{e}e le prolongement continu} ({\it ou le prolongement par continuit\'{e}})
+ {\it de} $f$ {\it en} $a$.
+ \end{Thm}
+ \end{frame}
+ \begin{frame}
+ \textbf{\textcolor{blue}{Exemples:}}\\\vspace{0.2cm}
+ 1. La fonction continue $f(x)=\dfrac{\sin x}{x}$ n'est pas d\'{e}finie en $0$ et $\displaystyle \lim\limits_{x\rightarrow 0}\dfrac{\sin x}{x}=1$, par suite $f$ est
+ prolongeable par continuit\'{e} en $0$ et le prolongement par continuit\'{e} de $f$ en $0$ (qui est une fonction continue en $0$) est :
+ 
+ $$\tilde{f}(x)=\left\{\begin{array}{ll}
+ \frac{\sin x}{x} & \mathrm{s}\mathrm{i}\ x\neq 0\\
+ 1 & \mathrm{s}\mathrm{i}\ x=0
+ \end{array}\right.$$\pause
+ 2. La fonction continue $f(x) =\displaystyle \frac{1}{x}$ n'est pas d\'{e}finie en $0$ et comme $\displaystyle \lim_{x\rightarrow 0^{+}}f(x)=+\infty$, alors $f$ n'admet pas de prolongement par continuité en $0.$
+ \end{frame}
+ \begin{frame}{Th\'{e}or\`{e}me des Valeurs Interm\'{e}diaires (TVI)}
+ \begin{Thm}{\it Soit} $f$ : $[a,\ b]\rightarrow \mathbb{R}$ {\it une fonction continue sur} $[a,\ b]$. {\it Alors pour tout r\'{e}el} $\lambda$ {\it compris entre} $f(a)$ {\it et} $f(b)$ {\it il existe au moins un point} $x_{0}\in[a,\ b]$ {\it tel que} : $f(x_{0})=\lambda.$
+ \end{Thm}\pause
+ \textbf{Interpr\'{e}tation g\'{e}om\'{e}trique.}
+ \begin{center}
+ \includegraphics[width=80.10mm,height=25.90mm]{./image001}
+ \end{center}\pause
+ Dans cet exemple, la droite d'\'{e}quation $ y=\lambda$ rencontre la courbe de $f$ en trois points :
+ $$f(x_{0})=f(x_{1})=f(x_{2})=\lambda.$$ 
+ \end{frame}
+  \begin{frame}
+ \begin{Rem}[Cas particulier du TVI]
+ Si $f(b)f(a) <0$ alors il existe au moins un point $ x_{0}\in] a, b[$ tel que : $f(x_0) =0$ (cela parce que
+ $f(a)$ et $f(a)$ sont de signe oppos\'{e} et donc il suffit de prendre la valeur $\lambda=0$ qui est \'{e}videment
+ comprise entre $f(a)$ et $f(b)$ ).
+ \end{Rem}
+ \end{frame}
+ \begin{frame}
+ \textbf{\textcolor{blue}{Exemple:}}\\\vspace{0.3cm}
+ V\'{e}rifions que l'\'{e}quation $x^{3}+x^{2}-1=0$ admet une solution dans l'intervalle $]0,1[.$\pause
+ 
+ Posons $$f(x) =x^{3}+x^{2}-1$$ qui est d\'{e}finie et continue sur $[0,1]$ (Fonction polyn\^{o}miale).\pause
+ 
+ On a: $f(0)=-1<0$ et $f(1)=1>0$, alors d'apr\`{e}s la remarque pr\'{e}c\'{e}dente, il existe au moins
+ $x_{0}\in]0,1[$ tel que : $f(x_0) =0$
+
+(remarquons que $0$ et 1 ne sont pas des racines de l'\'{e}quation ce
+ qui justifie le fait que $x_{0}\neq 0$ et $x_{0}\neq 1$).
+ \end{frame}
+ \begin{frame}{ Th\'{e}or\`{e}me du Point Fixe (TPF)}
+ \begin{Thm}
+ {\it Si} $f$ : $[a,\ b]\rightarrow[a,\ b]$ {\it est continue sur} $[a,\ b]$, {\it alors il existe au moins un point} $x_{0}\in[a,\ b]$ {\it tel que} :
+ $f(x_{0})=x_{0}$ ({\it Tout r\'{e}el} $x$ {\it qui r\'{e}alise} $f(x)=x$ {\it est appel\'{e} un point fixe de} $f$).
+ 
+  \end{Thm}\pause
+    \begin{center}
+  \includegraphics[width=96.18mm,height=48.77mm]{./image002}
+  \end{center}
+  
+ \end{frame}
+ \begin{frame}{Minimum et maximum d'une fonction}
+\begin{Def}
+{\it Soit une fonction} $f$ : $I\rightarrow \mathbb{R}$. {\it On} $dit$ {\it que} $f$ {\it admet un minimum} ~~({\it resp. un maximum}) {\it sur $I$ en} $x_{0}\in I$ {\it si}:
+$f(x_{0})\leq f(x)~~ (${\it resp}. $f(x_{0})\geq f(x)), \forall x\in I.$\\
+{\it On note}: $\displaystyle \min f(x)=f(x_{0}) ~~ (${\it resp}. $\displaystyle \max f(x)=f(x_{0}))$ .
+\end{Def}\pause
+\begin{Thm}
+{\it Si} $f$ {\it est continue sur} $[a,\ b]$ {\it alors} $f$ {\it atteint ses bornes} ({\it son minimum et son maximum}) {\it sur} $[a,\ b]$ :
+$\exists$ {\it au moins} $x_{0}, x_{1}\in[a,\ b]$ {\it tels que} $f(x_{0})=\displaystyle \min f(x)$ {\it et} $f(x_{1})=\displaystyle \max f(x)$.
+\end{Thm}
+ \end{frame}
+ \subsection{D\'{e}rivabilit\'{e}}
+ \begin{frame}{D\'{e}rivabilit\'{e} en un point}
+ \begin{Def}
+ {\it On} $dit$ {\it que} $f$ {\it est d\'{e}rivable en} $x_{0}$ {\it si} $$\displaystyle \lim_{x\rightarrow x_{0}}\dfrac{f(x)-f(x_{0})}{x-x_0}\in \mathbb{R}.$$
+ \pause
+ {\it Cette limite finie est appel\'{e}e la d\'{e}riv\'{e}e de} $f$ {\it en} $x_{0}$ {\it et est not\'{e}e} $f'(x_{0})$ :
+ $$
+ f'(x_{0})=\lim_{x\rightarrow x_{0}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\lim_{h\rightarrow 0}\frac{f(x_{0}+h)-f(x_{0})}{h}.
+ $$
+ {\it Si cette limite n}'{\it existe pas ou est infinie, on} $dit$ {\it que} $f$ {\it n}'{\it est pas d\'{e}rivable en} $x_{0}.$
+ \end{Def}\pause
+ \begin{Rem}
+ La d\'{e}riv\'{e}e de $f$ en $x_{0}$ est unique.
+ \end{Rem}
+ \end{frame}
+ \begin{frame}
+ \textbf{\textcolor{blue}{Exemples:}}
+ \begin{itemize}
+ \item[1.] $f(x)=c~~(c\in \mathbb{R})$ : \pause $f'(x_{0})=\displaystyle \lim_{x\rightarrow x_{0}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\lim_{x\rightarrow x_{0}}\frac{c-c}{x-x_{0}}=\lim_{x\rightarrow x_{0}}0=0~~(\forall x_{0}\in \mathbb{R})$ .\pause
+ 
+ \item[2.] $f(x)=\displaystyle \frac{1}{x}:$ \pause $\ \ f'(x_{0})=\lim_{x\rightarrow x_{0}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\lim_{x\rightarrow x_{0}}\dfrac{\frac{1}{x}-\frac{1}{x_{0}}}{x-x_{0}}=\lim_{x\rightarrow x_{0}}-\frac{1}{xx_{0}}=-\frac{1}{x^{2}_{0}}~~(\forall x_{0}\neq 0)$ .\pause
+ 
+ \item[3.] $f(x)=\sqrt{x}$: \pause
+ $$
+ f'(x_{0})=\lim_{x\rightarrow x_{0}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\lim_{x\rightarrow x_{0}}\frac{\sqrt{x}-\sqrt{x_{0}}}{x-x_{0}}=\lim_{x\rightarrow x_{0}}\frac{1}{\sqrt{x}+\sqrt{x_{0}}}=\frac{1}{2\sqrt{x_{0}}}~~(\forall x_{0}>0).
+ $$
+ \pause
+ Si $x_{0}=0:\displaystyle \lim_{x\rightarrow 0^{+}}\frac{f(x)-f(0)}{x}=\lim_{x\rightarrow 0^{+}}\frac{\sqrt{x}}{x}=\lim_{x\rightarrow 0^{+}}\frac{1}{\sqrt{x}}=+\infty.$
+ La fonction racine carr\'{e}e n'est pas d\'{e}rivable en $0.$
+ \end{itemize}
+ \end{frame}
+ \begin{frame}
+\textbf{ Interpr\'{e}tation g\'{e}om\'{e}trique de la d\'{e}riv\'{e}e en un point.}
+ \begin{center}
+ \includegraphics[width=99.91mm,height=52.83mm]{./image003}
+ \end{center}
+ La tangente $(T)$ \`{a} la courbe $C_{f}$ au point $x_{0}$ a pour pente $f'(x_{0})$ et est d'\'{e}quation:
+ $$
+ y=f'(x_{0})(x-x_{0})+f(x_0)\ .
+ $$
+ \end{frame}
+ \begin{frame}{D\'{e}rivabilit\'{e} \`{a} droite et D\'{e}rivabilit\'{e} \`{a} gauche}
+ \begin{Def}
+ \begin{itemize}
+ \item $f$ {\it est d\'{e}rivable \`{a} droite de} $x_{0}$ {\it si} $\displaystyle \lim_{x\rightarrow x_{0}^{+}}\frac{f(x)-f(x_{0})}{x-x_{0}}\in \mathbb{R}.$
+ 
+ {\it Cette limite finie est la d\'{e}riv\'{e}e \`{a} droite de} $f$ {\it en} $x_{0}$ {\it et est not\'{e}e} $f_{d}'(x_0)$ .\pause
+ 
+ \item $f$ {\it est d\'{e}rivable \`{a} gauche de} $x_{0}$ {\it si} $\displaystyle \lim_{x\rightarrow x_{0}^{-}}\frac{f(x)-f(x_{0})}{x-x_{0}}\in \mathbb{R}.$
+ 
+ {\it Cette limite finie est la d\'{e}riv\'{e}e \`{a} gauche de} $f$ {\it en} $x_{0}$ {\it et est not\'{e}e} $f_{g}'(x_{0})$ .
+ \end{itemize}
+ \end{Def}
+  \end{frame}
+  \begin{frame}
+ \begin{Rem}
+ \begin{itemize}
+\item[$\bullet$]  $f$ est d\'{e}rivable en $x_{0}$ si et seulement si $f$ est d\'{e}rivable \`{a} droite et \`{a} gauche en $x_{0}$ et
+ $$
+ f_{d}'(x_{0})=f'_{g}(x_0)\ 
+ $$ \pause
+ 
+\item[$\bullet$] Si $f$ est d\'{e}rivable en $x_{0}$ alors $f$ est continue en $x_{0}$\pause
+
+ \item[$\bullet$]  la r\'{e}ciproque est fausse. Prenons l'exemple de la fonction $f(x)=|x|$ qui est
+  continue en $0$ mais non d\'{e}rivable en $0$ (puisque $f_{d}'(0)=1$ et $f_{g}'(0)=-1)$.
+  \item[$\bullet$]
+  
+   \item[$\bullet$] Les deux demi-tangentes droite et gauche \`{a}
+  la courbe de $f$ en ce point : d'\'{e}quations respectives $y=f_{d}'(x)(x-x_{0})+f(x_{0})$ et
+  $y=f_{g}'(x)(x-x_{0})+f$
+  \end{itemize}
+ \end{Rem}
+ \end{frame}
+ \begin{frame}{D\'{e}rivabilit\'{e} sur un intervalle, Fonction d\'{e}riv\'{e}e}
+ \begin{Def}
+ {\it Une fonction} $f$ : $I\subseteq \mathbb{R}\rightarrow \mathbb{R}$ {\it est d\'{e}rivable sur l}'{\it intervalle $I$ si} $f$ {\it est d\'{e}rivable en tout point}
+ {\it de} $I.$
+ {\it La d\'{e}riv\'{e}e} $f'$ {\it de} $f$ {\it est la fonction d\'{e}finie sur $I$ telle} que à {\it chaque} $x$, {\it elle fait correspondre la}
+ {\it d\'{e}riv\'{e}e de} $f$ {\it en} $x$ :
+ $$
+ f':I\rightarrow \mathbb{R}
+ $$
+ $$
+ x\mapsto f'(x)
+ $$
+ \end{Def}
+ \end{frame}
+ \begin{frame}{Op\'{e}rations sur les d\'{e}riv\'{e}es}
+ \begin{Thm}
+ {\it I. Si} $f, g:I\rightarrow \mathbb{R}$ {\it sont d\'{e}rivables en} $x\in I$, {\it alors} :
+ \begin{itemize}
+ \item[1.] $(f+g)$ {\it est d\'{e}rivable en} $x$ {\it et} $(f+g)'(x)=f'(x)+g'(x)$.\pause
+ 
+ \item[2.] $(fg)$ {\it est d\'{e}rivable en} $x$ {\it et} $(fg)'(x)=f'(x)g(x)+f(x)g'(x)$.\pause
+ 
+ {\it En particulier}: $(\alpha g)'(x)=\alpha g'(x)(\alpha\in \mathbb{R})$.\pause
+ 
+ \item[3.] $\displaystyle \frac{f}{g}$ {\it est d\'{e}rivable en} $x$ {\it et} $\left( \displaystyle \frac{f}{g}\right)'(x)=\dfrac{f'(x)g(x)-f(x)g'(x)}{g^{2}(x)}.$\pause
+ 
+ {\it En particulier}: $(\displaystyle \frac{1}{g})'(x)=-\frac{g'(x)}{g^{2}(x)}.$\pause
+ \end{itemize}
+ {\it II. Si} $f$ : $I\rightarrow J$ {\it est d\'{e}rivable en} $x$ {\it et} $g$ : $J\rightarrow \mathbb{R}$ {\it est d\'{e}rivable en} $f(x)$ , {\it alors} $g\circ f$ {\it est}
+ {\it d\'{e}rivable en} $x$ {\it tel que} : $(g\circ f)'(x)=g'(f(x))\times f'(x)$.
+ \end{Thm}
+ \end{frame}
+ \begin{frame}{Quelques d\'{e}riv\'{e}es usuelles}
+ \begin{center}
+ \includegraphics[width=120.39mm,height=76.52mm]{./image006}
+ \end{center}
+ \end{frame}
+ \begin{frame}{ D\'{e}riv\'{e}es successives}
+ \begin{Def}[Fonction de classe $C^{1}$]
+ {\it On} dit {\it que} $f$ : $I\subseteq \mathbb{R}\rightarrow \mathbb{R}$ {\it est de classe} $C^{1}$ {\it sur I si} $f$ {\it est d\'{e}rivable sur I et si} $f'$ {\it est continue}
+ {\it sur} $I.$
+ \end{Def}\pause
+ \begin{Def}[D\'{e}riv\'{e}e d'ordre $2,$ Fonction de classe $C^{2}$]
+ {\it Si} $f$ {\it est de classe} $C^{1}$ {\it sur I et} $f'$ {\it est d\'{e}rivable sur} $I$, {\it on} $dit$ {\it que} $f$ {\it est deux fois d\'{e}rivable et on}
+ {\it note} $f''=(f')'$ {\it la d\'{e}riv\'{e}e seconde} ({\it ou d}'{\it ordre 2}) {\it de} $f.$
+ {\it Si} $f''$ {\it est continue sur} $I$, {\it on} $dit$ {\it que} $f$ {\it est de classe} $C^{2}.$
+ \end{Def}\pause
+ \begin{Def}[D\'{e}riv\'{e}e d'ordre $n,$ Fonction de classe $C^{n}$]
+ {\it Si les d\'{e}riv\'{e}es successives de} $f$ $(f',\ f'',\ .\ .\ .\ ,\ f^{(n)})$ {\it existent telles que} $f^{(k)}=(f^{(k-1)})',~~ (\forall k\leq n)$,
+ {\it on} $dit$ {\it que} $f$ {\it est} $n$ {\it fois d\'{e}rivable et on note} $f^{(n)}$ {\it est la d\'{e}riv\'{e}e} $n^{\grave{\text{{\it \`{e}}}}me}$ {\it ou la d\'{e}riv\'{e}e d}'{\it ordre} $n$ {\it de}
+ $f$. {\it Si en plus} $f^{(n)}$ {\it est continue}, $f$ {\it est de classe} $C^{n}.$
+ {\it Et si} $f$ {\it est de classe} $C^{n}$ {\it pour tout} $n\in \mathbb{N}$, {\it on} $dit$ {\it que} $f$ {\it est de classe} $C^{\infty}$ {\it ou qu}'{\it elle est ind\'{e}finiment}
+ {\it d\'{e}rivable}.
+ \end{Def}
+ \end{frame}
+ 
+ \begin{frame}
+ \textbf{\textcolor{blue}{Exemples:}}\\\vspace{0.2cm}
+ \begin{itemize}
+ \item[1.] $f(x)=x^{3}:$ \pause $~~f'(x)=3x^{2},~~ f''(x)=6x, f^{(3)}(x)=6,~~ f^{(n)}(x)=0,~~ \forall n\geq 4.$\\
+ \pause
+ \item[2.] $f(x)=\displaystyle \frac{1}{1-x}$: \pause $~~f'(x)=\frac{1}{(1-x)^{2}},~~ f''(x)=\displaystyle \frac{2}{(1-x)^{3}},~~ f^{(3)}=\displaystyle \frac{2\times 3}{(1-x)^{4}},$
+ 
+ $f^{(n)}(x)=\displaystyle \frac{2\times 3\times\cdots\times n}{(1-x)^{n+1}}=\frac{n!}{(1-x)^{n+1}}, \forall n\in \mathbb{N}$
+ \end{itemize}
+  \pause
+  \begin{block}{Théorème (R\`{e}gle de l'Hospital (RH))}\text{}\\
+  Soient $f, g$ : $I\rightarrow \mathbb{R}$  deux fonctions d\'{e}rivables sur I et $x_{0}\in I$  ou une extr\'{e}mit\'{e} ( finie ou non)  de I. Si $g(x)\neq 0$  et $g'(x)\neq 0, \forall x\in I$  et si $\displaystyle \lim_{x\rightarrow x_{0}}f(x)=\lim_{x\rightarrow x_{0}}g(x)=0$  ou $\pm\infty$,  alors:  \pause
+  $$
+  \lim_{x\rightarrow x_{0}}\frac{f(x)}{g(x)}=\lim_{x\rightarrow x_{0}}\frac{f'(x)}{g'(x)}.
+  $$
+  {\bf N.B.} La r\`{e}gle de l'Hospital permet de lever les deux formes ind\'{e}termin\'{e}es: $\frac{\infty}{\infty},\,\,\, \frac{0}{0}.$
+  \end{block}
+\end{frame}
+ \begin{frame}
+  \textbf{\textcolor{blue}{Exemples:}}\\\vspace{0.2cm}
+ \begin{itemize}
+ \item[1)] $\displaystyle \lim_{x\rightarrow+\infty}xe^{-x}$  \pause $=\lim_{x\rightarrow+\infty}\frac{x}{e^{x}}, \;\;"\frac{+\infty}{+\infty}"$ (FI).  \pause
+ 
+ En appliquant la r\`{e}gle de l'Hospital, on obtient :
+ $$
+ \lim_{x\rightarrow+\infty}xe^{-x}=\lim_{x\rightarrow+\infty}\frac{1}{e^{x}}=\frac{1}{\lim\limits_{x\rightarrow+\infty}e^{x}}=0\;\; (\frac{1}{+\infty})\ .
+ $$
+  \item[2)] $\displaystyle \lim_{x\rightarrow 0}\frac{\ln(1+x)-x}{x^{2}}\;\; "\frac{0}{0}"$ (FI). \pause
+ 
+ En appliquant la r\`{e}gle de l'Hospital, on obtient :
+ $$
+ \lim_{x\rightarrow 0}\frac{\ln(1+x)-x}{x^{2}}=\lim_{x\rightarrow 0}\frac{\frac{1}{1+x}-1}{2x}=\lim\limits_{x\rightarrow 0}\dfrac{-x}{2x(1+x)}=\lim\limits_{x\rightarrow 0}\dfrac{-1}{2(1+x)}=\frac{1}{2}.
+ $$
+ \end{itemize}
+ \end{frame}
+  \begin{frame}
+  \begin{itemize}
+ \item[3)] $\displaystyle \lim\limits_{x\rightarrow 1^{+}}(x-1)\ln(x-1)="0\times-\infty"$ (FI). \pause
+ 
+ On pose le changement de variable $u=x-1\Rightarrow(x\rightarrow 1^{+}\Leftrightarrow u\rightarrow 0^{+})$ , par suite:  \pause
+ $$
+ \lim\limits_{x\rightarrow 1^{+}}(x-1)\ln(x-1)=\lim\limits_{u\rightarrow 0+}u\ln(u)="0\times-\infty"\,\;\text{(FI)}\ .
+ $$
+ On peut réécrire aussi:
+ $$
+ \lim\limits_{u\rightarrow 0+}u\ln(u)=\lim\limits_{u\rightarrow 0^{+}}\frac{\ln(u)}{\frac{1}{u}}="\frac{-\infty}{+\infty}"\;\,\text{(FI)}.
+ $$
+ Par application de la r\`{e}gle de l'Hospital, et par passage aux d\'{e}riv\'{e}es on a:
+ $$
+ \lim\limits_{u\rightarrow 0+}\frac{\ln(u)}{\frac{1}{u}}=\lim\limits_{u\rightarrow 0+}\dfrac{\frac{1}{u}}{\frac{-1}{u^{2}}}=\lim\limits_{u\rightarrow 0^{+}}-u=0.
+ $$
+ Ainsi : $\quad \displaystyle \lim\limits_{x\rightarrow 1+}(x-1)\ln(x-1)=0.$
+  \end{itemize} 
+ \end{frame}
+ 
+ \begin{frame}{Th\'{e}or\`{e}me de Rolle et Th\'{e}or\`{e}me des Accroissements Finis}
+ \begin{block}{Th\'{e}or\`{e}me de Rolle}
+ Soit $f$ une fonction continue sur $[a,\ b]$  et d\'{e}rivable sur $]a, b[$  telle que: $f(a)=f(b)$. Alors il existe au moins un point $ x_{0}\in] a, b[$ tel que: $f'(x_{0})=0.$
+ \end{block}  \pause
+ \textbf{Interpr\'{e}tation g\'{e}om\'{e}trique.}
+ \begin{center}
+ \includegraphics[width=80.38mm,height=30.61mm]{./image001(2)}
+ \end{center}  \pause
+ Il existe au moins un point de la courbe dont la tangente \`{a} la courbe en ce point est parall\`{e}le \`{a} l'axe $(ox)$ (c-\`a-d horizontale). Dans cet exemple, Il y a deux points: $f'(x_{0})=f'(x_{1})=0.$
+ \end{frame}
+   \begin{frame}
+ \textbf{Exemple d'application.}\\
+ V\'{e}rifions que l'\'{e}quation $x^{2}+\ln(x+1)=0$ admet $0$ comme solution unique.  \pause Pour cela, consid\'{e}rons la fonction d\'{e}finie sur $ ]-1, +\infty[$ par $f(x)=x^{2}+\ln(x+1)$ $\quad(f(0)=0)$.\\  \pause
+ En raisonnant par l'absurde, on suppose qu'il existe une autre solution $ a\in$] $-1, +\infty[$ diff\'{e}rente de $0$.  \pause On pourra supposer que $a>0$ et puisque $f$ est continue et d\'{e}rivable sur $[0,\ a]$ et v\'{e}rifie $f(a) =f(0)=0$ alors le th\'{e}or\`{e}me de Rolle implique  \pause l'existence d'un point $ x_{0}\in]0, a[$ tel que $f'(x_{0})=0$: $f'(x_{0})=2x_{0}+\dfrac{1}{x_{0}+1}=0\Leftrightarrow 2x_{0}^{2}+2x_{0}+1=0.$\\  \pause
+ Or le discriminant de cette \'{e}quation du second degr\'{e} est $\triangle=-4<0$,  \pause donc elle ne peut admettre de solution et ce qui est impossible. Ainsi la supposition pos\'{e}e est fausse et donc $0$ est bien l'unique solution de l'\'{e}quation $x^{2}+\ln(x+1)=0.$
+ \end{frame}
+ \begin{frame}
+ \begin{block}{Théorème (Th\'{e}or\`{e}me des Accroissements Finis (TAF))}.\\\vspace{0.2cm}
+  Soit $f$  une fonction continue sur $[a,\ b]$ et d\'{e}rivable sur $]a, b[$.  Alors il existe au moins un point $x_{0}\in]a, b[$ tel que: $f'(x_{0})=\displaystyle \dfrac{f(b)-f(a)}{b-a}.$
+ \end{block}
+ \end{frame}
+  \begin{frame}
+ \textbf{Interpr\'{e}tation g\'{e}om\'{e}trique.}
+ \begin{center}
+ \includegraphics[width=85.25mm,height=40.98mm]{./image002(2)}
+ \end{center}
+  \pause
+ A noter que la pente de la droite ({\it AB}) est : $\displaystyle \dfrac{f(b)-f(a)}{b-a}.$\\\vspace{0.2cm}  \pause
+ Alors, il existe au moins un point dont la tangente \`{a} la courbe est parall\`{e}le \`{a} la droite ({\it AB}). Dans cet exemple, on voit qu'il y a deux tangentes de m\^{e}me pente que celle de ({\it AB}): $f'(x_{1})=f'(x_{2})=\displaystyle \dfrac{f(b)-f(a)}{b-a}.$
+ \end{frame}
+ \begin{frame}
+ \textbf{Exemples d'application.}
+ \begin{itemize}
+ \item Montrons l'in\'{e}galit\'{e} suivante: $\sin x\leq x, \forall x>0.$\\  \pause
+ La fonction $f(x)=\sin x$ est continue et d\'{e}rivable sur R.\\
+ Soit $x>0$, en appliquant le TAF \`{a} $f$ sur $[0,\ x]$ : $\exists x_{0}\in]0, x[$, tel que:  \pause
+ $$
+ \dfrac{f(x)-f(0)}{x-0}=f'(x_{0})\Leftrightarrow\dfrac{\sin x}{x}=\cos x_{0}.
+ $$ \pause
+ Or $\cos x_{0}\leq 1$, alors $\dfrac{\sin x}{x}\leq 1$, d'o\`{u}: $\sin x\leq x, (\forall x>0)$ .\\  \pause
+ Et en remarquant que pour $x=0, \sin 0=0$, alors : $\sin x\leq x, \forall x\geq 0.$
+  \pause
+ \item Montrons la double in\'{e}galit\'{e} suivante : $\displaystyle \frac{1}{x+1}<\ln(1+\frac{1}{x})<\frac{1}{x}, \forall x>0.$\\  \pause
+ Soit $x>0$, en appliquant le TAF \`{a} la fonction logarithme n\'{e}p\'{e}rien qui est continue sur le segment $[x,\ x+1]$ et d\'{e}rivable sur $[x,\ x+1]$, alors $\exists\, c\in]x, x+1[$ tel que :  \pause
+  $$
+  \ln'(c)=\dfrac{\ln(x+1)-\ln(x)}{(x+1)-x}\Leftrightarrow\frac{1}{c}=\ln(x+1)-\ln(x)=\ln(\frac{x+1}{x})=\ln(1+\frac{1}{x}).
+  $$
+  \end{itemize}\pause
+   Or $x<c<x+1\Leftrightarrow\frac{1}{x+1}<\frac{1}{c}<\frac{1}{x}$, d'o\`{u} la double in\'{e}galit\'{e}.
+ \end{frame}
+  \begin{frame} 
+ Ce type d'in\'{e}galit\'{e}s peut servir \`{a} l'encadrement et au calcul de limites, \pause par exemple, \`{a} partir de la double in\'{e}galit\'{e} pr\'{e}c\'{e}dente, on peut d\'{e}terminer la valeur de $\displaystyle \lim\limits_{x\rightarrow+\infty}(1+\frac{1}{x})^{x}$ qui est \'{e}gale \`{a} $\displaystyle \lim\limits_{x\rightarrow+\infty}\exp^{x\ln(1+\frac{1}{x})}$, en effet:\\\vspace{0.2cm} \pause
+ Comme $\displaystyle \frac{1}{x+1}<\ln(1+\frac{1}{x})<\frac{1}{x}\Leftrightarrow\frac{x}{x+1}<x\ln(1+\frac{1}{x})<\frac{x}{x}=1, \forall x>0$\pause et puisque $\exp^{x}$ est une fonction strictement croissante, alors: \pause
+ $$
+ \exp^{\frac{x}{x+1}}<\mathrm{e}^{x\ln(1+\frac{1}{x})}<\mathrm{e}^{1}=\mathrm{e}.
+ $$ \pause
+ Et par passage \`{a} la limite, on a: $\displaystyle \lim\limits_{x\rightarrow+\infty}\exp^{\frac{x}{x+1}}=\exp\leq\lim\limits_{x\rightarrow+\infty}\exp^{x\ln(1+\frac{1}{x})}\leq\lim\limits_{x\rightarrow+\infty}\exp=\exp.$\\ \pause
+ Ainsi d'apr\`{e}s la propri\'{e}t\'{e} d'encadrement des limites (Th\'{e}or\`{e}me des gendarmes), on conclut que $\displaystyle \lim\limits_{x\rightarrow+\infty}(1+\frac{1}{x})^{x}=\exp.$
+ \end{frame}
+ \begin{frame}{ Extremums}
+ \begin{Def}(Extremum global et Extremum local).\\
+ \begin{itemize}
+ \item [$\square$]  $f : I\rightarrow \mathbb{R}$ admet un minimum ( resp. un maximum)  global ou absolu en $x_{0}$  si: $ f(x_{0})\leq f(x)$ ( resp $f(x)\leq f(x_{0})$), $\forall x\in I.$
+ \pause
+ \item [$\square$]  $f : I\rightarrow \mathbb{R}$ admet un minimum ( resp. un maximum)  local ou relatif en $x_{0}$  s'il existe un voisinage $V_{x_{0}}$  de $x_{0}$  tel que: $f(x_{0})\leq f(x)$ ( resp $f(x)\leq f(x_{0})$), $\forall x\in V_{x_{0}}.$
+ \pause
+ \item [$\square$]  Un extremum est soit un minimum soit un maximum ( local ou global).
+ \end{itemize}
+ \end{Def}
+ \end{frame}
+  \begin{frame}
+  \textbf{\textcolor{blue}{Exemples:}}\\\vspace{0.2cm}
+ \begin{enumerate}
+ \item $f(x)=\sqrt{x-1}\geq f(1)=0, \;\forall x\in[1, +\infty[$: $f$ admet un minimum global en 1. \pause
+ \begin{center}
+ \includegraphics[width=97.20mm,height=60.62mm]{./image003(2)}
+ \end{center} \pause
+ \textbf{N.B.} Un extremum global est un extremum local, mais la r\'{e}ciproque n'est pas toujours vraie.
+ \end{enumerate}
+ \end{frame}
+ \begin{frame}
+ \begin{block}{Théorème (Condition n\'{e}cessaire ou du $1^{er}$ ordre)}.\\\vspace{0.2cm}
+  Si $f:\,I\rightarrow \mathbb{R}$  est d\'{e}rivable sur un intervalle ouvert $I$ et admet un extremum local en $x_{0}\in I$, alors: $f'(x_{0})=0$ (C.N).
+ \end{block}
+ \pause
+  \textbf{\textcolor{blue}{Remarques:}}\\\vspace{0.2cm}\begin{itemize}
+ \item La condition n\'{e}cessaire $f'(x_{0})=0$ est \'{e}quivalente \`{a} ce que la tangente \`{a} la courbe de $f$ en $x_{0}$ (d'\'{e}quation : $y=fx_{0}$ est horizontale (voir l'exemple graphique ci-dessus). \pause
+ \item Si $f'(x_{0})\neq 0$, alors $f$ n'admet pas d'extremum local en $x_{0}$ sachant que $x_{0}$ n'est pas une extr\'{e}mit\'{e} de $I$ (dans le th\'{e}or\`{e}me pr\'{e}c\'{e}dent, l'intervalle $I$ \'{e}tant suppos\'{e} ouvert).\\ \pause
+ Par ailleurs, il est possible d'avoir une extr\'{e}mit\'{e} de l'intervalle o\`{u} $f$ atteint un extremum local sans que n\'{e}cessairement $f'$ soit nulle en ce point.\\ \pause
+  Notons que la recherche d'extremums locaux se fait soit aux extr\'{e}mit\'{e}s de l'intervalle, soit aux points int\'{e}rieurs de d\'{e}riv\'{e}e nulle et parfois m\^{e}me aux points o\`{u} la fonction n'est pas d\'{e}rivable comme par exemple la fonction $|x|$ qui n'est pas d\'{e}rivable en $0$ et malgr\'{e} cela, elle admet un minimum global en $0 ($puisque $|x|\geq|0|=0,\ \forall x\in \mathbb{R})$ .
+   \end{itemize}
+   \end{frame}
+    \begin{frame}
+\begin{itemize}
+ \item Cette condition n\'{e}cessaire n'est pas suffisante, \pause en effet \'{e}tant donn\'{e}e la fonction $f(x)=x^{3}$ qui v\'{e}rifie $f'(0)=0$, mais en $0$, $f$ n'admet ni un minimum local ni un maximum local, il en fait d'un point d'inflexion de la courbe (voir plus loin, c'est un point o\`{u} la courbe change de concavit\'{e}): \pause
+ \begin{center}
+ \includegraphics[width=51.14mm,height=35.22mm]{./image004(2)}
+ \end{center}
+    \end{itemize}
+ \end{frame}
+ \begin{frame}
+ \begin{block}{Théorème(Condition suffisante ou du $2^{ème}$ ordre)}
+  Soit $f:\; I\rightarrow \mathbb{R}$  une fonction deux fois d\'{e}rivable sur I telle que $f'(x_{0})=0$.  Alors on a :  \pause
+  \begin{itemize}
+  \item[a.] $\quad$ Si $f''(x_{0})<0$  alors $f$  admet un maximum local en $x_{0}.$ \pause
+ \item[b.] $\quad$  Si $f''(x_{0})>0$  alors $f$ admet un minimum local en $x_{0}.$
+ \end{itemize}
+ \end{block} \pause
+ \begin{Rem}\text{}\\
+ Dans le cas o\`{u} $f'(x_{0})=0$ et $f''(x_{0})=0$, on ne peut rien conclure. Il faut proc\'{e}der par d'autres m\'{e}thodes comme les d\'{e}veloppements limit\'{e}s.
+ \end{Rem}
+ \end{frame}
+  \begin{frame}{ Sens de variation (Monotonie)}
+ \begin{block}{Définition (Fonctions monotones)}
+  Soit $f:\,I\rightarrow \mathbb{R}$  une fonction.\pause
+ \begin{enumerate}
+ \item[$\square$]  \textbf{Fonction croissante.} $f$  est croissante sur I si:
+ $$
+ x\leq y\Rightarrow f(x)\leq f(y),\ \forall x,\ y\in I.
+ $$\pause
+ \item[$\square$] \textbf{Fonction d\'{e}croissante.} $f$  est d\'{e}croissante sur $I$ si $-f$  est croissante sur $I$ :
+ $$
+ x\leq y\Rightarrow f(x)\geq f(y),\ \forall x,\ y\in I.
+ $$ \pause
+ \item[$\square$] \textbf{Fonction monotone.} $f$  est monotone sur I si elle est croissante ou d\'{e}croissante.
+ \end{enumerate}
+ \end{block} 
+ \end{frame}
+ \begin{frame}
+ La stricte monotonie est d\'{e}finie avec des in\'{e}galit\'{e}s strictes : $f$ est strictement croissante (resp. strictement d\'{e}croissante) si $\forall x, y\in I, x<y\Rightarrow f(x) <f(y)$ (resp. $x<y\Rightarrow f(x) >f(y)$\\\vspace{0.2cm}\pause
+ \textbf{N.B.} Une fonction est constante si elle est croissante et d\'{e}croissante.\pause
+ \begin{Thm}\text{}\\
+ Soit $f:\,I\rightarrow \mathbb{R}$  une fonction d\'{e}rivable sur $I$,  alors:\pause
+ \begin{enumerate}
+ \item[a.] $f$  est croissante sur I si et seulement si $f'(x)\geq 0, \forall x\in I.$\pause
+ \item[b.] $f$  est d\'{e}croissante sur I si et seulement si $f'(x)\leq 0, \forall x\in I.$
+ \end{enumerate}
+ \end{Thm}
+ \pause
+ \textbf{N.B.} $f$ est strictement croissante (resp. strictement d\'{e}croissante) sur $I$ si et seulement si $f'(x)>0$ (resp. $f'(x)<0) \forall x\in I.$\\ \pause
+ $f$ est constante sur $I\Leftrightarrow f'(x)=0, \forall x\in I$ (puisque $f$ est croissante et d\'{e}croissante sur $I$ donc $f'(x)\leq 0$ et $f'(x)\geq 0, \forall x\in I$).
+ \end{frame}
+ \begin{frame}
+ \begin{block}{Théorème ( $2^{ème}$ m\'{e}thode d'extremalit\'{e} (Condition suffisante))}
+  Soit $f:\,I\rightarrow \mathbb{R}$  une fonction d\'{e}rivable sur $I$ telle que $f'(x_{0})=0\;(x_{0}\in I)$. Si $f'$  change de signe, alors $f$  poss\`{e}de un extremum local en $x_{0}.$
+ \end{block}\pause
+ \textbf{Tableau de variation}\\
+ \begin{center}
+ \begin{tabular}{l|l}
+ $x$&	\ \ \ \ \ \ \ \ \ \ \ \ \  $x_{0}$	\\
+ \hline
+ $f'(x)$& $-\qquad \ \ \ \ \ \  0 \ \ \ \ \ \ \qquad +$	\\
+ \hline
+ $f$& $\displaystyle \searrow\qquad \text{min local}\qquad \nearrow$
+ \end{tabular}\\ \pause
+ \vspace*{1cm}
+ \begin{tabular}{l|l}
+ $x$&		\ \ \ \ \ \ \ \ \ \ \ \ \ $x_{0}$	\\
+ \hline
+ $f'(x)$& $+\qquad \ \ \ \ \ \  0 \ \ \ \ \ \ \qquad -$	\\
+ \hline
+ $f$& $\displaystyle \nearrow\qquad  \text{max local}\qquad \searrow$
+ \end{tabular}
+  \end{center}
+ \end{frame}
+ \begin{frame}
+ \includegraphics[width=100.89mm,height=61.99mm]{./local}
+ \end{frame}
+ \begin{frame}
+ \begin{Rem}\text{}\\
+ Si $f'(x_{0})=0$ sans que $f'$ change de signe alors $x_{0}$ est dit un point d'inflexion "PI" de $\mathcal{C}_{f}.$
+ \end{Rem}\vspace{0.2cm}\pause
+ \textbf{Tableau de variation}
+ \begin{center}
+ \begin{tabular}{l|l}
+ $x$&	\ \ \ \ \ \ \ \ \ \ \  $x_{0}$	\\
+ \hline
+ $f'(x)$& $-\qquad \ \ \  0\qquad \ \ \ \  -$	\\
+ \hline
+ $f$& $\displaystyle \searrow\qquad  \ \text{PI}\qquad \ \  \searrow$
+ \end{tabular}\\ \pause
+ \begin{tabular}{l|l}
+ $x$&		\ \ \ \ \ \ \ \ \ \ \  $x_{0}$	\\
+ \hline
+ $f'(x)$& $+\qquad \ \ \  0\qquad \ \ \ \ +$	\\
+ \hline
+ $f$& $\displaystyle \nearrow\qquad \ \text{PI}\qquad \ \ \nearrow$
+ \end{tabular}
+ \end{center}
+ \end{frame}
+ \begin{frame}{Fonctions r\'{e}ciproques}
+ \begin{block}{Définition (Injection, Surjection, Bijection)}
+  Soit $f:\,I\rightarrow J$ ($I,\ J\ $ sont\ des parties de $\mathbb{R}$): \pause
+ \begin{enumerate}
+ \item[$\square$]  $f$  est injective si:\\\vspace{0.2cm}
+ $\forall y\in J,\; \exists$  au plus $x\in I$  tel que $f(x)=y$ $\left(\Leftrightarrow\forall x,\ x'\in I,\; f(x)=f(x')\Rightarrow x=x'\right)$.\pause
+ \item[$\square$] $ f$ est surjective si: $\forall y\in J, \exists$ au moins $x\in I$ tel que $f(x)=y.$\pause
+ 
+ \item[$\square$]  $f$  est bijective ( injective et surjective)  si: $\forall y\in J, \exists x\in I$  unique tel que $f(x)=y.$
+ \end{enumerate}
+ \end{block}\pause
+  \textbf{\textcolor{blue}{Exemples:}}\\\vspace{0.2cm}
+ \begin{enumerate}
+ \item $f(x) =x^{3}(\mathbb{R}\rightarrow \mathbb{R})$ est injective: $x^{3}=x^{\prime 3}\Rightarrow x=x^{\prime}, \forall x, x'\in \mathbb{R}.$\pause
+ \item $f(x)=x^{2}(\mathbb{R}\rightarrow \mathbb{R}^{+})$ est surjective: $\forall y\in \mathbb{R}^{+}, \exists x=\pm\sqrt{y}$ tel que $y=x^{2}.$\pause
+ \item $f(x)=x^{2}(\mathbb{R}^{+}\rightarrow \mathbb{R}^{+})$ est bijective: $\forall y\in \mathbb{R}^{+}, \exists x=\sqrt{y}\geq 0$ unique tel que $y=x^{2}.$
+ \end{enumerate}
+ \end{frame}
+ \begin{frame}
+ \begin{Thm}\text{}\\
+  Une fonction $f:\,I\rightarrow J$  est une bijection si et seulement s'il existe une autre fonction bijective $g:J\rightarrow I$ telle que: $g\circ f(x)=x, \forall x\in I$  et $f\circ g(y)=y, \forall y\in J.$\\\vspace{0.1cm}
+  On note $g=f^{-1}$  et on l'appelle la fonction r\'{e}ciproque ( ou inverse)  de $f.$
+ \end{Thm}\pause
+ \begin{Thm}
+  Si $f:\,I\rightarrow J$  est continue et strictement monotone sur $I,$ alors $f$  est bijective et sa fonction r\'{e}ciproque $f^{-1}$  est continue sur $J$  et est de m\^{e}me sens de variation que $f.$\\\vspace{0.1cm}
+ De plus les courbes repr\'{e}sentatives de $f$  et de $f^{-1}$  sont sym\'{e}triques par rapport \`{a} la droite d'équation $y=x.$
+ \end{Thm}
+ \end{frame}
+ \begin{frame}
+  \textbf{\textcolor{blue}{Exemples:}}\\\vspace{0.2cm}
+\begin{itemize}
+ \item La fonction $f(x) =x^{2}$ $\left(\right.$continue, strictement croissante de $[0,\ +\infty[$ vers $\left.[0,\ +\infty[\right)$ a pour fonction r\'{e}ciproque $f^{-1}(x)=\sqrt{x}$ (continue, strictement croissante de $\ [0,\ +\infty[$ dans $[0,\ +\infty[)$ .\pause
+ \begin{center}
+ \includegraphics[width=51.48mm,height=36.24mm]{./image006(2)}
+ \end{center}
+
+ \end{itemize}
+   \end{frame}
+  \begin{frame}
+  La fonction r\'{e}ciproque de $f(x)=e^{x}$ \pause (continue, strictement croissante de $ \mathbb{R}$ vers $]0,\ +\infty[)$ a pour fonction r\'{e}ciproque $f^{-1}(x) =\ln x$ (continue, strictement croissante de ] $0, +\infty[$ dans $\mathbb{R}$).\pause
+ \begin{center}
+ \includegraphics[width=65.36mm,height=56.90mm]{./image007}
+ \end{center}
+ \end{frame}
+ \begin{frame}
+ \begin{Thm}\text{}\\
+  Soit $f:\,I\rightarrow J$  une fonction continue, strictement monotone et d\'{e}rivable sur $I.$  Si $x_{0}\in I$  est tel que $f'(x_{0})\neq 0$,  alors $f^{-1}$  est d\'{e}rivable en $y_{0}=f(x_0)$  et on a:\pause
+ $$
+ \left(f^{-1}\right)'(y_{0})=\dfrac{1}{f'(x_{0})}=\dfrac{1}{f'(f^{-1}(y_{0}))}.$$
+ \end{Thm}
+\end{frame}
+ \begin{frame}{Fonctions r\'{e}ciproques des fonctions trigonom\'{e}triques.}
+\begin{itemize}
+ \item La fonction r\'{e}ciproque de $f(x)=\sin x$\pause (continue, strictement croissante et d\'{e}rivable de $[-\displaystyle \ \frac{\pi}{2},\ \frac{\pi}{2}]$ dans $[-1, 1]$) est la fonction $f^{-1} (x) =\arcsin x$ (continue, strictement croissante sur $[-1, 1]$ \`{a} valeurs dans $[-\displaystyle \frac{\pi}{2},\ \frac{\pi}{2}]$) :\pause
+ $$\arcsin x=y\Leftrightarrow\left\{\begin{array}{clc}
+ & x=\sin y\\
+ &-\displaystyle \frac{\pi}{2}\leq y\leq\frac{\pi}{2}
+ \end{array}\right.$$
+ $\quad(\displaystyle \arcsin\frac{1}{2}=\frac{\pi}{6},\ \arcsin\frac{1}{\sqrt{2}}=\frac{\pi}{4},\ \arcsin\frac{\sqrt{3}}{2}=\frac{\pi}{3}).$ 
+   \end{itemize}
+ \end{frame}
+  \begin{frame}
+Donc
+ $\arcsin$ est d\'{e}rivable sur] $-1,1[$ de d\'{e}riv\'{e}e :\pause
+ $$
+ \arcsin'(x)=\frac{1}{\sqrt{1-x^{2}}},\ \forall x\in]-1,1[.
+ $$\pause
+ En effet, soit $ y\in] -1,1[\displaystyle \Leftrightarrow\exists x\in]-\frac{\pi}{2}, \displaystyle \frac{\pi}{2}$ [, tel que : $\sin x=y.$\\\vspace{0.1cm}\pause
+ Or $\cos^{2}x+\sin^{2}x=1\Rightarrow\cos x=\sqrt{1-\sin^{2}x}$, alors on a:
+ $$
+ \arcsin'(y)=\frac{1}{\sin' x}=\frac{1}{\cos x}=\frac{1}{\sqrt{1-\sin^{2}x}}=\frac{1}{\sqrt{1-y^{2}}}.
+ $$
+ \end{frame}
+  \begin{frame}
+ \begin{itemize}
+ \item La fonction r\'{e}ciproque de $f(x) =\cos x$\pause (continue, strictement d\'{e}croissante et d\'{e}rivable de $[0,\ \pi]$ dans $[-1, 1]$) est la fonction $f^{-1} (x) =\arccos x$ (continue, strictement croissante sur $[-1, 1]$ \`{a} valeurs dans $[0,\ \pi]$):\pause
+ $$\arccos x=y\Leftrightarrow\left\{\begin{array}{clc}
+ & x=\cos y\\
+ & 0\leq y\leq\pi
+ \end{array}\right.$$
+ $(\displaystyle \arccos\frac{1}{2}=\frac{\pi}{3},\ \arccos\frac{1}{\sqrt{2}}=\frac{\pi}{4},\ \arccos\frac{\sqrt{3}}{2}=\frac{\pi}{6})$\\ \pause
+Donc $\arccos$ est d\'{e}rivable sur] $-1,1[$ de d\'{e}riv\'{e}e :\pause
+ $$
+ \arccos'(x)=\frac{-1}{\sqrt{1-x^{2}}},\ \forall x\in]-1,1[.
+ $$
+ \end{itemize}
+  \end{frame}
+   \begin{frame}
+  \begin{itemize}
+ \item La fonction r\'{e}ciproque de $f(x)=\tan x=tg(x)$ \pause(continue, strictement croissante et d\'{e}ri- vable de $] -\displaystyle \frac{\pi}{2}, \displaystyle \frac{\pi}{2}$ dans $\mathbb{R}$ est la fonction $f^{-1}(x)=\arctan x=$ (continue, strictement croissante sur $] -\infty, \infty$[ \`{a} valeurs dans $]- \displaystyle \frac{\pi}{2}, \displaystyle \frac{\pi}{2}[$):\pause
+ $$\arctan x=y\Leftrightarrow\left\{\begin{array}{l}
+ x=\tan y\\
+  -\frac{\pi}{2}<y<\frac{\pi}{2}
+ \end{array}\right.$$\pause
+$(\displaystyle \arctan 0=0,\ \arctan 1=\frac{\pi}{4},\ \arctan\sqrt{3}=\frac{\pi}{3}).$\\ Donc $\arctan$ est d\'{e}rivable sur $\mathbb{R}$ de d\'{e}riv\'{e}e :\pause
+ $$
+ \arctan'(x)=\frac{1}{x^{2}+1},\ \forall x\in \mathbb{R}.
+ $$
+\end{itemize}
+ \end{frame}
+ \begin{frame}{Concavit\'{e} et Points d'inflexion}
+ \begin{block}{Définition (Fonction convexe, Fonction concave)}
+  Soit $f:\,I\rightarrow \mathbb{R}$  une fonction.
+ \begin{itemize}
+ \item $f$ est convexe sur I si: $f(\alpha x+(1-\alpha)y)\leq\alpha f(x)+(1-\alpha)f(y)$, $\forall x,\ y\in I, \forall\alpha\in[0,1].$\pause \item $f$ est concave sur I si: $f(\alpha x+(1-\alpha)y)\geq\alpha f(x)+(1-\alpha)f(y)$, $\forall x,\ y\in I, \forall\alpha\in[0,1].$
+ \end{itemize}
+ \end{block}\pause
+ \begin{Rem}\text{}\\
+ $f$ est concave si et seulement si $-f$ est convexe.
+ \end{Rem}
+ \end{frame}
+  \begin{frame}
+ \textbf{Interpr\'{e}tation g\'{e}om\'{e}trique.}\\\vspace{0.1cm}\pause
+ L'in\'{e}galit\'{e} dans la d\'{e}finition de la convexit\'{e} (resp. la concavit\'{e}) s'interpr\`{e}te g\'{e}om\'{e}triquement par le fait que tout arc de la courbe est situ\'{e} au dessous (resp. au dessus) de sa corde :\pause
+ \begin{center}
+ \includegraphics[width=92.46mm,height=45.38mm]{./image008}
+ \end{center}
+   \end{frame}
+    \begin{frame}
+   \begin{center}
+    \includegraphics[width=88.73mm,height=45.38mm]{./image009} 
+     \end{center}
+ \end{frame}
+
+  \begin{frame}
+ On d\'{e}finit aussi la stricte convexit\'{e} et la stricte concavit\'{e} avec les in\'{e}galit\'{e}s strictes :\pause
+ \begin{itemize}
+ \item  $f$ est strictement convexe sur $I$ si:
+ $
+ f(\alpha x+(1-\alpha)y)<\alpha f(x)+(1-\alpha)f(y),\ \forall x\neq y\in I,\ \forall\alpha\in]0,1[.
+ $\pause
+ \item  $f$ est strictement concave si sur $I$ si:
+ $
+ f(\alpha x+(1-\alpha)y)>\alpha f(x)+(1-\alpha)f(y),\ \forall x\neq y\in I,\ \forall\alpha\in]0,1[.
+ $
+ \end{itemize}\pause
+  \textbf{\textcolor{blue}{Exemples:}}\\\vspace{0.2cm}
+ \begin{enumerate}
+ \item La fonction $e^{x}$ est strictement convexe sur $\mathbb{R}$.\pause
+ \item La fonction $\ln x$ est strictement concave sur $]0, +\infty[.$
+ \end{enumerate}
+
+ \end{frame}
+  \begin{frame}
+ \begin{Thm}\text{}\\
+  Si $f$ est de classe $C^{1}$  sur $I$,  alors:\pause
+  \begin{enumerate}
+  \item[a.] $f$  est convexe sur I si et seulement si $f'$ est croissante sur $I$ ( si et seulement si $f''\geq 0$  sur $I$ lorsque $f$  est deux fois d\'{e}rivable).\pause
+ \item[b.] $f$  est concave sur I si et seulement si $f'$  est d\'{e}croissante sur $I$ (si et seulement si $f''\leq 0$  sur $I$ lorsque $f$  est deux fois d\'{e}rivable).
+ \end{enumerate}
+ \end{Thm}\pause
+ \begin{Thm}\text{}\\
+  Soit $f:\, I\rightarrow \mathbb{R}$  une fonction de classe $C^{1}.$\pause
+{\small \begin{enumerate}
+ \item[a.]  Si $f$  est convexe sur $I$,  alors la courbe de $f$  est au dessus de chacune de ses tangentes:
+ $$
+ f(x_{0})+(x-x_{0})f'(x_{0})\leq f(x),\ \forall x,\ x_{0}\in I\ :
+ $$\pause
+ \item[b.]  Si $f$  est concave sur $I$ alors la courbe de $f$  est au dessous de chacune de ses tangentes:
+ $$
+ f(x)\leq f(x_{0})+(x-x_{0})f'(x_{0}),\ \forall x,\ x_{0}\in I.
+ $$  \end{enumerate}}
+  \end{Thm}
+ \end{frame}
+  \begin{frame}
+ \begin{center}
+ \includegraphics[width=90.34mm,height=36.06mm]{./image010}\\ \pause
+ \includegraphics[width=90.36mm,height=39.78mm]{./image011}
+ \end{center}
+
+ 
+ \end{frame}
+ \begin{frame}
+ \begin{Propr}\text{}\\
+  Si $f$ est de classe $C^{1}$ est convexe (resp. concave)  sur $I=[a,\ b]$  telle que $f'(x_{0})=0$,  alors $f$ atteint un minimum ( resp. un maximum)  global en $x_{0}.$
+ \end{Propr}\pause
+ \begin{block}{Définition (Point d'inflexion)}
+  Soit $f:\,I\rightarrow \mathbb{R}$ une fonction. Tout point $x_{0}\in I$  o\`{u} la concavit\'{e} change (d'un c\^{o}t\'{e} $f$  est convexe et de l'autre elle est concave) est appel\'{e} un point d'inflexion de la courbe de $f.$
+  \end{block}\pause
+ \begin{center}
+ \includegraphics[width=52.49mm,height=37.25mm]{./image012}
+ \end{center}
+  \end{frame}
+  \begin{frame}
+ \begin{Rem}\text{}\\
+\begin{itemize}
+ \item La tangente en tout point d'inflexion o\`{u} la fonction est d\'{e}rivable, traverse la courbe de la fonction. Cependant, on peut rencontrer le cas d'un point d'inflexion m\^{e}me si la fonction n'est pas d\'{e}rivable en ce point.\\\vspace{0.1cm}\pause
+ L'exemple suivant montre que la fonction est d\'{e}rivable \`{a} droite et \`{a} gauche en $x_{0}$ mais n'\'{e}tant pas d\'{e}rivable en $x_{0}$ (d'o\`{u} la pr\'{e}sence de deux demi-tangentes \`{a} la courbe en ce point) et qu'en ce point la courbe admet un point d'inflexion d\^{u} \`{a} un changement de concavit\'{e} :\pause
+ \begin{center}
+ \includegraphics[width=49.78mm,height=32.85mm]{./image013}
+ \end{center}
+ \end{itemize}
+  \end{Rem}
+  \end{frame}
+   \begin{frame}
+    \begin{Rem}
+   \begin{itemize}
+ \item Si $f$ est deux fois d\'{e}rivable sur $I$ et $x_{0}$ est un point d'inflexion de la courbe de $f$ alors : $f''(x_{0})=0$ ( car en ce point, $f$ est convexe $(f''(x_{0})\geq 0)$ et $f$ est concave $(f''(x_{0})\leq 0)$). Par ailleurs, cette condition n'est pas suffisante (Exemple: $f(x)=x^{4},\, f''(0)=0$ et $f''\geq 0\,\Rightarrow\, f$ est totalement convexe sur $\mathbb{R}$ donc n'admet aucun point d'inflexion).\pause
+ \item Si $f$ est deux fois d\'{e}rivable sur $I$ telle que $f''(x_{0})=0$ et $f''$ change de signe, alors $x_{0}$ est un point d'inflexion de la courbe de $f.$
+\end{itemize}
+ \end{Rem}
+  \end{frame}
+  \begin{frame}
+ \textbf{D\'{e}marche pratique pour l'\'{e}tude globale des fonctions.}\vspace{0.2cm}
+{\small \begin{itemize}
+ \item[$\bullet$] Simplifier si possible l'expression de la fonction $f$ \`{a} \'{e}tudier.\vspace{0.2cm}\pause
+ \item[$\bullet$] D\'{e}terminer le domaine de d\'{e}finition de $f.$\vspace{0.2cm}\pause
+ \item[$\bullet$] Regarder si elle est paire, impaire ou p\'{e}riodique pour r\'{e}duire son domaine d'\'{e}tude.\vspace{0.2cm}\pause
+ \item[$\bullet$] \'{E}tudier la continuit\'{e} de $f$ et distinguer les points de discontinuit\'{e} \'{e}ventuels.\vspace{0.2cm}\pause
+ \item[$\bullet$] \'{E}tudier la d\'{e}rivabilit\'{e} de $f$ tout en pr\'{e}cisant les points o\`{u} $f$ n'\'{e}tant pas d\'{e}rivable puis calculer sa fonction d\'{e}riv\'{e}e.\vspace{0.2cm}\pause
+ \item[$\bullet$] \'{E}tudier les branches infinies s'il y'en a.\vspace{0.2cm}\pause
+ \item[$\bullet$] \'{E}tudier le sens de variation de $f$ (en discutant le signe de $f'$) et construire le tableau de variation puis d\'{e}terminer ses extremums locaux (globaux) s'il y'en a.\vspace{0.2cm}\pause
+ \item[$\bullet$] \'{E}tudier la convexit\'{e} et la concavit\'{e} de $f$ et en d\'{e}duire les points d'inflexion \'{e}ventuels.\vspace{0.2cm}\pause
+  \item[$\bullet$] Construire la courbe repr\'{e}sentative de $f$ d'\'{e}quation $y=f(x)$ sur un rep\`{e}re orthonorm\'{e}$(xoy)$.
+ \end{itemize}}
+  \end{frame}
+  \begin{frame}
+ \begin{ex}\text{}\\
+ Soit la fonction $f(x)=-\displaystyle \frac{1}{3}x^{3}+x^{2}+3x$ qui est continue et d\'{e}rivable sur $\mathbb{R}$ (fonction polynomiale).\\\vspace{0.1cm}\pause
+ Sa d\'{e}riv\'{e}e est $f'(x)=-x^{2}+2x+3$ et $f'(x)=0\Leftrightarrow x=-1$ {\it ou} $x=3.$\\\vspace{0.1cm}\pause
+ \textbf{Tableau de variation de $f.$}
+ \begin{center}
+{\small \begin{tabular}{l|l}
+ \multicolumn{1}{l|}{$x$}&	\multicolumn{1}{|l}{ $-\infty \ \  \ \ \ \ \ \ \  \ -1\ \ \ \ \ \ \ \ \  \ \ \ \ \  \ 3\ \ \ \ \  \ \ \  \ +\infty$}	\\
+ \hline
+ \multicolumn{1}{l|}{ $f'(x)$}&	\multicolumn{1}{|l}{ $\ \ \ \ \ \ \ \ \ -\ \ \  \ \ \ \    0  \ \ \ \  \ \ + \ \ \ \ \ \ 0 \ \ \ \ \  -$}	\\
+ \hline
+ \multicolumn{1}{l|}{$f(x)$}&	\multicolumn{1}{|l}{ $+\infty \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \   \ 9 \ \ \ \ $}	\\ 
+ \multicolumn{1}{l|}{  }&	\multicolumn{1}{|l}{ $\ \ \ \ \ \ \ \  \ \searrow \ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \nearrow \ \ \ \ \ \ \ \ \ \ \ \ \searrow$}	\\
+ \multicolumn{1}{l|}{  }&	\multicolumn{1}{|l}{ $\ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \ \ \frac{-5}{3}   \ \ \ \ \ \  \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \  \ -\infty$}	\\
+ \hline
+ 
+ \end{tabular}}
+ \end{center} \pause
+ D'apr\`{e}s ce tableau de variation, $f$ admet un minimum local en $-1$ et un maximum local en 3; puisque en ces points $f'$ s'annule en changeant de signe (mais il ne s'agit pas d'extremums globaux de $f$).\\\vspace{0.1cm}
+ $f$ est deux fois d\'{e}rivable: $f''(x)=-2x+2=0\Leftrightarrow x=1.$\\\vspace{0.1cm} \pause
+ Puisque $f''$ s'annule en $1$ et change de signe $(f''(x)\leq 0, \forall x\geq 1$: $f$ est concave sur $[1, +\infty[$ et $f''(x)\geq 0, \forall x\leq 1$: $f$ est convexe sur $]-\infty, 1]$ alors la courbe de $f$ admet un seul point d'inflexion en $1$.
+ \end{ex}
+ \end{frame}
+ %---------------------------------------
+  %--------------------------------------
+ %--------------------------------------
+ %--------------------------------------
+
+\end{document}
